@@ -95,7 +95,10 @@ If you have any of the following already, you should skip those steps. These ins
  - Run the Anaconda Installer.
  - Install for **all users** of your computer (unless you share the computer).
 
+### JupyterLab
 
+- [Download JupyterLab](https://github.com/jupyterlab/jupyterlab-desktop)
+- Run the installer.
 
 ### OneDrive (recommended)
 
