@@ -368,7 +368,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-computer-code">2.1. What is computer code?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-data-types">2.2. Variables and Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-data-types">2.2. Variables and Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">2.2.1. Data Types</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric">2.3. Numeric</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">2.4. Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">2.5. Booleans</a></li>
@@ -395,9 +398,9 @@ document.write(`
 <section id="what-is-computer-code">
 <h2><span class="section-number">2.1. </span>What is computer code?<a class="headerlink" href="#what-is-computer-code" title="Link to this heading">#</a></h2>
 <p>We’ve already gotten a glimpse of programming above. We used variables (e.g. a, b, c, d, e), operators (e.g. +, -, *, /, **), built-in functions (e.g. print())</p>
-<p><strong>ELINSTB</strong></p>
+<p><strong>ELINSTB</strong> (Explain Like I’ve Never Seen This Before)</p>
 <p>A programming language is a set of instructions followed EXPLICITLY by a computer. Like a natural language (between people…or people and LLMs), a programming language has nouns (stored data) and verbs (actions).</p>
-<p>*<strong>A little bit deeper about Python</strong></p>
+<p><strong>A little bit deeper about Python</strong></p>
 <p>Python is an object-oriented language and everything in Python is an object. What’s that mean? Objects are members of a group of similar things; the groups are called classes. And every object has special properties (attributes) and functions (methods) specific to that class.</p>
 <p><em>So ‘a’ is an object?</em> Yes, ‘a’ is an object that is of a numeric data type.
 <em>What about ‘print()’, I thought that was a verb?</em> Yes, even ‘print’ is an object, a function object. Think of print as a printer; that’s a thing that prints (a blender blends, a television televises, etc.)</p>
@@ -405,21 +408,40 @@ document.write(`
 <section id="variables-and-data-types">
 <h2><span class="section-number">2.2. </span>Variables and Data Types<a class="headerlink" href="#variables-and-data-types" title="Link to this heading">#</a></h2>
 <p>(Read <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython/03-semantics-variables.html">WTOP Ch 3</a>)</p>
-<p>Variables store the data we use in programs. You can think of a variable as a box with a label on it (or a mailbox with an address…that happens to be a location in your computer’s memory). Variables hold our data and keep track of the values (see above), but what kinds of data can variables hold. For now, we’ll start with three simple data types.</p>
+<p>Variables store the data we use in programs. You can think of a variable as a box with a label on it (or a mailbox with an address…that happens to be a location in your computer’s memory). The name of the variable is the label on the box, and it can be almost anything:</p>
+<ul class="simple">
+<li><p>variable names should only contain letters, dashes, underscores, and numbers.</p></li>
+<li><p>must start with a letter</p></li>
+<li><p>should be descriptive of the value it’s storing (what’s in the box?). This will make your code easier to read.</p></li>
+</ul>
+<p>Whenever we create a variable, we have to <strong>assign</strong> it a value (even if that value is empty…more on that later). We assign values using single = sign.</p>
+<ul class="simple">
+<li><p>y = 5</p></li>
+<li><p>s = ‘hello’</p></li>
+</ul>
+<section id="data-types">
+<h3><span class="section-number">2.2.1. </span>Data Types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h3>
+<p>Variables hold our data and keep track of the values (see above), but what kinds of data can variables hold. For now, we’ll start with three simple data types.</p>
 <ul class="simple">
 <li><p><strong>Numeric</strong> - integers (round numbers) and floats (decimal numbers)</p></li>
 <li><p><strong>String</strong> - any text (e.g. a single character, a password, an entire book). Strings are denoted by quotes, either ‘hello’ or “hello” is fine.</p></li>
 <li><p><strong>Boolean</strong> - True or False. True and False are keywords and will be color-highlighted when used.</p></li>
 </ul>
 </section>
+</section>
 <section id="numeric">
 <h2><span class="section-number">2.3. </span>Numeric<a class="headerlink" href="#numeric" title="Link to this heading">#</a></h2>
-<p>Numeric values can be either integers or floats. In first assigning the variable, it is an integer or a float depending on whether or not the number has a decimal point. You can mix and match ints and floats when doing arithmetic.</p>
+<p>Numeric values can be either:</p>
+<ul class="simple">
+<li><p>int - an integer, a whole number or a negative of a whole number, represented without a decimal (e.g. 0, 1, 2, 3 or -1, -2, -3)</p></li>
+<li><p>floats - any number with a decimal, even if there are no digits after the decimal or all of the digits after the decimal are zeros (e.g. 1.32, -1.32, 5.00, 7.).</p></li>
+</ul>
+<p>In first assigning the variable, it is an integer or a float depending on whether or not the number has a decimal point. You can mix and match ints and floats when doing arithmetic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Numeric</span>
 
-<span class="c1"># Integers</span>
+<span class="c1"># These are all technically integers, but only the first is an int</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">7.</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mf">7.0</span>
@@ -441,7 +463,7 @@ z is a &lt;class &#39;float&#39;&gt;
 </section>
 <section id="strings">
 <h2><span class="section-number">2.4. </span>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h2>
-<p>Strings are textual data (including numbers and characters).</p>
+<p>Strings are textual data (including numbers and characters). Strings are contained in quotes, either ‘ ‘ or “ “, your choice as long as both ends match.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strings</span>
@@ -457,6 +479,10 @@ z is a &lt;class &#39;float&#39;&gt;
 <section id="booleans">
 <h2><span class="section-number">2.5. </span>Booleans<a class="headerlink" href="#booleans" title="Link to this heading">#</a></h2>
 <p>True and False statements.</p>
+<ul class="simple">
+<li><p>Below, notice that True and False (capitalized) are emphasized in code. They are keywords in Python and should never be used as variable names.</p></li>
+<li><p>A Boolean can also be an expression that evaluates as true or false (e.g. 5 &lt; 3 is False, ‘dog’==’dog’ is True)</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="kc">True</span>
@@ -480,23 +506,23 @@ z is a &lt;class &#39;float&#39;&gt;
 </ul>
 <section id="id1">
 <h3><span class="section-number">2.6.1. </span>Numeric<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>What do the following do (between two numbers)?</p>
+<p>What do the following do (between two numbers)? Experiment with different numeric values of x and y to figure out what these operators do.</p>
 <ul class="simple">
-<li><p>**</p></li>
-<li><p>//</p></li>
-<li><p>%</p></li>
+<li><p>x**y</p></li>
+<li><p>x//y</p></li>
+<li><p>x%y</p></li>
 </ul>
 </section>
 <section id="string">
 <h3><span class="section-number">2.6.2. </span>String<a class="headerlink" href="#string" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>+ between two strings</p></li>
+<li><p>s1+s2 (string plus a string)</p></li>
 </ul>
 </section>
 <section id="string-and-numeric">
 <h3><span class="section-number">2.6.3. </span>String and numeric<a class="headerlink" href="#string-and-numeric" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>* between a number and a string</p></li>
+<li><p>x*s2 (number times a string)</p></li>
 </ul>
 </section>
 <section id="boolean">
@@ -507,7 +533,11 @@ z is a &lt;class &#39;float&#39;&gt;
 <li><p>not, !</p></li>
 <li><p>== between any two objects</p></li>
 <li><p>!= between any two objects</p></li>
-<li><p>* Boolean with number or string</p></li>
+</ul>
+<p>What happens when you multiply a Boolean and a number? A string?</p>
+<ul class="simple">
+<li><p>TF*x (Boolean times number)</p></li>
+<li><p>TF*s1 (Boolean times string)</p></li>
 </ul>
 </section>
 </section>
@@ -578,7 +608,10 @@ z is a &lt;class &#39;float&#39;&gt;
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-computer-code">2.1. What is computer code?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-data-types">2.2. Variables and Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-data-types">2.2. Variables and Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">2.2.1. Data Types</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric">2.3. Numeric</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">2.4. Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">2.5. Booleans</a></li>
@@ -613,7 +646,7 @@ By Eatai Roth, Gettysburg College
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright Eatai Roth   2024.
       <br/>
     
   </p>
