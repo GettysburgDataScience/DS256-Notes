@@ -15,7 +15,10 @@ parts:
     - file: 01_Intro/02_variables
     - file: 01_Intro/03_functions
     - file: 01_Intro/04_conditionals
+    - file: 01_Intro/05_lists
+
   - caption: Assignments
     numbered: false
     chapters:
     - file: 00_Assignments/ps01
+    - file: 00_Assignments/ps02
