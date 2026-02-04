@@ -392,11 +392,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-lists">5.2.1. Adding to lists</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-lists">5.2.2. Length of lists</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-of-lists">5.2.3. Indexing of lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">5.2.4. Slicing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.2.4.1. Exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">5.2.4. Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">5.2.5. Practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.2.5.1. Exercises</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element-in-a-list">5.2.5. Finding an element in a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element-in-a-list">5.2.6. Finding an element in a list</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">5.3. Tuples</a></li>
@@ -428,8 +429,17 @@ document.write(`
 <p><strong>Functions</strong></p>
 <p>Functions are our actors; they perform actions.</p>
 <p>Python is a stickler for grammar, so be careful to follow the syntax for a function EXACTLY!
-(this applies to all structures in Python)
-<img alt="demo functions" src="../_images/function_good_bad.png" /></p>
+(this applies to all structures in Python)</p>
+<img src="../images/function_good_bad.png"/>
+<p><strong>if-elif-else</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="o">&lt;</span><span class="n">boolean</span> <span class="n">condition</span><span class="o">&gt;</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="n">do</span> <span class="n">this</span><span class="o">&gt;</span>
+    <span class="k">elif</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">different</span> <span class="n">boolean</span> <span class="n">condition</span><span class="o">&gt;</span><span class="p">:</span>   <span class="c1"># only if the above condition is False</span>
+        <span class="o">&lt;</span><span class="n">do</span> <span class="n">this</span> <span class="n">instead</span><span class="o">&gt;</span>
+    <span class="k">else</span><span class="p">:</span>                                   <span class="c1"># only if all of the above conditions are False</span>
+        <span class="o">&lt;</span><span class="n">do</span> <span class="n">this</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 </section>
 <section id="id1">
 <h2><span class="section-number">5.2. </span>Lists<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
@@ -583,6 +593,14 @@ zeta
 </ul>
 </li>
 </ul>
+<p><strong>STRINGS CAN BE SLICED AS IF THEY ARE LISTS OF CHARACTERS! HOW FUN!</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">hi</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+    <span class="n">bad_place</span> <span class="o">=</span> <span class="n">hi</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="practice">
+<h3><span class="section-number">5.2.5. </span>Practice<a class="headerlink" href="#practice" title="Link to this heading">#</a></h3>
 <p><em>Try these!</em>
 First, guess what these slices will do. Then type them into your notes to check:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="s1">&#39;beta&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="s1">&#39;delta&#39;</span><span class="p">,</span> <span class="s1">&#39;epsilon&#39;</span><span class="p">,</span> <span class="s1">&#39;zeta&#39;</span><span class="p">,</span> <span class="s1">&#39;theta&#39;</span><span class="p">]</span>
@@ -594,34 +612,17 @@ First, guess what these slices will do. Then type them into your notes to check:
 <li><p><code class="docutils literal notranslate"><span class="pre">new_list[4::]</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">new_list[:3]</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">new_list[-3:]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">new_list[-1::-1]</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="s1">&#39;beta&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="s1">&#39;delta&#39;</span><span class="p">,</span> <span class="s1">&#39;epsilon&#39;</span><span class="p">,</span> <span class="s1">&#39;zeta&#39;</span><span class="p">,</span> <span class="s1">&#39;theta&#39;</span><span class="p">]</span>
-<span class="n">new_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;theta&#39;, &#39;zeta&#39;, &#39;epsilon&#39;, &#39;delta&#39;, &#39;gamma&#39;, &#39;beta&#39;, &#39;alpha&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;theta&#39;</span><span class="p">,</span> <span class="s1">&#39;zeta&#39;</span><span class="p">,</span> <span class="s1">&#39;epsilon&#39;</span><span class="p">,</span> <span class="s1">&#39;delta&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="s1">&#39;beta&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;theta&#39;, &#39;zeta&#39;, &#39;epsilon&#39;, &#39;delta&#39;, &#39;gamma&#39;, &#39;beta&#39;, &#39;alpha&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <section id="exercises">
-<h4><span class="section-number">5.2.4.1. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">5.2.5.1. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h4>
 <p>Write a slice to select the colored blocks. There’s more than one way to solve each of these problems.</p>
 <p><strong>1.</strong>
 <img alt="q1" src="../_images/q1.png" /></p>
@@ -638,7 +639,7 @@ First, guess what these slices will do. Then type them into your notes to check:
 </section>
 </section>
 <section id="finding-an-element-in-a-list">
-<h3><span class="section-number">5.2.5. </span>Finding an element in a list<a class="headerlink" href="#finding-an-element-in-a-list" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">5.2.6. </span>Finding an element in a list<a class="headerlink" href="#finding-an-element-in-a-list" title="Link to this heading">#</a></h3>
 <p><strong>Is the element in the list?</strong></p>
 <p>To check if an element is in a list, use the keyword <code class="docutils literal notranslate"><span class="pre">in</span></code> like this:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```python
@@ -783,11 +784,12 @@ First, guess what these slices will do. Then type them into your notes to check:
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-lists">5.2.1. Adding to lists</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-lists">5.2.2. Length of lists</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-of-lists">5.2.3. Indexing of lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">5.2.4. Slicing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.2.4.1. Exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">5.2.4. Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">5.2.5. Practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.2.5.1. Exercises</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element-in-a-list">5.2.5. Finding an element in a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element-in-a-list">5.2.6. Finding an element in a list</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">5.3. Tuples</a></li>
