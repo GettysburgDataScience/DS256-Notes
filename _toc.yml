@@ -15,7 +15,9 @@ parts:
     - file: 01_Intro/02_variables
     - file: 01_Intro/03_functions
     - file: 01_Intro/04_conditionals
+    - file: 01_Intro/04_conditionals_practice
     - file: 01_Intro/05_lists
+    - file: 01_Intro/06_loops
 
   - caption: Assignments
     numbered: false
