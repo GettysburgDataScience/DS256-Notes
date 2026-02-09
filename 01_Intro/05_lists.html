@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Lists &#8212; DS256 Data Science Programming</title>
+    <title>6. Lists &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -73,8 +73,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '01_Intro/05_lists';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PS01" href="../00_Assignments/ps01.html" />
-    <link rel="prev" title="4. Control Flow: Conditional statements" href="04_conditionals.html" />
+    <link rel="next" title="7. Control Flow: Loops" href="06_loops.html" />
+    <link rel="prev" title="5. Practice Problems: Conditionals" href="04_conditionals_practice.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,7 +202,9 @@
 <li class="toctree-l1"><a class="reference internal" href="02_variables.html">2. Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_functions.html">3. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_conditionals.html">4. Control Flow: Conditional statements</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_conditionals_practice.html">5. Practice Problems: Conditionals</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_loops.html">7. Control Flow: Loops</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -387,20 +389,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">5.1. Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.2. Lists</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-lists">5.2.1. Adding to lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-lists">5.2.2. Length of lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-of-lists">5.2.3. Indexing of lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">5.2.4. Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">5.2.5. Practice</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.2.5.1. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">6.1. Recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.2. Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-lists">6.2.1. Adding to lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-lists">6.2.2. Length of lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-of-lists">6.2.3. Indexing of lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">6.2.4. Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">6.2.5. Practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.2.5.1. Exercises</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element-in-a-list">5.2.6. Finding an element in a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element-in-a-list">6.2.6. Finding an element in a list</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">5.3. Tuples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">6.3. Tuples</a></li>
 </ul>
             </nav>
         </div>
@@ -413,11 +415,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lists">
-<h1><span class="section-number">5. </span>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h1>
 <p>Today, we’ll introduce <em>lists</em>, our first data structure!</p>
 <p>But first, let’s recap:</p>
 <section id="recap">
-<h2><span class="section-number">5.1. </span>Recap<a class="headerlink" href="#recap" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Recap<a class="headerlink" href="#recap" title="Link to this heading">#</a></h2>
 <p><strong>Variables</strong></p>
 <p>You can think of a variable as a box in storage that contains a thing (or things). The name of the variable is a label on the box. When you use a variable in code, you get the value out of the box.</p>
 <p>A variable can hold almost anything in Python. But there are a few simple data types that will cover most of the data we work with:</p>
@@ -442,7 +444,7 @@ document.write(`
 </div>
 </section>
 <section id="id1">
-<h2><span class="section-number">5.2. </span>Lists<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Lists<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>(Read <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython/06-built-in-data-structures.html">WTOP Ch 6</a>)</p>
 <p>A <em>list</em> is an ordered grouping of data. So if a variable is a box, a list is a box of boxes!</p>
 <ul class="simple">
@@ -464,7 +466,7 @@ document.write(`
 </div>
 </div>
 <section id="adding-to-lists">
-<h3><span class="section-number">5.2.1. </span>Adding to lists<a class="headerlink" href="#adding-to-lists" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.1. </span>Adding to lists<a class="headerlink" href="#adding-to-lists" title="Link to this heading">#</a></h3>
 <p>You can add A SINGLE item to the end of a list with <code class="docutils literal notranslate"><span class="pre">.append(item)</span></code>. However, this item could be a list. ‘Append’ updates the list in place.</p>
 <p>You can concatenate two lists with +.</p>
 <div class="cell docutils container">
@@ -512,7 +514,7 @@ document.write(`
 </div>
 </section>
 <section id="length-of-lists">
-<h3><span class="section-number">5.2.2. </span>Length of lists<a class="headerlink" href="#length-of-lists" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.2. </span>Length of lists<a class="headerlink" href="#length-of-lists" title="Link to this heading">#</a></h3>
 <p>You can get the length of a list with the function <code class="docutils literal notranslate"><span class="pre">len(list)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -528,7 +530,7 @@ document.write(`
 </div>
 </section>
 <section id="indexing-of-lists">
-<h3><span class="section-number">5.2.3. </span>Indexing of lists<a class="headerlink" href="#indexing-of-lists" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.3. </span>Indexing of lists<a class="headerlink" href="#indexing-of-lists" title="Link to this heading">#</a></h3>
 <p>The locations in a list are indexed by number, <strong>starting at 0</strong>. That is, a list starts with a zero-th entry.</p>
 <p>Alternatively, you can index lists from the end backwards starting with -1 (the last item in a list).</p>
 <p><img alt="indices" src="https://github.com/GettysburgDataScience/DS256-Notes/blob/main/images/indices.png?raw=true" /></p>
@@ -575,7 +577,7 @@ zeta
 </div>
 </section>
 <section id="slicing">
-<h3><span class="section-number">5.2.4. </span>Slicing<a class="headerlink" href="#slicing" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.4. </span>Slicing<a class="headerlink" href="#slicing" title="Link to this heading">#</a></h3>
 <p>A slice is an extraction of a sub-list from a list.</p>
 <p>You slice a list as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span><span class="p">[</span><span class="n">startIdx</span><span class="p">:</span><span class="n">stopIdx</span><span class="p">:</span><span class="n">stepSize</span><span class="p">]</span>
@@ -600,7 +602,7 @@ zeta
 </div>
 </section>
 <section id="practice">
-<h3><span class="section-number">5.2.5. </span>Practice<a class="headerlink" href="#practice" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.5. </span>Practice<a class="headerlink" href="#practice" title="Link to this heading">#</a></h3>
 <p><em>Try these!</em>
 First, guess what these slices will do. Then type them into your notes to check:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="s1">&#39;beta&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="s1">&#39;delta&#39;</span><span class="p">,</span> <span class="s1">&#39;epsilon&#39;</span><span class="p">,</span> <span class="s1">&#39;zeta&#39;</span><span class="p">,</span> <span class="s1">&#39;theta&#39;</span><span class="p">]</span>
@@ -622,7 +624,7 @@ First, guess what these slices will do. Then type them into your notes to check:
 </div>
 </div>
 <section id="exercises">
-<h4><span class="section-number">5.2.5.1. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.2.5.1. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h4>
 <p>Write a slice to select the colored blocks. There’s more than one way to solve each of these problems.</p>
 <p><strong>1.</strong>
 <img alt="q1" src="https://github.com/GettysburgDataScience/DS256-Notes/blob/main/images/q1.png?raw=true" /></p>
@@ -639,7 +641,7 @@ First, guess what these slices will do. Then type them into your notes to check:
 </section>
 </section>
 <section id="finding-an-element-in-a-list">
-<h3><span class="section-number">5.2.6. </span>Finding an element in a list<a class="headerlink" href="#finding-an-element-in-a-list" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.6. </span>Finding an element in a list<a class="headerlink" href="#finding-an-element-in-a-list" title="Link to this heading">#</a></h3>
 <p><strong>Is the element in the list?</strong></p>
 <p>To check if an element is in a list, use the keyword <code class="docutils literal notranslate"><span class="pre">in</span></code> like this:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```python
@@ -678,7 +680,7 @@ First, guess what these slices will do. Then type them into your notes to check:
 </section>
 </section>
 <section id="tuples">
-<h2><span class="section-number">5.3. </span>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h2>
 <p>Tuples are just like lists EXCEPT:</p>
 <ul class="simple">
 <li><p>They are immutable, meaning once they are created you can not change them.</p></li>
@@ -746,20 +748,20 @@ First, guess what these slices will do. Then type them into your notes to check:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="04_conditionals.html"
+       href="04_conditionals_practice.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Control Flow: Conditional statements</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Practice Problems: Conditionals</p>
       </div>
     </a>
     <a class="right-next"
-       href="../00_Assignments/ps01.html"
+       href="06_loops.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PS01</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Control Flow: Loops</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -779,20 +781,20 @@ First, guess what these slices will do. Then type them into your notes to check:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">5.1. Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.2. Lists</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-lists">5.2.1. Adding to lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-lists">5.2.2. Length of lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-of-lists">5.2.3. Indexing of lists</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">5.2.4. Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">5.2.5. Practice</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.2.5.1. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">6.1. Recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.2. Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-lists">6.2.1. Adding to lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-lists">6.2.2. Length of lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-of-lists">6.2.3. Indexing of lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">6.2.4. Slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">6.2.5. Practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.2.5.1. Exercises</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element-in-a-list">5.2.6. Finding an element in a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element-in-a-list">6.2.6. Finding an element in a list</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">5.3. Tuples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">6.3. Tuples</a></li>
 </ul>
   </nav></div>
 
