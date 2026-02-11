@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7. Control Flow: Loops &#8212; DS256 Data Science Programming</title>
+    <title>6. Control Flow: Loops &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -74,7 +74,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="PS01" href="../00_Assignments/ps01.html" />
-    <link rel="prev" title="6. Lists" href="05_lists.html" />
+    <link rel="prev" title="5. Lists" href="05_lists.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -201,15 +201,18 @@
 <li class="toctree-l1"><a class="reference internal" href="01_jupyter.html">1. Intro to Notebooks and Python First Steps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_variables.html">2. Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_functions.html">3. Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_conditionals.html">4. Control Flow: Conditional statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_conditionals_practice.html">5. Practice Problems: Conditionals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_lists.html">6. Lists</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Control Flow: Loops</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="04_conditionals.html">4. Control Flow: Conditional statements</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_conditionals_practice.html">4.6. Practice Problems: Conditionals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="05_lists.html">5. Lists</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Control Flow: Loops</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps01.html">PS01</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps02.html">PS02</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps03.html">PS03</a></li>
 </ul>
 
     </div>
@@ -389,19 +392,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">7.1. While loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-1">7.1.1. Example Problem 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-2">7.1.2. Example Problem 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-3">7.1.3. Example Problem 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">6.1. While loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-1">6.1.1. Example Problem 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-2">6.1.2. Example Problem 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-3">6.1.3. Example Problem 3</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">7.2. For loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-4">7.2.1. Example Problem 4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-5">7.2.2. Example Problem 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-loop-keywords">7.2.3. Other loop keywords</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-7">7.2.4. Example Problem 7</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2.5. Example Problem 7</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-8">7.2.6. Example Problem 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">6.2. For loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-4">6.2.1. Example Problem 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-5">6.2.2. Example Problem 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-loop-keywords">6.2.3. Other loop keywords</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-7">6.2.4. Example Problem 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.2.5. Example Problem 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-8">6.2.6. Example Problem 8</a></li>
 </ul>
 </li>
 </ul>
@@ -416,7 +419,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="control-flow-loops">
-<h1><span class="section-number">7. </span>Control Flow: Loops<a class="headerlink" href="#control-flow-loops" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Control Flow: Loops<a class="headerlink" href="#control-flow-loops" title="Link to this heading">#</a></h1>
 <p>We introduced control flow with <em>conditional statements</em>. Today we’ll explore loops.</p>
 <ul class="simple">
 <li><p>Conditional Statements - statements that allow you to run different code under certain conditions</p></li>
@@ -445,14 +448,14 @@ Run some code repeatedly some set amount of times:</p>
 </ul>
 <p>We’ll start with while loops:</p>
 <section id="while-loops">
-<h2><span class="section-number">7.1. </span>While loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>While loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h2>
 <p><strong>Syntax for While loops:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <section id="example-problem-1">
-<h3><span class="section-number">7.1.1. </span>Example Problem 1<a class="headerlink" href="#example-problem-1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.1. </span>Example Problem 1<a class="headerlink" href="#example-problem-1" title="Link to this heading">#</a></h3>
 <p>Suppose we are developing a mobile game. Our game permits in-app purchases, as such, users must “verify” they are 18+ years old. We’ll keep asking until we get the answer we want.</p>
 <p>Use if statements to check if the value entered is a number and if that number is greater than or equal to 18.</p>
 <p><em>Useful tools</em>:</p>
@@ -462,7 +465,42 @@ Run some code repeatedly some set amount of times:</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Say hello to everyone:&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Say hello to everyone:&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/ipykernel/kernelbase.py:1395,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1393</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1394</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1395</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1396</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1397</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1398</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_get_shell_context_var</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_shell_parent_ident</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1399</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1400</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1401</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">verifyAge</span><span class="p">():</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter your age:&#39;</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">age</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">age</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+            <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Invalid entry. Please enter a number:&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Try again:&#39;</span><span class="p">)</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Congratulations! You are verified.&#39;</span><span class="p">)</span>
            
@@ -477,14 +515,36 @@ Run some code repeatedly some set amount of times:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Congratulations! You are verified.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">verifyAge</span><span class="p">()</span>
+
+<span class="nn">Cell In[2], line 2,</span> in <span class="ni">verifyAge</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">verifyAge</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter your age:&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">while</span> <span class="ow">not</span> <span class="n">age</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">age</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+
+<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/ipykernel/kernelbase.py:1395,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1393</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1394</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1395</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1396</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1397</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1398</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_get_shell_context_var</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_shell_parent_ident</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1399</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1400</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1401</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="example-problem-2">
-<h3><span class="section-number">7.1.2. </span>Example Problem 2<a class="headerlink" href="#example-problem-2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.2. </span>Example Problem 2<a class="headerlink" href="#example-problem-2" title="Link to this heading">#</a></h3>
 <p>We’ll write a (crude) countdown timer. The user enters a number and the timer will count down that number of seconds.</p>
 <p>For this problem, we’ll import a package called <code class="docutils literal notranslate"><span class="pre">time</span></code> (our first imported package…more on that soon). From the time package, we’ll use a function called <code class="docutils literal notranslate"><span class="pre">sleep</span></code> which pauses the program for a set number of seconds.</p>
 <div class="cell docutils container">
@@ -492,35 +552,60 @@ Run some code repeatedly some set amount of times:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">countdown</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
-    <span class="k">return</span>
+    
+    <span class="k">while</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>  <span class="c1"># same as count = count - 1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Times up!&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi class!&#39;</span><span class="p">)</span>
+    
     
 
     
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hi class!
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countdown</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countdown</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Times up!
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="example-problem-3">
-<h3><span class="section-number">7.1.3. </span>Example Problem 3<a class="headerlink" href="#example-problem-3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.3. </span>Example Problem 3<a class="headerlink" href="#example-problem-3" title="Link to this heading">#</a></h3>
 <p>Let’s write a function that takes a paragraph of text and prints each sentence on it’s own line. We might want to use nested while loops (a while loop inside a while loop) for this one.</p>
 <p><em>Hint:</em> If using a string as the condition in an <code class="docutils literal notranslate"><span class="pre">if</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> statement, a non-empty string evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>. An empty string evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">parse_sentences</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    
-    <span class="k">return</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>I’ve written out two solutions (one with a while loop the other with a for loop) twice (once just as code and the second time with every line commented as to what it does). I hope this helps.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Romeo</span> <span class="o">=</span> <span class="s1">&#39;But, soft! what light through yonder window breaks? It is the east, and Juliet is the sun. Arise, fair sun, and kill the envious moon, Who is already sick and pale with grief, That thou her maid art far more fair than she. It is my lady, O, it is my love! O, that she knew she were! She speaks, yet she says nothing: what of that?&#39;</span>
@@ -529,16 +614,210 @@ Run some code repeatedly some set amount of times:</p>
 </div>
 </div>
 </div>
+<p><strong>with a while loop</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse_sentences</span><span class="p">(</span><span class="n">Romeo</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">parse_sentences</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+
+    <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">beginning_of_sentence</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">while</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">char</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        
+        <span class="k">if</span> <span class="n">char</span><span class="o">==</span><span class="s1">&#39; &#39;</span> <span class="ow">and</span> <span class="n">beginning_of_sentence</span><span class="p">:</span> 
+            <span class="k">continue</span>
+        <span class="k">elif</span> <span class="n">beginning_of_sentence</span><span class="p">:</span>
+            <span class="n">beginning_of_sentence</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">char</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;!&#39;</span><span class="p">,</span><span class="s1">&#39;?&#39;</span><span class="p">]:</span> 
+            <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">True</span>           
+        <span class="k">elif</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span> <span class="ow">and</span> <span class="n">end_of_sentence</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+            <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">continue</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    
+<span class="n">parse_sentences</span><span class="p">(</span><span class="n">TheCat</span><span class="p">)</span>
+<span class="n">parse_sentences</span><span class="p">(</span><span class="n">Romeo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We looked and we saw him! 
+The Cat in the Hat! 
+and he said to us, &quot;Why do you sit there like that?&quot; 
+&quot;I know it is wet and the sun is not sunny. 
+But we can have lots of good fun that is funny!&quot;But, soft! 
+what light through yonder window breaks? 
+It is the east, and Juliet is the sun. 
+Arise, fair sun, and kill the envious moon, Who is already sick and pale with grief, That thou her maid art far more fair than she. 
+It is my lady, O, it is my love! 
+O, that she knew she were! 
+She speaks, yet she says nothing: what of that?
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse_sentences</span><span class="p">(</span><span class="n">TheCat</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">parse_sentences</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+
+    <span class="c1"># Two Flag variables to signify when we&#39;re just starting a sentence and when we are just ending a sentence.</span>
+    <span class="c1"># We will use the end_of_sentence to catch any characters that belong to a sentence but come after a .!? (e.g. &quot;How are you&quot;, She said what!?!?!)</span>
+    <span class="c1"># We will use the beginning_of_sentence to remove spaces at the beginning of a line.</span>
+    <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">beginning_of_sentence</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">while</span> <span class="n">text</span><span class="p">:</span>  <span class="c1"># while the text is not empty</span>
+        
+        <span class="n">char</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># char is the first letter from text</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="c1"># remove the first letter from text</span>
+        
+        <span class="k">if</span> <span class="n">char</span><span class="o">==</span><span class="s1">&#39; &#39;</span> <span class="ow">and</span> <span class="n">beginning_of_sentence</span><span class="p">:</span> <span class="c1"># if the character is a space at the beginning of a sentence</span>
+            <span class="k">continue</span> <span class="c1"># go to the next character</span>
+        <span class="k">elif</span> <span class="n">beginning_of_sentence</span><span class="p">:</span>  <span class="c1"># if we&#39;re at the beginning of a sentence</span>
+            <span class="n">beginning_of_sentence</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># For the next step, we will no longer be at the beginning</span>
+        <span class="k">elif</span> <span class="n">char</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;!&#39;</span><span class="p">,</span><span class="s1">&#39;?&#39;</span><span class="p">]:</span> <span class="c1"># if the character is .!?, we are at or near the end of the sentence. We&#39;ll know we&#39;re done when we see the next space.</span>
+            <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Flag that we&#39;re at the end of a line         </span>
+        <span class="k">elif</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span> <span class="ow">and</span> <span class="n">end_of_sentence</span><span class="p">:</span> <span class="c1"># We are actually at the end of the sentence</span>
+            <span class="nb">print</span><span class="p">()</span> <span class="c1"># print() just prints a blank line (technically a newline character \n)</span>
+            <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># We are no longer at the end of the sentence</span>
+            <span class="n">beginning_of_sentence</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># We will be beginning a new sentence with our next non-space character</span>
+            <span class="k">continue</span> <span class="c1"># Don&#39;t print the space, just go to the next iteration of the loop character</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># if you didn&#39;t encounter a &#39;continue&#39; above, you get to this line which prints the character. The end = &#39;&#39; makes it that the print statement doesn&#39;t start a new line.</span>
+    
+<span class="n">parse_sentences</span><span class="p">(</span><span class="n">TheCat</span><span class="p">)</span>
+<span class="n">parse_sentences</span><span class="p">(</span><span class="n">Romeo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We looked and we saw him!
+The Cat in the Hat!
+and he said to us, &quot;Why do you sit there like that?&quot;
+&quot;I know it is wet and the sun is not sunny.
+But we can have lots of good fun that is funny!&quot;But, soft!
+what light through yonder window breaks?
+It is the east, and Juliet is the sun.
+Arise, fair sun, and kill the envious moon, Who is already sick and pale with grief, That thou her maid art far more fair than she.
+It is my lady, O, it is my love!
+O, that she knew she were!
+She speaks, yet she says nothing: what of that?
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>with a for loop</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">parse_sentences</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+
+    <span class="n">single_sentence</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">char</span><span class="o">==</span><span class="s1">&#39; &#39;</span> <span class="ow">and</span> <span class="n">single_sentence</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span> 
+            <span class="k">continue</span>
+        <span class="k">elif</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">end_of_sentence</span><span class="p">:</span> 
+            <span class="n">single_sentence</span> <span class="o">+=</span> <span class="n">char</span>
+        
+        <span class="k">elif</span> <span class="n">char</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;!&#39;</span><span class="p">,</span><span class="s1">&#39;?&#39;</span><span class="p">]:</span> 
+            <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">True</span>   
+            <span class="n">single_sentence</span> <span class="o">+=</span> <span class="n">char</span>  
+        
+        <span class="k">elif</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span> <span class="ow">and</span> <span class="n">end_of_sentence</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">single_sentence</span><span class="p">)</span> 
+            <span class="n">single_sentence</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>   
+            <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">False</span> 
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">single_sentence</span> <span class="o">+=</span> <span class="n">char</span>  
+            
+    <span class="nb">print</span><span class="p">(</span><span class="n">single_sentence</span><span class="p">)</span>
+
+
+<span class="n">parse_sentences</span><span class="p">(</span><span class="n">TheCat</span><span class="p">)</span>
+<span class="n">parse_sentences</span><span class="p">(</span><span class="n">Romeo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We looked and we saw him!
+The Cat in the Hat!
+and he said to us, &quot;Why do you sit there like that?&quot;
+&quot;I know it is wet and the sun is not sunny.
+But we can have lots of good fun that is funny!&quot;
+But, soft!
+what light through yonder window breaks?
+It is the east, and Juliet is the sun.
+Arise, fair sun, and kill the envious moon, Who is already sick and pale with grief, That thou her maid art far more fair than she.
+It is my lady, O, it is my love!
+O, that she knew she were!
+She speaks, yet she says nothing: what of that?
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">parse_sentences</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+
+    <span class="c1"># This will be the variable that holds our sentence before we print it. We will add one character at a time.</span>
+    <span class="n">single_sentence</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="c1"># We ran into an issue that sometimes there are characters after a ., ?, ! that still belong with the previous sentence.</span>
+    <span class="c1"># The end_of_sentence variable below will be used to signify that we&#39;ve seen an end-of-sentence character (.!?), but we may still have characters to add.</span>
+    <span class="c1"># This kind of reminder variable (what state are we in) is sometimes called a FLAG</span>
+    <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># Go through the text character by character.</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="c1"># The following are a list of conditions and they may not come in the order you&#39;d expect.</span>
+
+        <span class="c1"># We don&#39;t want to start a sentence with a space.</span>
+        <span class="k">if</span> <span class="n">char</span><span class="o">==</span><span class="s1">&#39; &#39;</span> <span class="ow">and</span> <span class="n">single_sentence</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="c1"># If there&#39;s a blank space at the beginning of the sentence</span>
+            <span class="k">continue</span>  <span class="c1"># skip to the next iteration of the loop (next letter)</span>
+
+        <span class="c1"># If we haven&#39;t yet seen a .!? add the current character to the sentence</span>
+        <span class="k">elif</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">end_of_sentence</span><span class="p">:</span> <span class="c1"># if the character is not a ., !, or ? and we&#39;re not at the end of a sentence</span>
+            <span class="n">single_sentence</span> <span class="o">+=</span> <span class="n">char</span>  <span class="c1"># add the character to the sentence</span>
+        
+        <span class="c1"># When we do see a .!? we may be at the end of a sentence OR close to it</span>
+        <span class="k">elif</span> <span class="n">char</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;!&#39;</span><span class="p">,</span><span class="s1">&#39;?&#39;</span><span class="p">]:</span>  <span class="c1"># if the character is ., !, or ? it tells us the sentence is ending</span>
+            <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">True</span>   <span class="c1"># set the end_of_sentence flag to True</span>
+            <span class="n">single_sentence</span> <span class="o">+=</span> <span class="n">char</span>  <span class="c1"># add the character to the sentence.</span>
+        
+        <span class="c1"># We&#39;ve seen a .!? and now we see a space, that is the end of the sentence.</span>
+        <span class="k">elif</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span> <span class="ow">and</span> <span class="n">end_of_sentence</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">single_sentence</span><span class="p">)</span> <span class="c1"># print the sentence</span>
+            <span class="n">single_sentence</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>   <span class="c1"># reset the single_sentence variable to an empty string</span>
+            <span class="n">end_of_sentence</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># reset the end_of_sentence flag to False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">single_sentence</span> <span class="o">+=</span> <span class="n">char</span>  <span class="c1"># in all other cases, just add the character to the sentence</span>
+            
+    <span class="nb">print</span><span class="p">(</span><span class="n">single_sentence</span><span class="p">)</span>  <span class="c1"># Print the sentence when we get to the end</span>
+
+<span class="n">parse_sentences</span><span class="p">(</span><span class="n">TheCat</span><span class="p">)</span>
+<span class="n">parse_sentences</span><span class="p">(</span><span class="n">Romeo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We looked and we saw him!
+The Cat in the Hat!
+and he said to us, &quot;Why do you sit there like that?&quot;
+&quot;I know it is wet and the sun is not sunny.
+But we can have lots of good fun that is funny!&quot;
+But, soft!
+what light through yonder window breaks?
+It is the east, and Juliet is the sun.
+Arise, fair sun, and kill the envious moon, Who is already sick and pale with grief, That thou her maid art far more fair than she.
+It is my lady, O, it is my love!
+O, that she knew she were!
+She speaks, yet she says nothing: what of that?
 </pre></div>
 </div>
 </div>
@@ -546,7 +825,7 @@ Run some code repeatedly some set amount of times:</p>
 </section>
 </section>
 <section id="for-loops">
-<h2><span class="section-number">7.2. </span>For loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>For loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h2>
 <p><strong>Syntax for For Loops</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">&lt;</span><span class="nb">iter</span> <span class="n">variable</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">iterable</span> <span class="nb">set</span><span class="o">&gt;</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span><span class="o">&gt;</span>
@@ -570,7 +849,7 @@ eatai
 </div>
 </div>
 <section id="example-problem-4">
-<h3><span class="section-number">7.2.1. </span>Example Problem 4<a class="headerlink" href="#example-problem-4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.1. </span>Example Problem 4<a class="headerlink" href="#example-problem-4" title="Link to this heading">#</a></h3>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">stock_check</span></code> to check if the items a customer wants are in stock. Use a loop to compare elements of two lists, <code class="docutils literal notranslate"><span class="pre">order_list</span></code> and <code class="docutils literal notranslate"><span class="pre">stock_list</span></code>, and return three lists <code class="docutils literal notranslate"><span class="pre">ordered</span></code>, <code class="docutils literal notranslate"><span class="pre">out_of_stock</span></code>, and <code class="docutils literal notranslate"><span class="pre">stock_list</span></code>. If the item in the order is in stock, add it to the list of ordered items and remove it from the stock list; otherwise, add it to the list of out of stock items.</p>
 <p>Remember <code class="docutils literal notranslate"><span class="pre">.append</span></code> adds an item to the list.</p>
 <p><em>Useful tools</em>:</p>
@@ -593,9 +872,49 @@ eatai
 </ul>
 </li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">stock_check</span><span class="p">(</span><span class="n">order_list</span><span class="p">,</span> <span class="n">stock_list</span><span class="p">):</span>
+    <span class="n">ordered</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">out_of_stock</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">order_list</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">stock_list</span><span class="p">:</span>
+            <span class="n">ordered</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="n">stock_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">out_of_stock</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">ordered</span><span class="p">,</span> <span class="n">out_of_stock</span><span class="p">,</span> <span class="n">stock_list</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inventory</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bat&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;ant&#39;</span><span class="p">,</span> <span class="s1">&#39;bat&#39;</span><span class="p">,</span> <span class="s1">&#39;ant&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;ferret&#39;</span><span class="p">]</span>
+<span class="n">order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bat&#39;</span><span class="p">,</span> <span class="s1">&#39;bat&#39;</span><span class="p">,</span> <span class="s1">&#39;worm&#39;</span><span class="p">,</span><span class="s1">&#39;ant&#39;</span><span class="p">]</span>
+
+<span class="n">stock_check</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="n">inventory</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bat
+bat
+worm
+ant
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([&#39;bat&#39;, &#39;bat&#39;, &#39;ant&#39;], [&#39;worm&#39;], [&#39;cat&#39;, &#39;ant&#39;, &#39;dog&#39;, &#39;ferret&#39;])
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="example-problem-5">
-<h3><span class="section-number">7.2.2. </span>Example Problem 5<a class="headerlink" href="#example-problem-5" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.2. </span>Example Problem 5<a class="headerlink" href="#example-problem-5" title="Link to this heading">#</a></h3>
 <p>Lists can hold all different types of data. Suppose we get a list of mixed string and numeric data. Write a for loop to sift through the list and create two new lists, one containing all of the strings and another containing all of the numbers.</p>
 <p><em>Hint</em>: Remember <code class="docutils literal notranslate"><span class="pre">type()</span></code></p>
 <div class="cell docutils container">
@@ -612,7 +931,7 @@ eatai
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DS&#39;</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="s1">&#39;Sec A&#39;</span><span class="p">,</span> <span class="s1">&#39;meets&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesdays and Thursdays&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span>
 <span class="ne">----&gt; </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">strings</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
@@ -624,7 +943,7 @@ eatai
 </div>
 </section>
 <section id="other-loop-keywords">
-<h3><span class="section-number">7.2.3. </span>Other loop keywords<a class="headerlink" href="#other-loop-keywords" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.3. </span>Other loop keywords<a class="headerlink" href="#other-loop-keywords" title="Link to this heading">#</a></h3>
 <p>You may exit a loop or skip an iteration of a loop using the <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> keywords, respectively.</p>
 <ul class="simple">
 <li><p>break - exit the loop and proceed with code outside of the loop</p></li>
@@ -632,7 +951,7 @@ eatai
 </ul>
 </section>
 <section id="example-problem-7">
-<h3><span class="section-number">7.2.4. </span>Example Problem 7<a class="headerlink" href="#example-problem-7" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.4. </span>Example Problem 7<a class="headerlink" href="#example-problem-7" title="Link to this heading">#</a></h3>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">just_numbers</span></code> that takes as input a list returns a list with only the numerical items from the original list.</p>
 <p>Write another function <code class="docutils literal notranslate"><span class="pre">just_upto_numbers</span></code> that takes as input a list returns a list with only the numerical items from the original list up to the first non-number entry.</p>
 <div class="cell docutils container">
@@ -668,11 +987,11 @@ None
 </div>
 </section>
 <section id="id1">
-<h3><span class="section-number">7.2.5. </span>Example Problem 7<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.5. </span>Example Problem 7<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>We’ve used the .index() function to find the location of an item in a list. The problem with .index() is that it raises an error if the item isn’t in the list. Let’s write our own version. The function should iterate through a list, checking each entry for a match. If a match is found, the function returns the location of the first match. Otherwise, the function prints ‘no match found’.</p>
 </section>
 <section id="example-problem-8">
-<h3><span class="section-number">7.2.6. </span>Example Problem 8<a class="headerlink" href="#example-problem-8" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.6. </span>Example Problem 8<a class="headerlink" href="#example-problem-8" title="Link to this heading">#</a></h3>
 <p>Let’s revisit Example Problem 3 above. This time, after a sentence is complete, we should skip any subsequent spaces before beginning a new sentence. Can we achieve this with a <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement?</p>
 </section>
 </section>
@@ -714,7 +1033,7 @@ None
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Lists</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Lists</p>
       </div>
     </a>
     <a class="right-next"
@@ -742,19 +1061,19 @@ None
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">7.1. While loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-1">7.1.1. Example Problem 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-2">7.1.2. Example Problem 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-3">7.1.3. Example Problem 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">6.1. While loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-1">6.1.1. Example Problem 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-2">6.1.2. Example Problem 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-3">6.1.3. Example Problem 3</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">7.2. For loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-4">7.2.1. Example Problem 4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-5">7.2.2. Example Problem 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-loop-keywords">7.2.3. Other loop keywords</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-7">7.2.4. Example Problem 7</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2.5. Example Problem 7</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-8">7.2.6. Example Problem 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">6.2. For loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-4">6.2.1. Example Problem 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-5">6.2.2. Example Problem 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-loop-keywords">6.2.3. Other loop keywords</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-7">6.2.4. Example Problem 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.2.5. Example Problem 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-8">6.2.6. Example Problem 8</a></li>
 </ul>
 </li>
 </ul>
