@@ -15,8 +15,8 @@ parts:
     - file: 01_Intro/02_variables
     - file: 01_Intro/03_functions
     - file: 01_Intro/04_conditionals
-      section:
-        - file: 01_Intro/04_conditionals_practice
+      sections:
+      - file: 01_Intro/04_conditionals_practice
     - file: 01_Intro/05_lists
     - file: 01_Intro/06_loops
 
@@ -25,3 +25,4 @@ parts:
     chapters:
     - file: 00_Assignments/ps01
     - file: 00_Assignments/ps02
+    - file: 00_Assignments/ps03
