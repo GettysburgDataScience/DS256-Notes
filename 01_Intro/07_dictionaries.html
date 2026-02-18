@@ -73,7 +73,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '01_Intro/07_dictionaries';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PS01" href="../00_Assignments/ps01.html" />
+    <link rel="next" title="Wordle" href="../00_Games/wordle.html" />
     <link rel="prev" title="6. Control Flow: Loops" href="06_loops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -208,6 +208,10 @@
 <li class="toctree-l1"><a class="reference internal" href="05_lists.html">5. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_loops.html">6. Control Flow: Loops</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Dictionaries</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">GAME(s)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_Games/wordle.html">Wordle</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -393,8 +397,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking-dictionaries">7.1. Unpacking dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-of-dicts-and-dicts-of-lists">7.2. Lists of dicts and Dicts of lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-in-functions">7.1. Dictionaries in Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking-dictionaries">7.2. Unpacking dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-of-dicts-and-dicts-of-lists">7.3. Lists of dicts and Dicts of lists</a></li>
 </ul>
             </nav>
         </div>
@@ -428,10 +433,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_a</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;Eatai&#39;</span><span class="p">,</span>
-               <span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;Roth&#39;</span><span class="p">,</span>
-               <span class="nb">id</span> <span class="o">=</span> <span class="mi">1112222</span><span class="p">,</span>
-               <span class="n">major</span> <span class="o">=</span> <span class="s1">&#39;undeclared&#39;</span><span class="p">,</span>
-               <span class="n">minor</span> <span class="o">=</span> <span class="s1">&#39;Data Science&#39;</span><span class="p">)</span>
+                 <span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;Roth&#39;</span><span class="p">,</span>
+                 <span class="nb">id</span> <span class="o">=</span> <span class="mi">1112222</span><span class="p">,</span>
+                 <span class="n">major</span> <span class="o">=</span> <span class="s1">&#39;undeclared&#39;</span><span class="p">,</span>
+                 <span class="n">minor</span> <span class="o">=</span> <span class="s1">&#39;Data Science&#39;</span><span class="p">)</span>
 
 <span class="n">student_b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span><span class="s1">&#39;Eatai&#39;</span><span class="p">,</span>
            <span class="s1">&#39;last&#39;</span><span class="p">:</span><span class="s1">&#39;Roth&#39;</span><span class="p">,</span>
@@ -445,6 +450,30 @@ document.write(`
 <p>A dictionary is indexed by keyword instead of position. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_a</span> <span class="o">==</span> <span class="n">student_b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_a</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Eatai&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_a</span><span class="p">[</span><span class="s1">&#39;ssn&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -452,7 +481,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">student_a</span><span class="p">[</span><span class="s1">&#39;ssn&#39;</span><span class="p">]</span>
 
 <span class="ne">KeyError</span>: &#39;ssn&#39;
@@ -488,6 +517,33 @@ document.write(`
 <p>And you can reassign values or even add fields to a dictionary on the fly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;ssn&#39;</span> <span class="ow">in</span> <span class="n">student_a</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">student_a</span><span class="p">[</span><span class="s1">&#39;ssn&#39;</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">student_a</span><span class="p">[</span><span class="s1">&#39;ssn&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">111111111</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;first&#39;: &#39;Eatai&#39;,
+ &#39;last&#39;: &#39;Roth&#39;,
+ &#39;id&#39;: 1112222,
+ &#39;major&#39;: &#39;undeclared&#39;,
+ &#39;minor&#39;: &#39;Data Science&#39;,
+ &#39;ssn&#39;: 111111111}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_c</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="n">student_c</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;James&#39;</span>
@@ -517,10 +573,11 @@ document.write(`
 <li><p>can save a single container variable rather than ??? individual variables</p></li>
 <li><p>can pass multiple variables into a function as inputs</p></li>
 </ul>
-<p>###Dictionaries in Functions</p>
+<section id="dictionaries-in-functions">
+<h2><span class="section-number">7.1. </span>Dictionaries in Functions<a class="headerlink" href="#dictionaries-in-functions" title="Link to this heading">#</a></h2>
 <p>Let’s write a function that prints a student’s contact information (name and email).</p>
 <ul class="simple">
-<li><p>A new tool*: f-strings</p></li>
+<li><p><em>A new tool</em>: f-strings</p></li>
 </ul>
 <p>Like a string, but prepended by the letter f. You can insert variables in the string that will be interpreted and converted to strings.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Eatai&#39;</span>
@@ -530,39 +587,88 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">Let&#39;s pass a dictionary to a function. </span>
-<span class="sd">Why would we use this?</span>
-<span class="sd">&#39;&#39;&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Eatai&#39;</span>
+<span class="n">wait</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">! You are caller number </span><span class="si">{</span><span class="n">wait</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="n">wait</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s1"> customers ahead of you.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\nLet&#39;s pass a dictionary to a function. \nWhy would we use this?\n&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Eatai! You are caller number 64. 63 customers ahead of you.
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_a</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;eroth@gettysburg.edu&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">contact_info</span><span class="p">(</span><span class="n">student</span><span class="p">):</span>
+    
+    <span class="n">last</span> <span class="o">=</span> <span class="n">student</span><span class="p">[</span><span class="s1">&#39;last&#39;</span><span class="p">]</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">student</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">]</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">student</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">last</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s1"> -- (</span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">contact_info2</span><span class="p">(</span><span class="n">last</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">last</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s1"> -- (</span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+
+<span class="n">contact_info</span><span class="p">(</span><span class="n">student_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Roth, Eatai -- (eroth@gettysburg.edu)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contact_info2</span><span class="p">(</span><span class="s1">&#39;Roth&#39;</span><span class="p">,</span> <span class="s1">&#39;Eatai&#39;</span><span class="p">,</span> <span class="s1">&#39;eroth@gettysburg.edu&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Roth, Eatai -- (eroth@gettysburg.edu)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="unpacking-dictionaries">
-<h2><span class="section-number">7.1. </span>Unpacking dictionaries<a class="headerlink" href="#unpacking-dictionaries" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>Unpacking dictionaries<a class="headerlink" href="#unpacking-dictionaries" title="Link to this heading">#</a></h2>
 <p>The contacts of a dictionary can be ‘unpacked’ into a list of key-value pairs. We can use this fun trick to store all the arguments to a function as a dictionary.</p>
 <p><strong>Caution</strong>: The keys of the dict must be the same as the argument names of the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contactInfo</span><span class="p">(</span><span class="o">**</span><span class="n">student_c</span><span class="p">)</span>   <span class="c1"># ** means unpack</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;first&#39;: &#39;James&#39;, &#39;last&#39;: &#39;Jameson&#39;, &#39;email&#39;: &#39;jamesja01@gettysburg.edu&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contact_info2</span><span class="p">(</span><span class="o">**</span><span class="n">student_c</span><span class="p">)</span>   <span class="c1"># ** means unpack</span>
 
 <span class="c1"># same as contactInfo(first = &#39;James&#39;, last = &#39;Jameson&#39;, email = &#39;jamesja01@gettysburg.edu&#39;)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">contactInfo</span><span class="p">(</span><span class="o">**</span><span class="n">student_c</span><span class="p">)</span>   <span class="c1"># ** means unpack</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># same as contactInfo(first = &#39;James&#39;, last = &#39;Jameson&#39;, email = &#39;jamesja01@gettysburg.edu&#39;)</span>
-
-<span class="ne">NameError</span>: name &#39;contactInfo&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jameson, James -- (jamesja01@gettysburg.edu)
 </pre></div>
 </div>
 </div>
@@ -570,22 +676,24 @@ document.write(`
 <p>We can also create functions that take dictionaries as inputs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">contactInfo</span><span class="p">(</span><span class="n">student</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">student</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">student</span><span class="p">[</span><span class="s1">&#39;last&#39;</span><span class="p">]</span><span class="si">}</span><span class="s1">  can be reached at </span><span class="si">{</span><span class="n">student</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        
-<span class="n">contactInfo</span><span class="p">(</span><span class="n">student_c</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contact_info2</span><span class="p">(</span><span class="o">**</span><span class="n">student_a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>James Jameson  can be reached at jamesja01@gettysburg.edu
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">contact_info2</span><span class="p">(</span><span class="o">**</span><span class="n">student_a</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: contact_info2() got an unexpected keyword argument &#39;id&#39;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="lists-of-dicts-and-dicts-of-lists">
-<h2><span class="section-number">7.2. </span>Lists of dicts and Dicts of lists<a class="headerlink" href="#lists-of-dicts-and-dicts-of-lists" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>Lists of dicts and Dicts of lists<a class="headerlink" href="#lists-of-dicts-and-dicts-of-lists" title="Link to this heading">#</a></h2>
 <p>If we have many dicts of the same format, we might want to package them together.
 We can do this as a list of dicts or a dict of lists.</p>
 <ul class="simple">
@@ -608,6 +716,24 @@ We can do this as a list of dicts or a dict of lists.</p>
 <span class="n">student_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#an empty dictionary</span>
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">student_a</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     <span class="n">student_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">student_list</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_dict</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;first&#39;: [&#39;Eatai&#39;, &#39;Eatai&#39;, &#39;James&#39;],
+ &#39;last&#39;: [&#39;Roth&#39;, &#39;Roth&#39;, &#39;Jameson&#39;],
+ &#39;id&#39;: [1112222, 1112222, None],
+ &#39;major&#39;: [&#39;undeclared&#39;, &#39;undeclared&#39;, None],
+ &#39;minor&#39;: [&#39;Data Science&#39;, &#39;Data Science&#39;, None],
+ &#39;ssn&#39;: [111111111, None, None],
+ &#39;email&#39;: [&#39;eroth@gettysburg.edu&#39;, None, &#39;jamesja01@gettysburg.edu&#39;]}
 </pre></div>
 </div>
 </div>
@@ -685,11 +811,11 @@ We can do this as a list of dicts or a dict of lists.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../00_Assignments/ps01.html"
+       href="../00_Games/wordle.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PS01</p>
+        <p class="prev-next-title">Wordle</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -709,8 +835,9 @@ We can do this as a list of dicts or a dict of lists.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking-dictionaries">7.1. Unpacking dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-of-dicts-and-dicts-of-lists">7.2. Lists of dicts and Dicts of lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-in-functions">7.1. Dictionaries in Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking-dictionaries">7.2. Unpacking dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-of-dicts-and-dicts-of-lists">7.3. Lists of dicts and Dicts of lists</a></li>
 </ul>
   </nav></div>
 
