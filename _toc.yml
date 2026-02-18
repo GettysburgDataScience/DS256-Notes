@@ -20,7 +20,10 @@ parts:
     - file: 01_Intro/05_lists
     - file: 01_Intro/06_loops
     - file: 01_Intro/07_dictionaries
-
+  - caption: GAME(s)
+    numbered: false
+    chapters:
+    - file: 00_Games/wordle
 
   - caption: Assignments
     numbered: false
