@@ -1,0 +1,910 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Snake &#8212; DS256 Data Science Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_admonition_style.css?v=8627ce31" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_dropdown_style.css?v=f3461767" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_code_header_style.css?v=7d542921" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_sidebar_scroll.css?v=b9929681" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_margin.css?v=4a1e31aa" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_text_captions.css?v=29546296" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_code.css?v=719ffd7f" />
+    <link rel="stylesheet" type="text/css" href="../_static/margin_patch.css?v=1aa379b9" />
+    <link rel="stylesheet" type="text/css" href="../_static/mathjax_patch.css?v=e1a8445e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/download_patch.js?v=75631000"></script>
+    <script src="../_static/fix_hash_jump.js?v=2aad3019"></script>
+    <script src="../_static/mathjax_patch.js?v=c73a562d"></script>
+    <script src="../_static/preserve_dropdown_state.js?v=d724701d"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '00_Games/snake';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PS01" href="../00_Assignments/ps01.html" />
+    <link rel="prev" title="Wordle" href="wordle.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/_ds256_sticker.png" class="logo__image only-light" alt="DS256 Data Science Programming - Home"/>
+    <script>document.write(`<img src="../_static/_ds256_sticker.png" class="logo__image only-dark" alt="DS256 Data Science Programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to DS256 Data Science Programming
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_Resources/setup.html">Setting Up</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/01_jupyter.html">1. Intro to Notebooks and Python First Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/02_variables.html">2. Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/03_functions.html">3. Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_Intro/04_conditionals.html">4. Control Flow: Conditional statements</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_Intro/04_conditionals_practice.html">4.6. Practice Problems: Conditionals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/05_lists.html">5. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/06_loops.html">6. Control Flow: Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/07_dictionaries.html">7. Dictionaries</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">GAME(s)</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="wordle.html">Wordle</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Snake</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps01.html">PS01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps02.html">PS02</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps03.html">PS03</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/GettysburgDataScience/DS256-Notes/blob/main/00_Games/snake.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/00_Games/snake.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Snake</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-parameters">Setting parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-cell-location-to-pixel-location">Convert Cell Location to Pixel Location</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#place-food">Place food</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-instructions">Explicit instructions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reset-game">Reset Game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Explicit instructions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-direction">Change Direction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">Update</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge-upgrades">Challenge Upgrades</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="snake">
+<h1>Snake<a class="headerlink" href="#snake" title="Link to this heading">#</a></h1>
+<p>Name:</p>
+<ul class="simple">
+<li><p>Collaborator 1:</p></li>
+<li><p>Collaborator 2:</p></li>
+</ul>
+<p>In the game snake, you guide a snake looking for food. As food pellets appear, steer towards them. Each food pellet you eat increases the length of your snake by one block.</p>
+<p>BUT BE CAREFUL! If you crash into yourself or the edge of the playing arena, your game is over.</p>
+<p>Controls:</p>
+<ul class="simple">
+<li><p>Arrow Keys – Change direction</p></li>
+<li><p>R – Restart after game over</p></li>
+<li><p>SPACE - Pause</p></li>
+<li><p>ESC – Quit</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pygame 2.6.1 (SDL 2.28.4, Python 3.13.1)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/eatai/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/pygame/pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools&lt;81.
+  from pkg_resources import resource_stream, resource_exists
+</pre></div>
+</div>
+</div>
+</div>
+<section id="setting-parameters">
+<h2>Setting parameters<a class="headerlink" href="#setting-parameters" title="Link to this heading">#</a></h2>
+<p>Below I choose the size of the playing arena as well as some colors and fonts. Feel free to play around with these to style your game.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CELL_SIZE</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">COLS</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">ROWS</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">WINDOW_WIDTH</span> <span class="o">=</span> <span class="n">COLS</span> <span class="o">*</span> <span class="n">CELL_SIZE</span>
+<span class="n">WINDOW_HEIGHT</span> <span class="o">=</span> <span class="n">ROWS</span> <span class="o">*</span> <span class="n">CELL_SIZE</span> <span class="o">+</span> <span class="mi">60</span>   <span class="c1"># +60 for scoreboard strip</span>
+<span class="n">FPS</span> <span class="o">=</span> <span class="mi">15</span>                       <span class="c1"># frames (= ticks) per second</span>
+
+<span class="n">FONT</span> <span class="o">=</span> <span class="s1">&#39;Courier New&#39;</span>
+    
+<span class="c1"># Colours (R, G, B)</span>
+<span class="n">BG_COLOR</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">15</span><span class="p">,</span>  <span class="mi">15</span><span class="p">,</span>  <span class="mi">30</span><span class="p">)</span>  <span class="c1"># background color</span>
+<span class="n">GRID_COLOR</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">25</span><span class="p">,</span>  <span class="mi">25</span><span class="p">,</span>  <span class="mi">45</span><span class="p">)</span> <span class="c1"># grid color</span>
+<span class="n">HEAD_COLOR</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span> <span class="c1"># head of snake</span>
+<span class="n">BODY_COLOR</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span>  <span class="mi">80</span><span class="p">)</span> <span class="c1"># body of snake</span>
+<span class="n">FOOD_COLOR</span> <span class="o">=</span> <span class="p">(</span><span class="mi">230</span><span class="p">,</span>  <span class="mi">70</span><span class="p">,</span>  <span class="mi">70</span><span class="p">)</span> <span class="c1"># food color</span>
+<span class="n">TEXT_COLOR</span> <span class="o">=</span> <span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span> 
+<span class="n">HI_COLOR</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span>  <span class="mi">80</span><span class="p">)</span> <span class="c1"># Hi score color</span>
+
+<span class="n">GAMEOVER_COLOR</span> <span class="o">=</span> <span class="p">(</span><span class="mi">230</span><span class="p">,</span>  <span class="mi">60</span><span class="p">,</span>  <span class="mi">60</span><span class="p">)</span> <span class="c1"># Game Over color</span>
+<span class="n">OVERLAY_COLOR</span> <span class="o">=</span> <span class="p">(</span>  <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">)</span>  <span class="c1"># semi-transparent overlay during pause or game over</span>
+<span class="n">STRIP_COLOR</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">20</span><span class="p">,</span>  <span class="mi">20</span><span class="p">,</span>  <span class="mi">40</span><span class="p">)</span> <span class="c1"># Bottom score strip color</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="s1">&#39;right&#39;</span>
+<span class="n">L</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span>
+<span class="n">U</span> <span class="o">=</span> <span class="s1">&#39;up&#39;</span>
+<span class="n">D</span> <span class="o">=</span> <span class="s1">&#39;down&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="convert-cell-location-to-pixel-location">
+<h2>Convert Cell Location to Pixel Location<a class="headerlink" href="#convert-cell-location-to-pixel-location" title="Link to this heading">#</a></h2>
+<p>The playing arena is divided into cells by a grid. We will use cell locations to describe the position of food</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cell_to_pixel</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    
+    <span class="n">pos_pixel</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">pos_pixel</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="place-food">
+<h2>Place food<a class="headerlink" href="#place-food" title="Link to this heading">#</a></h2>
+<p>Once food is eaten, a new food item should appear at a random position on the screen. The new food item must not be placed on a tile occupied by the snake (use a while loop to check).</p>
+<ul class="simple">
+<li><p><em>Hint:</em> if a function returns during a while loop, that while loop is terminated.</p></li>
+<li><p><em>Useful Tool</em>: <code class="docutils literal notranslate"><span class="pre">random.randint(lo,</span> <span class="pre">hi)</span></code> will pick a number randomly between lo and hi (including lo and hi)</p></li>
+</ul>
+<section id="explicit-instructions">
+<h3>Explicit instructions<a class="headerlink" href="#explicit-instructions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Create a while loop where the condition is just ```True````. This is an infinite loop.</p></li>
+<li><p>Randomly create an x and y position using <code class="docutils literal notranslate"><span class="pre">random.randint</span></code>. This position should be in units of cell.</p></li>
+<li><p>Check if the new food position is in the list of snake body segments.</p></li>
+<li><p>If it is, loop again and generate a new random food location using <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p></li>
+<li><p>If not, return the new food position.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">place_food</span><span class="p">(</span><span class="n">food</span><span class="p">,</span> <span class="n">snake</span><span class="p">):</span>
+    
+    <span class="c1"># This is a place holder, you will delete this when you write your function</span>
+    <span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> 
+    
+    <span class="k">return</span> <span class="n">food</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="reset-game">
+<h2>Reset Game<a class="headerlink" href="#reset-game" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Make a new 2-segment snake. It’s head should be in the center of the playing arena and it’s tail to the left.</p></li>
+<li><p>Place a food randomly using the function you made above.</p></li>
+</ul>
+<section id="id1">
+<h3>Explicit instructions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Calculate the center cell of the playing arena.</p></li>
+<li><p>Create a new list called snake in which the first element is that center cell and the second element is one less in the x-direction.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">reset_game</span><span class="p">():</span>
+    
+    <span class="c1"># This is a place holder, you will delete this when you write your function</span>
+    <span class="n">snake</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">]]</span>
+    <span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">snake</span><span class="p">,</span> <span class="n">food</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="change-direction">
+<h2>Change Direction<a class="headerlink" href="#change-direction" title="Link to this heading">#</a></h2>
+<p>Return the new direction provided it does not cause the snake to fold back on itself; if that’s the case, just keep the original heading direction.</p>
+<p>For example, if the snake is moving up, you should ignore a command to start moving down.</p>
+<p>Use the constants R, L, U, D.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">change_direction</span><span class="p">(</span><span class="n">direction</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="n">direction</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="update">
+<h2>Update<a class="headerlink" href="#update" title="Link to this heading">#</a></h2>
+<p>Check if the game is over or paused. If so, just return the current snake and food position.</p>
+<p>Our snake is going to be represented as a list of body segments.</p>
+<ul class="simple">
+<li><p>Each body segment is itself a list containing two integers, the x and y coordinate of that cell.</p></li>
+<li><p>The head is the first element of the list, the tail is the last.</p></li>
+<li><p>When the snake moves, the new head position will be the original head position moved by one cell in either the left, right, up, or down directions; the tail follows the segment in front of it.</p></li>
+</ul>
+<p>You should:</p>
+<ul class="simple">
+<li><p>If the new head position is in a food location, grow the snake by adding the new food location as the new head. Add 10 to the score, then place a new food item.</p></li>
+<li><p>If the new head position collides with the edge of the arena or the body, GAME OVER!</p></li>
+<li><p>Otherwise, add a new set of coordinates for the new head position and remove the last element in the snake list (the tip of the tail).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">game_over</span><span class="p">,</span> <span class="n">game_paused</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="n">snake</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">score</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="challenge-upgrades">
+<h2>Challenge Upgrades<a class="headerlink" href="#challenge-upgrades" title="Link to this heading">#</a></h2>
+<p>For these upgrades, you will have to change some of your functions as well as some parts of the functions below.</p>
+<ul class="simple">
+<li><p>Infinite space. Make it that the snake does not collide with the wall, rather it appears on the other side of the screen. For example, if the snake runs off the right side of the arena, it will run into the arena from the left.</p></li>
+<li><p>Allow diagonal movement.</p></li>
+<li><p>Allow two players. First player to 20 segments wins. If you collide with yourself or your opponent, you LOSE!</p></li>
+</ul>
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw_game</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">game_over</span><span class="p">,</span> <span class="n">game_paused</span><span class="p">):</span>
+
+    <span class="n">FONT_S</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="n">FONT</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">FONT_L</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="n">FONT</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Background</span>
+    <span class="n">surface</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">BG_COLOR</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">WINDOW_WIDTH</span><span class="p">,</span> <span class="n">ROWS</span> <span class="o">*</span> <span class="n">CELL_SIZE</span><span class="p">))</span>
+
+    <span class="c1"># Grid cells</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">COLS</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ROWS</span><span class="p">):</span>
+            <span class="p">[</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">]</span> <span class="o">=</span> <span class="n">cell_to_pixel</span><span class="p">([</span><span class="n">c</span><span class="p">,</span> <span class="n">r</span><span class="p">])</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">GRID_COLOR</span><span class="p">,</span>
+                             <span class="p">(</span><span class="n">px</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">py</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">CELL_SIZE</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">CELL_SIZE</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="c1"># Food</span>
+    <span class="p">[</span><span class="n">fpx</span><span class="p">,</span> <span class="n">fpy</span><span class="p">]</span> <span class="o">=</span> <span class="n">cell_to_pixel</span><span class="p">(</span><span class="n">food</span><span class="p">)</span>
+    
+    <span class="n">mf</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># reduce size of food by this many pixels smaller than cell size</span>
+    <span class="p">[</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">]</span> <span class="o">=</span> <span class="n">food</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">FOOD_COLOR</span><span class="p">,</span>
+                     <span class="p">(</span><span class="n">fx</span> <span class="o">+</span> <span class="n">mf</span><span class="p">,</span> <span class="n">fy</span> <span class="o">+</span> <span class="n">mf</span><span class="p">,</span>
+                      <span class="n">CELL_SIZE</span> <span class="o">-</span> <span class="n">mf</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">CELL_SIZE</span> <span class="o">-</span> <span class="n">mf</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="c1"># Snake segments</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">segment</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">snake</span><span class="p">):</span>
+        <span class="p">[</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">]</span> <span class="o">=</span> <span class="n">cell_to_pixel</span><span class="p">(</span><span class="n">segment</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">HEAD_COLOR</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">BODY_COLOR</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
+            
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span>
+                         <span class="p">(</span><span class="n">sx</span> <span class="o">+</span> <span class="n">m</span><span class="p">,</span> <span class="n">sy</span> <span class="o">+</span> <span class="n">m</span><span class="p">,</span> <span class="n">CELL_SIZE</span> <span class="o">-</span> <span class="n">m</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">CELL_SIZE</span> <span class="o">-</span> <span class="n">m</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="c1"># Scoreboard strip</span>
+    <span class="n">surface</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">STRIP_COLOR</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ROWS</span> <span class="o">*</span> <span class="n">CELL_SIZE</span><span class="p">,</span> <span class="n">WINDOW_WIDTH</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
+
+    <span class="c1"># Score text</span>
+    <span class="n">score_surf</span> <span class="o">=</span> <span class="n">FONT_S</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Score: </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">TEXT_COLOR</span><span class="p">)</span>
+    
+    <span class="n">surface</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">score_surf</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">ROWS</span> <span class="o">*</span> <span class="n">CELL_SIZE</span> <span class="o">+</span> <span class="mi">15</span><span class="p">))</span>
+
+    <span class="c1"># Game-over overlay</span>
+    <span class="k">if</span> <span class="n">game_paused</span><span class="p">:</span>
+        <span class="n">overlay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Surface</span><span class="p">((</span><span class="n">WINDOW_WIDTH</span><span class="p">,</span> <span class="n">ROWS</span> <span class="o">*</span> <span class="n">CELL_SIZE</span><span class="p">),</span> <span class="n">pygame</span><span class="o">.</span><span class="n">SRCALPHA</span><span class="p">)</span>
+        <span class="n">overlay</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="o">*</span><span class="n">OVERLAY_COLOR</span><span class="p">,</span> <span class="mi">180</span><span class="p">))</span>
+        <span class="n">surface</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">overlay</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+        <span class="n">over_surf</span>    <span class="o">=</span> <span class="n">FONT_L</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;PAUSED&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">HI_COLOR</span><span class="p">)</span>
+        <span class="n">pause_surf</span> <span class="o">=</span> <span class="n">FONT_S</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;Press SPACE to unpause&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">TEXT_COLOR</span><span class="p">)</span>
+
+        <span class="n">surface</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">over_surf</span><span class="p">,</span>
+                     <span class="p">(</span><span class="n">WINDOW_WIDTH</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">over_surf</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
+                      <span class="n">ROWS</span> <span class="o">*</span> <span class="n">CELL_SIZE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">over_surf</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">20</span><span class="p">))</span>
+        <span class="n">surface</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">pause_surf</span><span class="p">,</span>
+                     <span class="p">(</span><span class="n">WINDOW_WIDTH</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">restart_surf</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
+                      <span class="n">ROWS</span> <span class="o">*</span> <span class="n">CELL_SIZE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">20</span><span class="p">))</span>
+        
+    <span class="k">if</span> <span class="n">game_over</span><span class="p">:</span>
+        <span class="n">overlay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Surface</span><span class="p">((</span><span class="n">WINDOW_WIDTH</span><span class="p">,</span> <span class="n">ROWS</span> <span class="o">*</span> <span class="n">CELL_SIZE</span><span class="p">),</span> <span class="n">pygame</span><span class="o">.</span><span class="n">SRCALPHA</span><span class="p">)</span>
+        <span class="n">overlay</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="o">*</span><span class="n">OVERLAY_COLOR</span><span class="p">,</span> <span class="mi">180</span><span class="p">))</span>
+        <span class="n">surface</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">overlay</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+        <span class="n">over_surf</span>    <span class="o">=</span> <span class="n">FONT_L</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;GAME OVER&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">GAMEOVER_COLOR</span><span class="p">)</span>
+        <span class="n">restart_surf</span> <span class="o">=</span> <span class="n">FONT_S</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;Press R to restart&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">TEXT_COLOR</span><span class="p">)</span>
+
+        <span class="n">surface</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">over_surf</span><span class="p">,</span>
+                     <span class="p">(</span><span class="n">WINDOW_WIDTH</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">over_surf</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
+                      <span class="n">ROWS</span> <span class="o">*</span> <span class="n">CELL_SIZE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">over_surf</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">20</span><span class="p">))</span>
+        <span class="n">surface</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">restart_surf</span><span class="p">,</span>
+                     <span class="p">(</span><span class="n">WINDOW_WIDTH</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">restart_surf</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
+                      <span class="n">ROWS</span> <span class="o">*</span> <span class="n">CELL_SIZE</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">play_snake</span><span class="p">():</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">direction</span> <span class="o">=</span> <span class="n">R</span>
+
+    <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+    <span class="n">surface</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">WINDOW_WIDTH</span><span class="p">,</span> <span class="n">WINDOW_HEIGHT</span><span class="p">))</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;Snake&#39;</span><span class="p">)</span>
+    <span class="n">clock</span>   <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+    
+
+    <span class="n">snake</span><span class="p">,</span> <span class="n">food</span> <span class="o">=</span> <span class="n">reset_game</span><span class="p">()</span>
+    
+    <span class="n">game_over</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">game_paused</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    <span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+        <span class="c1"># --- Events ---</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span> <span class="c1"># user clicks the X in the upper corner of the pygame window</span>
+                <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">:</span>
+                    <span class="n">change_direction</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_DOWN</span><span class="p">:</span>
+                    <span class="n">change_direction</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                    <span class="n">change_direction</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">change_direction</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_SPACE</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">game_paused</span><span class="p">:</span>
+                    <span class="n">game_paused</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_SPACE</span> <span class="ow">and</span> <span class="n">game_paused</span><span class="p">:</span>
+                    <span class="n">game_paused</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_r</span> <span class="ow">and</span> <span class="n">game_over</span><span class="p">:</span>
+                    <span class="n">snake</span><span class="p">,</span> <span class="n">food</span> <span class="o">=</span> <span class="n">reset_game</span><span class="p">()</span>
+                    <span class="n">game_over</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_ESCAPE</span><span class="p">:</span> <span class="c1"># user clicks ESC</span>
+                    <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+  
+        <span class="c1"># --- Update ---</span>
+        <span class="n">update</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">game_over</span><span class="p">,</span> <span class="n">game_paused</span><span class="p">)</span>
+
+        <span class="c1"># --- Draw ---</span>
+        <span class="n">draw_game</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">game_over</span><span class="p">,</span> <span class="n">game_paused</span><span class="p">)</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="n">FPS</span><span class="p">)</span>
+    
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># play_snake()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./00_Games"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="wordle.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Wordle</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../00_Assignments/ps01.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PS01</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-parameters">Setting parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-cell-location-to-pixel-location">Convert Cell Location to Pixel Location</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#place-food">Place food</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-instructions">Explicit instructions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reset-game">Reset Game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Explicit instructions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-direction">Change Direction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update">Update</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge-upgrades">Challenge Upgrades</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eatai Roth, Gettysburg College
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Eatai Roth   2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
