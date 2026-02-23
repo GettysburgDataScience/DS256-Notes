@@ -24,6 +24,8 @@ parts:
     numbered: false
     chapters:
     - file: 00_Games/wordle
+    - file: 00_Games/snake
+
 
   - caption: Assignments
     numbered: false
