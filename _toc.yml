@@ -20,6 +20,12 @@ parts:
     - file: 01_Intro/05_lists
     - file: 01_Intro/06_loops
     - file: 01_Intro/07_dictionaries
+  - caption: Numpy and Matplotlib
+    numbered: true
+    chapters:
+    - file: 01_import
+    - file: 02_numpy
+    - file: 03_matplotlib
   - caption: GAME(s)
     numbered: false
     chapters:
