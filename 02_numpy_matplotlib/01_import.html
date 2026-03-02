@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Control Flow: Conditional statements &#8212; DS256 Data Science Programming</title>
+    <title>8. Introducing (and importing) Packages and Modules &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -70,11 +70,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01_Intro/04_conditionals';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_numpy_matplotlib/01_import';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.6. Practice Problems: Conditionals" href="04_conditionals_practice.html" />
-    <link rel="prev" title="3. Functions" href="03_functions.html" />
+    <link rel="next" title="9. Numpy" href="02_numpy.html" />
+    <link rel="prev" title="7. Dictionaries" href="../01_Intro/07_dictionaries.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -197,23 +197,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../00_Resources/setup.html">Setting Up</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Basics</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_jupyter.html">1. Intro to Notebooks and Python First Steps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_variables.html">2. Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_functions.html">3. Functions</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Control Flow: Conditional statements</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="04_conditionals_practice.html">4.6. Practice Problems: Conditionals</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/01_jupyter.html">1. Intro to Notebooks and Python First Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/02_variables.html">2. Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/03_functions.html">3. Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_Intro/04_conditionals.html">4. Control Flow: Conditional statements</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_Intro/04_conditionals_practice.html">4.6. Practice Problems: Conditionals</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="05_lists.html">5. Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_loops.html">6. Control Flow: Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_dictionaries.html">7. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/05_lists.html">5. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/06_loops.html">6. Control Flow: Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/07_dictionaries.html">7. Dictionaries</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy and Matplotlib</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/01_import.html">8. Introducing (and importing) Packages and Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/02_numpy.html">9. Numpy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/03_matplotlib.html">10. Matplotlib</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Introducing (and importing) Packages and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_numpy.html">9. Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_matplotlib.html">10. Matplotlib</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -275,7 +275,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/GettysburgDataScience/DS256-Notes/blob/main/01_Intro/04_conditionals.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/GettysburgDataScience/DS256-Notes/blob/main/02_numpy_matplotlib/01_import.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +306,7 @@
       
       
       
-      <li><a href="../_sources/01_Intro/04_conditionals.ipynb" target="_blank"
+      <li><a href="../_sources/02_numpy_matplotlib/01_import.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +390,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Control Flow: Conditional statements</h1>
+    <h1>Introducing (and importing) Packages and Modules</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,11 +400,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">4.1. If statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-statements">4.2. If-else statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else">4.3. if-elif-else</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-for-if-elif-else">4.4. Syntax for if-elif-else</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">4.5. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-packages">8.1. Importing Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-entire-packages">8.1.1. Importing entire packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-with-aliases">8.1.2. Importing with Aliases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-select-functions">8.1.3. Importing Select Functions</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -416,69 +417,122 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="control-flow-conditional-statements">
-<h1><span class="section-number">4. </span>Control Flow: Conditional statements<a class="headerlink" href="#control-flow-conditional-statements" title="Link to this heading">#</a></h1>
-<p>Read <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython/07-control-flow-statements.html">WTOP Ch 7</a>.</p>
-<p><em>Control flow</em> refer to commands that determine which code runs and how many times. The main tools of control flow are:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="introducing-and-importing-packages-and-modules">
+<h1><span class="section-number">8. </span>Introducing (and importing) Packages and Modules<a class="headerlink" href="#introducing-and-importing-packages-and-modules" title="Link to this heading">#</a></h1>
+<p>Today, I’ll briefly introduce packages and how we import them <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython/13-modules-and-packages.html">WTOP Ch 14</a>.</p>
+<p>So far, we’ve mainly used base Python with a few peeks at functions not in base Python (e.g. sleep and plot). We can extend the functionality of our code by incorporating specialized modules or packages (a package is a collection of modules…we’ll just refer to everything as a package).</p>
+<p>Packages may provide new data types and functions. We may choose to incorporate a package in its entirety or select only the functions we want.</p>
+<p>The most common packages we’ll use moving forward in this course are:</p>
 <ul class="simple">
-<li><p>Conditional Statements - statements that allow you to run different code under certain conditions</p></li>
-<li><p>Loops - statements that allow you to run blocks of code multiple times</p></li>
+<li><p>numpy (alias np) - arrays and vectorized math, common math operations</p></li>
+<li><p>pandas (alias pd) - dataframes and dataframe manipulation</p></li>
+<li><p>matplotlib.pyplot (alias plt) - data visualization</p></li>
+<li><p>sklearn - full name scikit-learn, modeling machine learning</p></li>
 </ul>
-<p>Conditional Statements</p>
-<p>Conditional statements determine if code will run using <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> (abbreviation of else if), and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements.</p>
-<section id="if-statements">
-<h2><span class="section-number">4.1. </span>If statements<a class="headerlink" href="#if-statements" title="Link to this heading">#</a></h2>
-<p>Run some code if a condition is met.</p>
-<ul class="simple">
-<li><p>If it’s nice outside, I’m going to play tennis.</p></li>
-<li><p>If I’m not sleepy, I’ll watch the fourth quarter.</p></li>
-<li><p>If the requested withdrawal amount is more than the amount in your checking account, the transaction will be declined.</p></li>
-</ul>
-</section>
-<section id="if-else-statements">
-<h2><span class="section-number">4.2. </span>If-else statements<a class="headerlink" href="#if-else-statements" title="Link to this heading">#</a></h2>
-<p>This gives one path of code if the condition is met and another path for all other cases.</p>
-<ul class="simple">
-<li><p>If it’s nice outside, I’m going to play tennis. Else (otherwise), I’ll go the gym to play basketball.</p></li>
-<li><p>If I’m not sleepy, I’ll watch the fourth quarter, else I’ll go to bed.</p></li>
-<li><p>If the requested withdrawal amount is more than the amount in your checking account, the transaction will be declined, else the funds will be transferred to the vendor.</p></li>
-</ul>
-</section>
-<section id="if-elif-else">
-<h2><span class="section-number">4.3. </span>if-elif-else<a class="headerlink" href="#if-elif-else" title="Link to this heading">#</a></h2>
-<p>This gives a sequence of conditions, if one isn’t met then you move onto the next option. <code class="docutils literal notranslate"><span class="pre">if-elif</span></code> may or may not have an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement at the end (mostly they do).</p>
-<ul class="simple">
-<li><p>If it’s nice outside I’m going to play tennis, else if it’s just drizzling I’ll go to the gym to play basketball, else I’ll stay home and watch a show.</p></li>
-<li><p>If I’m not sleepy, I’ll watch the fourth quarter of the game. Else if I’m a little sleepy, I’ll watch the first five minutes then go to bed. Else, I’ll go to bed right away.</p></li>
-<li><p>If the requested withdrawal amount is more than the amount in your checking account, the transaction will be declined, else if you have the funds but the remaining balance is less than $50, the funds will be transferred to the vendor and the buyer will get a “low balance” notification. Else, the funds will be transferred to the vendor.</p></li>
-</ul>
-<p>The if-elif-else statements don’t have to be particularly related:</p>
-<ul class="simple">
-<li><p>If it’s nice outside, I’ll play tennis. Else if I’m feeling hungry, I’ll eat a bowl of cereal. Else if the dollar is strong, my dad will invest in foreign currency. Else, print “they’re all good dogs”.</p></li>
-</ul>
-</section>
-<section id="syntax-for-if-elif-else">
-<h2><span class="section-number">4.4. </span>Syntax for if-elif-else<a class="headerlink" href="#syntax-for-if-elif-else" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="mi">1</span><span class="o">&gt;</span><span class="p">:</span>
-    <span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span> <span class="mi">1</span><span class="o">&gt;</span>
-<span class="k">elif</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="mi">2</span><span class="o">&gt;</span><span class="p">:</span>
-    <span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span> <span class="mi">2</span><span class="o">&gt;</span>
-<span class="k">elif</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="mi">3</span><span class="o">&gt;</span><span class="p">:</span>
-    <span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span> <span class="mi">3</span><span class="o">&gt;</span>
-    <span class="o">.</span>
-    <span class="o">.</span>
-    <span class="o">.</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span> <span class="mi">0</span><span class="o">&gt;</span>
+<p>You will also refer to the documentation for these packages frequently.</p>
+<section id="importing-packages">
+<h2><span class="section-number">8.1. </span>Importing Packages<a class="headerlink" href="#importing-packages" title="Link to this heading">#</a></h2>
+<section id="importing-entire-packages">
+<h3><span class="section-number">8.1.1. </span>Importing entire packages<a class="headerlink" href="#importing-entire-packages" title="Link to this heading">#</a></h3>
+<p>We can import an entire package with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="o">&lt;</span><span class="n">package</span> <span class="n">name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="practice-problems">
-<h2><span class="section-number">4.5. </span>Practice Problems<a class="headerlink" href="#practice-problems" title="Link to this heading">#</a></h2>
-<p><a class="reference download internal" download="" href="../_downloads/4d3e7a4efda54f1a1db2cda1c82f1d97/conditional_practice.pdf"><span class="xref download myst">view PDF</span></a></p>
-</section>
-<div class="toctree-wrapper compound">
+<p>Once imported, we can then use functions from the package as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">package</span> <span class="n">name</span><span class="o">&gt;.&lt;</span><span class="n">function</span><span class="o">&gt;</span>
+</pre></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">vect</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">11.36</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vect</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+1.0
+[ 0.          3.14159265 11.36      ]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importing-with-aliases">
+<h3><span class="section-number">8.1.2. </span>Importing with Aliases<a class="headerlink" href="#importing-with-aliases" title="Link to this heading">#</a></h3>
+<p>It will get tiring typing numpy every time you want to call a function from numpy. So it is common to abbreviate the package name by assigning it an <em>alias</em>. Some packages are so widely used, there is a conventional alias that everybody uses; in the list above, the common alias is in ().</p>
+<p>We assign an alias at import using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="o">&lt;</span><span class="n">package</span> <span class="n">name</span><span class="o">&gt;</span> <span class="k">as</span> <span class="o">&lt;</span><span class="n">alias</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>and then to use functions from the package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">alias</span><span class="o">&gt;.&lt;</span><span class="n">function</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">vect</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">11.36</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vect</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+1.0
+[ 0.          3.14159265 11.36      ]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importing-select-functions">
+<h3><span class="section-number">8.1.3. </span>Importing Select Functions<a class="headerlink" href="#importing-select-functions" title="Link to this heading">#</a></h3>
+<p>And sometimes, we may only need a few functions from a package, and we can import those individually.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="o">&lt;</span><span class="n">f1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">f2</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>and then we can use these functions without prefix.</p>
+<p>We import select functions when:
+- we really only need very few functions from a package
+- the package is very large and we don’t want to import the whole thing (sklearn for example)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -494,7 +548,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./01_Intro"
+            path: "./02_numpy_matplotlib"
         },
         predefinedOutput: true
     }
@@ -512,20 +566,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="03_functions.html"
+       href="../01_Intro/07_dictionaries.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Functions</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Dictionaries</p>
       </div>
     </a>
     <a class="right-next"
-       href="04_conditionals_practice.html"
+       href="02_numpy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.6. </span>Practice Problems: Conditionals</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Numpy</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -545,11 +599,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">4.1. If statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-statements">4.2. If-else statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else">4.3. if-elif-else</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-for-if-elif-else">4.4. Syntax for if-elif-else</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">4.5. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-packages">8.1. Importing Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-entire-packages">8.1.1. Importing entire packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-with-aliases">8.1.2. Importing with Aliases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-select-functions">8.1.3. Importing Select Functions</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

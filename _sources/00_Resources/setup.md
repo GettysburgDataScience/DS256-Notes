@@ -26,11 +26,7 @@ As we move towards data science projects, it will become increasingly important 
 
 Your computer is organized as a tree of *directories* (aka folders) which contain files and other *subdirectories* (which in turn contain files and subdirectories). At the top of this tree is the *root* directory.
 
-```{figure} ../images/filestructure.png
-:alt: filestructure
-:width: 350px
-:align: left
-:figclass: margin
+![filestructure](https://github.com/GettysburgDataScience/DS256-Notes/blob/main/images/filestructure.png?raw=true)
 
 An example folder heirarchy for MacOS. credit: Daniel J. Barrett
 ```
