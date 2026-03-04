@@ -512,6 +512,18 @@ Image credit: <a class="reference external" href="https://realpython.com/python-
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/263a6aa3e7061700ac55beb3de37d9b163d5dc73d99cb178f2ae0c8ba943cd5d.png" src="../_images/263a6aa3e7061700ac55beb3de37d9b163d5dc73d99cb178f2ae0c8ba943cd5d.png" />
+</div>
+</div>
 <p>Create the figure and axes with subplots.
 This is not the most basic approach, but it’s very flexible. Learn it now and never go back.</p>
 <ul class="simple">
@@ -519,7 +531,42 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 <li><p><code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code> plots the data.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> displays the figure.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> 
+        <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> 
+        <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y4</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/dd18c2af1d176d45ee0425ff5aec01c87182f8ee1214fc2470fa7c1329192416.png" src="../_images/dd18c2af1d176d45ee0425ff5aec01c87182f8ee1214fc2470fa7c1329192416.png" />
+</div>
+</div>
 <p>Let’s add the other traces to this plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2da684afad0d27304134788ff27b5e29afd6caa4b0c6277938d05f63aa74cefc.png" src="../_images/2da684afad0d27304134788ff27b5e29afd6caa4b0c6277938d05f63aa74cefc.png" />
+</div>
+</div>
 <p><em>Nearly every</em> aspect of a figure, axes, or plot can be changed to fit your needs or wants. We achieve this by specifying properties of these objects.</p>
 <p>In the next code block:</p>
 <ul class="simple">

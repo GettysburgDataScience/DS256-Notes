@@ -73,8 +73,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '00_Games/snake';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PS01" href="../00_Assignments/ps01.html" />
-    <link rel="prev" title="Wordle" href="wordle.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -136,6 +134,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -209,16 +209,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../01_Intro/06_loops.html">6. Control Flow: Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../01_Intro/07_dictionaries.html">7. Dictionaries</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">GAME(s)</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="wordle.html">Wordle</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Snake</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy and Matplotlib</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/01_import.html">8. Introducing (and importing) Packages and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/02_numpy.html">9. Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/03_matplotlib.html">10. Matplotlib</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps01.html">PS01</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps02.html">PS02</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps03.html">PS03</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps04.html">PS04</a></li>
 </ul>
 
     </div>
@@ -399,6 +401,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-parameters">Setting parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-the-grid-system">Explaining the grid system</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-cell-location-to-pixel-location">Convert Cell Location to Pixel Location</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#place-food">Place food</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-instructions">Explicit instructions</a></li>
@@ -438,6 +441,27 @@ document.write(`
 <li><p>SPACE - Pause</p></li>
 <li><p>ESC – Quit</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %conda install pygame</span>
+
+<span class="o">%</span><span class="k">pip</span> install pygame
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pygame in /Users/eatai/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages (2.6.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.3.1</span> -&gt; <span class=" -Color -Color-Green">26.0.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">/Users/eatai/.pyenv/versions/3.13.1/envs/datascience/bin/python -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
@@ -491,6 +515,9 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 </div>
 </div>
 </div>
+</section>
+<section id="explaining-the-grid-system">
+<h2>Explaining the grid system<a class="headerlink" href="#explaining-the-grid-system" title="Link to this heading">#</a></h2>
 </section>
 <section id="convert-cell-location-to-pixel-location">
 <h2>Convert Cell Location to Pixel Location<a class="headerlink" href="#convert-cell-location-to-pixel-location" title="Link to this heading">#</a></h2>
@@ -768,7 +795,46 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># play_snake()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">play_snake</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">error</span><span class="g g-Whitespace">                                     </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">play_snake</span><span class="p">()</span>
+
+<span class="nn">Cell In[10], line 48,</span> in <span class="ni">play_snake</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="n">update</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">game_over</span><span class="p">,</span> <span class="n">game_paused</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="c1"># --- Draw ---</span>
+<span class="ne">---&gt; </span><span class="mi">48</span> <span class="n">draw_game</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">game_over</span><span class="p">,</span> <span class="n">game_paused</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="n">FPS</span><span class="p">)</span>
+
+<span class="nn">Cell In[9], line 3,</span> in <span class="ni">draw_game</span><span class="nt">(snake, food, surface, score, game_over, game_paused)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">draw_game</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">game_over</span><span class="p">,</span> <span class="n">game_paused</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">FONT_S</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="n">FONT</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">FONT_L</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="n">FONT</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="c1"># Background</span>
+
+<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/pygame/sysfont.py:460,</span> in <span class="ni">SysFont</span><span class="nt">(name, size, bold, italic, constructor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">457</span> <span class="k">if</span> <span class="n">italic</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">gotitalic</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span>     <span class="n">set_italic</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">460</span> <span class="k">return</span> <span class="n">constructor</span><span class="p">(</span><span class="n">fontname</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">set_bold</span><span class="p">,</span> <span class="n">set_italic</span><span class="p">)</span>
+
+<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/pygame/sysfont.py:378,</span> in <span class="ni">font_constructor</span><span class="nt">(fontpath, size, bold, italic)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="k">def</span><span class="w"> </span><span class="nf">font_constructor</span><span class="p">(</span><span class="n">fontpath</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">bold</span><span class="p">,</span> <span class="n">italic</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span><span class="sd">     pygame.font specific declarations</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span><span class="sd"> </span>
+<span class="sd">   (...)    375     :return: A font.Font object.</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">378</span>     <span class="n">font</span> <span class="o">=</span> <span class="n">Font</span><span class="p">(</span><span class="n">fontpath</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span>     <span class="k">if</span> <span class="n">bold</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>         <span class="n">font</span><span class="o">.</span><span class="n">set_bold</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="ne">error</span>: font not initialized
 </pre></div>
 </div>
 </div>
@@ -806,24 +872,6 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="wordle.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Wordle</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../00_Assignments/ps01.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PS01</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -841,6 +889,7 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-parameters">Setting parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-the-grid-system">Explaining the grid system</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-cell-location-to-pixel-location">Convert Cell Location to Pixel Location</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#place-food">Place food</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-instructions">Explicit instructions</a></li>
