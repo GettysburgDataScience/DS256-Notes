@@ -26,8 +26,7 @@ parts:
     - file: 02_numpy_matplotlib/01_import
     - file: 02_numpy_matplotlib/02_numpy
     - file: 02_numpy_matplotlib/03_matplotlib
-    sections:
-      - file: 02_numpy_matplotlib/03_matplotlib_practice
+    - file: 02_numpy_matplotlib/03_matplotlib_practice
   - caption: Assignments
     numbered: false
     chapters:
