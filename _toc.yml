@@ -23,16 +23,9 @@ parts:
   - caption: Numpy and Matplotlib
     numbered: true
     chapters:
-    - file: 01_import
-    - file: 02_numpy
-    - file: 03_matplotlib
-  - caption: GAME(s)
-    numbered: false
-    chapters:
-    - file: 00_Games/wordle
-    - file: 00_Games/snake
-
-
+    - file: 02_numpy_matplotlib/01_import
+    - file: 02_numpy_matplotlib/02_numpy
+    - file: 02_numpy_matplotlib/03_matplotlib
   - caption: Assignments
     numbered: false
     chapters:
