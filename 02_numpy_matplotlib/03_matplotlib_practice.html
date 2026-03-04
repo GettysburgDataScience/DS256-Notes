@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Visualizing NFL QB contracts &#8212; DS256 Data Science Programming</title>
+    <title>11. Visualizing NFL QB contracts &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -73,6 +73,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '02_numpy_matplotlib/03_matplotlib_practice';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PS01" href="../00_Assignments/ps01.html" />
+    <link rel="prev" title="10. Matplotlib" href="03_matplotlib.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -134,8 +136,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -210,10 +210,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../01_Intro/07_dictionaries.html">7. Dictionaries</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy and Matplotlib</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_import.html">8. Introducing (and importing) Packages and Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_numpy.html">9. Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_matplotlib.html">10. Matplotlib</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Visualizing NFL QB contracts</a></li>
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -400,13 +404,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Visualizing NFL QB contracts</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-data">Downloading the data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Visualizing NFL QB contracts</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-data">11.1. Downloading the data</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-gettysburg-weather-trends">Visualizing Gettysburg Weather Trends</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-datetime64-data">Using datetime64 data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-gun-deaths-in-the-united-states">Visualizing Gun Deaths in the United States</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-gettysburg-weather-trends">12. Visualizing Gettysburg Weather Trends</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-datetime64-data">13. Using datetime64 data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-gun-deaths-in-the-united-states">14. Visualizing Gun Deaths in the United States</a></li>
 </ul>
 
             </nav>
@@ -437,7 +441,7 @@ document.write(`
 </div>
 </div>
 <section id="visualizing-nfl-qb-contracts">
-<h1>Visualizing NFL QB contracts<a class="headerlink" href="#visualizing-nfl-qb-contracts" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Visualizing NFL QB contracts<a class="headerlink" href="#visualizing-nfl-qb-contracts" title="Link to this heading">#</a></h1>
 <p>Many of the datasets used in class notebooks are stored in the <a class="reference internal" href="#'https://github.com/GettysburgDataScience/datasets'"><span class="xref myst">Gettysburg Datascience datasets github repository</span></a>.</p>
 <p>From this page, you can select a dataset from the list to see a preview of the data (provided that the dataset is not too large).</p>
 <p>To get the data, we’ll need to import it in its raw form as a .csv.</p>
@@ -451,7 +455,7 @@ document.write(`
 </ul>
 <p><img alt="raw data" src="https://github.com/GettysburgDataScience/DS256-Notes/blob/main/images/raw_data.png?raw=true" /></p>
 <section id="downloading-the-data">
-<h2>Downloading the data<a class="headerlink" href="#downloading-the-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>Downloading the data<a class="headerlink" href="#downloading-the-data" title="Link to this heading">#</a></h2>
 <p>After finding the data URL, we use <code class="docutils literal notranslate"><span class="pre">np.genfromtxt()</span></code> to bring the data into numpy.</p>
 <p><strong>Remember</strong>, numpy arrays may only contain one data type! So first, we’ll look at the headers to get a sense of the data each column contains. Column headers are generally in the top row of the data file.</p>
 <p>Here is the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.genfromtxt.html">np.genfromtxt documentation</a></p>
@@ -514,7 +518,7 @@ document.write(`
 </section>
 </section>
 <section id="visualizing-gettysburg-weather-trends">
-<h1>Visualizing Gettysburg Weather Trends<a class="headerlink" href="#visualizing-gettysburg-weather-trends" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">12. </span>Visualizing Gettysburg Weather Trends<a class="headerlink" href="#visualizing-gettysburg-weather-trends" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gettysburg_weather_git</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/gettysburg_weather.csv&#39;</span>
@@ -557,11 +561,11 @@ document.write(`
 </div>
 </section>
 <section id="using-datetime64-data">
-<h1>Using datetime64 data<a class="headerlink" href="#using-datetime64-data" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">13. </span>Using datetime64 data<a class="headerlink" href="#using-datetime64-data" title="Link to this heading">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">np.datetime64</span></code> is a numpy data type for storing data information. Here is some more <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.datetime.html">information on datetime64</a>.</p>
 </section>
 <section id="visualizing-gun-deaths-in-the-united-states">
-<h1>Visualizing Gun Deaths in the United States<a class="headerlink" href="#visualizing-gun-deaths-in-the-united-states" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">14. </span>Visualizing Gun Deaths in the United States<a class="headerlink" href="#visualizing-gun-deaths-in-the-united-states" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gun_deaths_git</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/gun_deaths_cdc.csv&#39;</span>
@@ -613,6 +617,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="03_matplotlib.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Matplotlib</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../00_Assignments/ps01.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PS01</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -629,13 +651,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Visualizing NFL QB contracts</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-data">Downloading the data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Visualizing NFL QB contracts</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-data">11.1. Downloading the data</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-gettysburg-weather-trends">Visualizing Gettysburg Weather Trends</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-datetime64-data">Using datetime64 data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-gun-deaths-in-the-united-states">Visualizing Gun Deaths in the United States</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-gettysburg-weather-trends">12. Visualizing Gettysburg Weather Trends</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-datetime64-data">13. Using datetime64 data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-gun-deaths-in-the-united-states">14. Visualizing Gun Deaths in the United States</a></li>
 </ul>
 
   </nav></div>
