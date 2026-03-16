@@ -27,6 +27,11 @@ parts:
     - file: 02_numpy_matplotlib/02_numpy
     - file: 02_numpy_matplotlib/03_matplotlib
     - file: 02_numpy_matplotlib/03_matplotlib_practice
+    - file: 02_numpy_matplotlib/04_matplotlib_reference
+  - caption: Pandas
+    numbered: true
+    chapters:
+    - file: 04_Pandas/01_pandas_intro
   - caption: Assignments
     numbered: false
     chapters:
