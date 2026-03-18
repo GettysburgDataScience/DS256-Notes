@@ -457,6 +457,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">df.head(n)</span></code> - Look at the first n rows (5 rows by default, if you omit n)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">df.tail(n)</span></code> - Look at the last n rows</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> - Get information and statistics of the data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.info()</span></code> - Gets the data type and number of valid entries for each column</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">df.columns</span></code> - Get a list of feature names</p></li>
 </ul>
 <p>We’ll import and inspect the Marvel Cinematic Universe (MCU) Movies &amp; Series dataset, compiled by Stephen Tracy and published on Kaggle: <a class="reference external" href="https://www.kaggle.com/datasets/stevetracy/marvel-cinematic-universe-mcu-movies-and-series">https://www.kaggle.com/datasets/stevetracy/marvel-cinematic-universe-mcu-movies-and-series</a></p>
@@ -479,7 +480,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -574,41 +575,276 @@ document.write(`
       <td>$311,500,000</td>
       <td>$623,933,331</td>
     </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>Type</th>
+      <th>mcu_phase_number</th>
+      <th>mcu_phase_text</th>
+      <th>release_date</th>
+      <th>release_year</th>
+      <th>rt_tomato_meter</th>
+      <th>rt_audience_score</th>
+      <th>imdb-rating</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+      <th>production_budget</th>
+      <th>domestic_box_office</th>
+      <th>international_box_office</th>
+      <th>worldwide_box_office</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
-      <th>3</th>
-      <td>Thor</td>
+      <th>41</th>
+      <td>The Marvels</td>
       <td>Movie</td>
-      <td>1.0</td>
-      <td>MCU Phase 1</td>
-      <td>5/6/11</td>
-      <td>2011.0</td>
-      <td>77.0</td>
-      <td>76.0</td>
-      <td>7.0</td>
-      <td>57.0</td>
-      <td>7.0</td>
-      <td>$150,000,000</td>
-      <td>$181,030,624</td>
-      <td>$268,295,994</td>
-      <td>$449,326,618</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>11/10/23</td>
+      <td>2023.0</td>
+      <td>62.0</td>
+      <td>82.0</td>
+      <td>5.6</td>
+      <td>50.0</td>
+      <td>3.8</td>
+      <td>$270,000,000</td>
+      <td>$84,500,223</td>
+      <td>$121,612,709</td>
+      <td>$206,112,932</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>Captain America: The First Avenger</td>
-      <td>Movie</td>
-      <td>1.0</td>
-      <td>MCU Phase 1</td>
-      <td>7/22/11</td>
-      <td>2011.0</td>
-      <td>79.0</td>
-      <td>75.0</td>
-      <td>6.9</td>
-      <td>66.0</td>
-      <td>6.8</td>
-      <td>$140,000,000</td>
-      <td>$176,654,505</td>
-      <td>$193,915,269</td>
-      <td>$370,569,774</td>
+      <th>42</th>
+      <td>Echo</td>
+      <td>TV Show</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>1/9/24</td>
+      <td>2024.0</td>
+      <td>71.0</td>
+      <td>61.0</td>
+      <td>6.0</td>
+      <td>62.0</td>
+      <td>5.2</td>
+      <td>$40,000,000</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>$8,157,000,000</td>
+      <td>$11,799,499,952</td>
+      <td>$18,027,089,947</td>
+      <td>$29,826,145,377</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 45 entries, 0 to 44
+Data columns (total 15 columns):
+ #   Column                      Non-Null Count  Dtype  
+---  ------                      --------------  -----  
+ 0   movie_title                 43 non-null     object 
+ 1   Type                        43 non-null     object 
+ 2   mcu_phase_number            43 non-null     float64
+ 3   mcu_phase_text              43 non-null     object 
+ 4   release_date                43 non-null     object 
+ 5   release_year                43 non-null     float64
+ 6   rt_tomato_meter             43 non-null     float64
+ 7   rt_audience_score           43 non-null     float64
+ 8   imdb-rating                 43 non-null     float64
+ 9   metacritic_metascore        43 non-null     float64
+ 10  metacritic_userscore        43 non-null     float64
+ 11   production_budget          44 non-null     object 
+ 12   domestic_box_office        44 non-null     object 
+ 13   international_box_office   44 non-null     object 
+ 14   worldwide_box_office       44 non-null     object 
+dtypes: float64(7), object(8)
+memory usage: 5.4+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mcu_phase_number</th>
+      <th>release_year</th>
+      <th>rt_tomato_meter</th>
+      <th>rt_audience_score</th>
+      <th>imdb-rating</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>43.000000</td>
+      <td>43.000000</td>
+      <td>43.000000</td>
+      <td>43.000000</td>
+      <td>43.000000</td>
+      <td>43.000000</td>
+      <td>43.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3.162791</td>
+      <td>2018.023256</td>
+      <td>81.511628</td>
+      <td>81.906977</td>
+      <td>7.158140</td>
+      <td>67.093023</td>
+      <td>6.593023</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.233080</td>
+      <td>4.431964</td>
+      <td>13.017154</td>
+      <td>13.876692</td>
+      <td>0.753794</td>
+      <td>8.242786</td>
+      <td>1.493381</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>2008.000000</td>
+      <td>46.000000</td>
+      <td>32.000000</td>
+      <td>5.300000</td>
+      <td>48.000000</td>
+      <td>2.700000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.000000</td>
+      <td>2015.000000</td>
+      <td>76.500000</td>
+      <td>78.000000</td>
+      <td>6.750000</td>
+      <td>62.500000</td>
+      <td>5.950000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.000000</td>
+      <td>2019.000000</td>
+      <td>85.000000</td>
+      <td>86.000000</td>
+      <td>7.300000</td>
+      <td>68.000000</td>
+      <td>6.900000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4.000000</td>
+      <td>2021.500000</td>
+      <td>92.000000</td>
+      <td>91.000000</td>
+      <td>7.750000</td>
+      <td>72.000000</td>
+      <td>7.750000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>5.000000</td>
+      <td>2024.000000</td>
+      <td>98.000000</td>
+      <td>98.000000</td>
+      <td>8.400000</td>
+      <td>88.000000</td>
+      <td>8.600000</td>
     </tr>
   </tbody>
 </table>
@@ -626,7 +862,8 @@ document.write(`
 <p>You can select a column or set of columns using a list of names. This is the similar to how we select keys in a dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="p">[[</span><span class="s1">&#39;movie_title&#39;</span><span class="p">,</span> <span class="s1">&#39;release_year&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns_to_view</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;movie_title&#39;</span><span class="p">,</span> <span class="s1">&#39;release_year&#39;</span><span class="p">]</span>
+<span class="n">mcu_df</span><span class="p">[</span><span class="n">columns_to_view</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -898,6 +1135,240 @@ document.write(`
 <li><p>The <em>Guardians of the Galaxy</em> movies</p></li>
 <li><p>Movies liked more by the general audience than by the critics.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_post_covid</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;release_year &gt;= 2021 and Type == &quot;Movie&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_post_covid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>Type</th>
+      <th>mcu_phase_number</th>
+      <th>mcu_phase_text</th>
+      <th>release_date</th>
+      <th>release_year</th>
+      <th>rt_tomato_meter</th>
+      <th>rt_audience_score</th>
+      <th>imdb-rating</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+      <th>production_budget</th>
+      <th>domestic_box_office</th>
+      <th>international_box_office</th>
+      <th>worldwide_box_office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>26</th>
+      <td>Black Widow</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>7/9/21</td>
+      <td>2021.0</td>
+      <td>79.0</td>
+      <td>91.0</td>
+      <td>6.7</td>
+      <td>68.0</td>
+      <td>6.0</td>
+      <td>$288,000,000</td>
+      <td>$183,651,655</td>
+      <td>$196,100,000</td>
+      <td>$379,751,655</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Shang-Chi and the Legend of the Ten Rings</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>9/3/21</td>
+      <td>2021.0</td>
+      <td>91.0</td>
+      <td>98.0</td>
+      <td>7.4</td>
+      <td>71.0</td>
+      <td>7.0</td>
+      <td>$150,000,000</td>
+      <td>$224,543,292</td>
+      <td>$207,700,000</td>
+      <td>$432,243,292</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Eternals</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>11/5/21</td>
+      <td>2021.0</td>
+      <td>47.0</td>
+      <td>78.0</td>
+      <td>6.3</td>
+      <td>52.0</td>
+      <td>6.1</td>
+      <td>$236,000,000</td>
+      <td>$164,870,234</td>
+      <td>$237,194,665</td>
+      <td>$402,064,899</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Spider-Man: No Way Home</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>12/17/21</td>
+      <td>2021.0</td>
+      <td>93.0</td>
+      <td>98.0</td>
+      <td>8.2</td>
+      <td>71.0</td>
+      <td>8.5</td>
+      <td>$200,000,000</td>
+      <td>$814,115,070</td>
+      <td>$1,107,732,041</td>
+      <td>$1,921,847,111</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Doctor Strange: Multiverse of Madness</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>5/6/22</td>
+      <td>2022.0</td>
+      <td>73.0</td>
+      <td>85.0</td>
+      <td>6.9</td>
+      <td>60.0</td>
+      <td>5.9</td>
+      <td>$294,000,000</td>
+      <td>$411,331,607</td>
+      <td>$544,444,197</td>
+      <td>$955,775,804</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Thor: Love and Thunder</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>7/8/22</td>
+      <td>2022.0</td>
+      <td>63.0</td>
+      <td>76.0</td>
+      <td>6.2</td>
+      <td>57.0</td>
+      <td>4.8</td>
+      <td>$250,000,000</td>
+      <td>$343,256,830</td>
+      <td>$417,671,251</td>
+      <td>$760,928,081</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Black Panther: Wakanda Forever</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>11/11/22</td>
+      <td>2022.0</td>
+      <td>83.0</td>
+      <td>94.0</td>
+      <td>6.7</td>
+      <td>67.0</td>
+      <td>5.2</td>
+      <td>$200,000,000</td>
+      <td>$453,829,060</td>
+      <td>$405,379,776</td>
+      <td>$859,208,836</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Ant-Man and the Wasp: Quantumania</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>2/17/23</td>
+      <td>2023.0</td>
+      <td>46.0</td>
+      <td>82.0</td>
+      <td>6.1</td>
+      <td>48.0</td>
+      <td>5.5</td>
+      <td>$200,000,000</td>
+      <td>$214,504,909</td>
+      <td>$261,566,271</td>
+      <td>$476,071,180</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Guardians of the Galaxy Vol. 3</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>5/5/23</td>
+      <td>2023.0</td>
+      <td>82.0</td>
+      <td>94.0</td>
+      <td>7.9</td>
+      <td>64.0</td>
+      <td>7.9</td>
+      <td>$250,000,000</td>
+      <td>$358,995,815</td>
+      <td>$486,559,962</td>
+      <td>$845,555,777</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>The Marvels</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>11/10/23</td>
+      <td>2023.0</td>
+      <td>62.0</td>
+      <td>82.0</td>
+      <td>5.6</td>
+      <td>50.0</td>
+      <td>3.8</td>
+      <td>$270,000,000</td>
+      <td>$84,500,223</td>
+      <td>$121,612,709</td>
+      <td>$206,112,932</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </section>
 <section id="slicing-using-loc">
 <h3><span class="section-number">13.3.3. </span>Slicing using <code class="docutils literal notranslate"><span class="pre">.loc</span></code><a class="headerlink" href="#slicing-using-loc" title="Link to this heading">#</a></h3>
@@ -914,6 +1385,30 @@ document.write(`
 </div>
 <p>Will return the first two rows (regardless of input number) of the zero-th (first) column (regardless of name).</p>
 <p>Let’s see an example when the indices are not ordered.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_post_covid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">37</span><span class="p">,</span> <span class="s1">&#39;movie_title&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Black Panther: Wakanda Forever&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_post_covid</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Black Panther: Wakanda Forever&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="data-cleaning">
@@ -928,6 +1423,143 @@ document.write(`
 <section id="dropping-bad-data">
 <h3><span class="section-number">13.4.1. </span>Dropping bad data<a class="headerlink" href="#dropping-bad-data" title="Link to this heading">#</a></h3>
 <p>Data can be ‘bad’ for numerous reasons, but most immediately obvious are missing data. We drop missing data with <code class="docutils literal notranslate"><span class="pre">df.dropna</span></code> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html">dropna documentation</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>Type</th>
+      <th>mcu_phase_number</th>
+      <th>mcu_phase_text</th>
+      <th>release_date</th>
+      <th>release_year</th>
+      <th>rt_tomato_meter</th>
+      <th>rt_audience_score</th>
+      <th>imdb-rating</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+      <th>production_budget</th>
+      <th>domestic_box_office</th>
+      <th>international_box_office</th>
+      <th>worldwide_box_office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>40</th>
+      <td>Secret Invasion</td>
+      <td>TV Show</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>6/21/23</td>
+      <td>2023.0</td>
+      <td>53.0</td>
+      <td>46.0</td>
+      <td>5.9</td>
+      <td>63.0</td>
+      <td>3.5</td>
+      <td>$211,000,000</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>The Marvels</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>11/10/23</td>
+      <td>2023.0</td>
+      <td>62.0</td>
+      <td>82.0</td>
+      <td>5.6</td>
+      <td>50.0</td>
+      <td>3.8</td>
+      <td>$270,000,000</td>
+      <td>$84,500,223</td>
+      <td>$121,612,709</td>
+      <td>$206,112,932</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Echo</td>
+      <td>TV Show</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>1/9/24</td>
+      <td>2024.0</td>
+      <td>71.0</td>
+      <td>61.0</td>
+      <td>6.0</td>
+      <td>62.0</td>
+      <td>5.2</td>
+      <td>$40,000,000</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>$8,157,000,000</td>
+      <td>$11,799,499,952</td>
+      <td>$18,027,089,947</td>
+      <td>$29,826,145,377</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1072,45 +1704,80 @@ document.write(`
 <p>We can rename columns using the function <code class="docutils literal notranslate"><span class="pre">.rename()</span></code> which takes as input a dictionary. The keys of the dictionary are the current column headers and the values are the replacement headers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Applying a Function to a Column</span>
-
-
-<span class="c1">### Working With Strings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;movie_title&#39;, &#39;Type&#39;, &#39;mcu_phase_number&#39;, &#39;mcu_phase_text&#39;,
+       &#39;release_date&#39;, &#39;release_year&#39;, &#39;rt_tomato_meter&#39;, &#39;rt_audience_score&#39;,
+       &#39;imdb-rating&#39;, &#39;metacritic_metascore&#39;, &#39;metacritic_userscore&#39;,
+       &#39; production_budget &#39;, &#39; domestic_box_office &#39;,
+       &#39; international_box_office &#39;, &#39; worldwide_box_office &#39;],
+      dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="adding-a-column">
-<h3><span class="section-number">13.4.3. </span>Adding a column<a class="headerlink" href="#adding-a-column" title="Link to this heading">#</a></h3>
-<p>Just as in dictionaries, you can add a calculated column as you go.</p>
-</section>
-</section>
-<section id="calculations-on-columns">
-<h2><span class="section-number">13.5. </span>Calculations on Columns<a class="headerlink" href="#calculations-on-columns" title="Link to this heading">#</a></h2>
-<p>When extracting a column, you can use numpy functions to get different measures of those data:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.max()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.sum()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.unique()</span></code></p></li>
-</ul>
-</section>
-<section id="selecting-data">
-<h2><span class="section-number">13.6. </span>Selecting Data<a class="headerlink" href="#selecting-data" title="Link to this heading">#</a></h2>
-<section id="inspection">
-<h3><span class="section-number">13.6.1. </span>Inspection<a class="headerlink" href="#inspection" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>What movies/tv shows are on the list?</p></li>
-<li><p>What are the statistics of the numeric columns?</p></li>
-</ul>
-<p>Describe creates another dataframe and we can save this as a variable and interact with it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a new column indicating whether viewers or critics liked the movie more</span>
-<span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;audience_vs_critic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_audience_score&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_tomato_meter&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rename_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39; production_budget &#39;</span> <span class="p">:</span> <span class="s1">&#39;production&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39; domestic_box_office &#39;</span> <span class="p">:</span> <span class="s1">&#39;domestic&#39;</span><span class="p">,</span>
+    <span class="s1">&#39; international_box_office &#39;</span> <span class="p">:</span> <span class="s1">&#39;international&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39; worldwide_box_office &#39;</span> <span class="p">:</span> <span class="s1">&#39;worldwide&#39;</span>
+<span class="p">}</span>
+
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">rename_dict</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;domestic&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39; $319,034,126 &#39;, &#39; $134,806,913 &#39;, &#39; $312,433,331 &#39;,
+       &#39; $181,030,624 &#39;, &#39; $176,654,505 &#39;, &#39; $623,357,910 &#39;,
+       &#39; $409,013,994 &#39;, &#39; $206,362,140 &#39;, &#39; $259,766,572 &#39;,
+       &#39; $333,176,600 &#39;, &#39; $459,005,868 &#39;, &#39; $180,202,163 &#39;,
+       &#39; $408,084,349 &#39;, &#39; $232,641,920 &#39;, &#39; $389,813,101 &#39;,
+       &#39; $334,201,140 &#39;, &#39; $315,058,289 &#39;, &#39; $700,059,566 &#39;,
+       &#39; $678,815,482 &#39;, &#39; $216,648,740 &#39;, &#39; $426,829,839 &#39;,
+       &#39; $858,372,000 &#39;, &#39; $390,532,085 &#39;, &#39; - &#39;, &#39; $183,651,655 &#39;,
+       &#39; $224,543,292 &#39;, &#39; $164,870,234 &#39;, &#39; $814,115,070 &#39;,
+       &#39; $411,331,607 &#39;, &#39; $343,256,830 &#39;, &#39; $453,829,060 &#39;,
+       &#39; $214,504,909 &#39;, &#39; $358,995,815 &#39;, &#39; $84,500,223 &#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; - &#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Applying a Function to a Column</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">convert_money</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">errors</span> <span class="o">=</span> <span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="n">money_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;production&#39;</span><span class="p">,</span> <span class="s1">&#39;domestic&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;international&#39;</span><span class="p">,</span> <span class="s1">&#39;worldwide&#39;</span><span class="p">]</span>
+
+<span class="n">mcu_df</span><span class="p">[</span><span class="n">money_columns</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="n">money_columns</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">convert_money</span><span class="p">)</span>
 
 <span class="n">mcu_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -1146,10 +1813,264 @@ document.write(`
       <th>imdb-rating</th>
       <th>metacritic_metascore</th>
       <th>metacritic_userscore</th>
-      <th>production_budget</th>
-      <th>domestic_box_office</th>
-      <th>international_box_office</th>
-      <th>worldwide_box_office</th>
+      <th>production</th>
+      <th>domestic</th>
+      <th>international</th>
+      <th>worldwide</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Iron Man</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/2/08</td>
+      <td>2008.0</td>
+      <td>94.0</td>
+      <td>91.0</td>
+      <td>7.9</td>
+      <td>79.0</td>
+      <td>8.6</td>
+      <td>140000000.0</td>
+      <td>319034126.0</td>
+      <td>266762121.0</td>
+      <td>585796247.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>The Incredible Hulk</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>6/13/08</td>
+      <td>2008.0</td>
+      <td>67.0</td>
+      <td>70.0</td>
+      <td>6.6</td>
+      <td>61.0</td>
+      <td>6.8</td>
+      <td>140000000.0</td>
+      <td>134806913.0</td>
+      <td>128620638.0</td>
+      <td>263427551.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Iron Man 2</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/7/10</td>
+      <td>2010.0</td>
+      <td>72.0</td>
+      <td>71.0</td>
+      <td>6.9</td>
+      <td>57.0</td>
+      <td>6.4</td>
+      <td>200000000.0</td>
+      <td>312433331.0</td>
+      <td>311500000.0</td>
+      <td>623933331.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Thor</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/6/11</td>
+      <td>2011.0</td>
+      <td>77.0</td>
+      <td>76.0</td>
+      <td>7.0</td>
+      <td>57.0</td>
+      <td>7.0</td>
+      <td>150000000.0</td>
+      <td>181030624.0</td>
+      <td>268295994.0</td>
+      <td>449326618.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Captain America: The First Avenger</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>7/22/11</td>
+      <td>2011.0</td>
+      <td>79.0</td>
+      <td>75.0</td>
+      <td>6.9</td>
+      <td>66.0</td>
+      <td>6.8</td>
+      <td>140000000.0</td>
+      <td>176654505.0</td>
+      <td>193915269.0</td>
+      <td>370569774.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;profit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;worldwide&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;production&#39;</span><span class="p">]</span>
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>Type</th>
+      <th>mcu_phase_number</th>
+      <th>mcu_phase_text</th>
+      <th>release_date</th>
+      <th>release_year</th>
+      <th>rt_tomato_meter</th>
+      <th>rt_audience_score</th>
+      <th>imdb-rating</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+      <th>production</th>
+      <th>domestic</th>
+      <th>international</th>
+      <th>worldwide</th>
+      <th>profit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Iron Man</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/2/08</td>
+      <td>2008.0</td>
+      <td>94.0</td>
+      <td>91.0</td>
+      <td>7.9</td>
+      <td>79.0</td>
+      <td>8.6</td>
+      <td>140000000.0</td>
+      <td>319034126.0</td>
+      <td>266762121.0</td>
+      <td>585796247.0</td>
+      <td>445796247.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>The Incredible Hulk</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>6/13/08</td>
+      <td>2008.0</td>
+      <td>67.0</td>
+      <td>70.0</td>
+      <td>6.6</td>
+      <td>61.0</td>
+      <td>6.8</td>
+      <td>140000000.0</td>
+      <td>134806913.0</td>
+      <td>128620638.0</td>
+      <td>263427551.0</td>
+      <td>123427551.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="adding-a-column">
+<h3><span class="section-number">13.4.3. </span>Adding a column<a class="headerlink" href="#adding-a-column" title="Link to this heading">#</a></h3>
+<p>Just as in dictionaries, you can add a calculated column as you go.</p>
+</section>
+</section>
+<section id="calculations-on-columns">
+<h2><span class="section-number">13.5. </span>Calculations on Columns<a class="headerlink" href="#calculations-on-columns" title="Link to this heading">#</a></h2>
+<p>When extracting a column, you can use numpy functions to get different measures of those data:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.max()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.sum()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.unique()</span></code></p></li>
+</ul>
+</section>
+<section id="selecting-data">
+<h2><span class="section-number">13.6. </span>Selecting Data<a class="headerlink" href="#selecting-data" title="Link to this heading">#</a></h2>
+<section id="inspection">
+<h3><span class="section-number">13.6.1. </span>Inspection<a class="headerlink" href="#inspection" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>What movies/tv shows are on the list?</p></li>
+<li><p>What are the statistics of the numeric columns?</p></li>
+</ul>
+<p>Describe creates another dataframe and we can save this as a variable and interact with it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a new column indicating whether viewers or critics liked the movie more</span>
+<span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;audience_vs_critic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_audience_score&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_tomato_meter&#39;</span><span class="p">]</span>
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>Type</th>
+      <th>mcu_phase_number</th>
+      <th>mcu_phase_text</th>
+      <th>release_date</th>
+      <th>release_year</th>
+      <th>rt_tomato_meter</th>
+      <th>rt_audience_score</th>
+      <th>imdb-rating</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+      <th>production</th>
+      <th>domestic</th>
+      <th>international</th>
+      <th>worldwide</th>
+      <th>profit</th>
       <th>audience_vs_critic</th>
     </tr>
   </thead>
@@ -1167,10 +2088,11 @@ document.write(`
       <td>7.9</td>
       <td>79.0</td>
       <td>8.6</td>
-      <td>$140,000,000</td>
-      <td>$319,034,126</td>
-      <td>$266,762,121</td>
-      <td>$585,796,247</td>
+      <td>140000000.0</td>
+      <td>319034126.0</td>
+      <td>266762121.0</td>
+      <td>585796247.0</td>
+      <td>445796247.0</td>
       <td>-3.0</td>
     </tr>
     <tr>
@@ -1186,10 +2108,11 @@ document.write(`
       <td>6.6</td>
       <td>61.0</td>
       <td>6.8</td>
-      <td>$140,000,000</td>
-      <td>$134,806,913</td>
-      <td>$128,620,638</td>
-      <td>$263,427,551</td>
+      <td>140000000.0</td>
+      <td>134806913.0</td>
+      <td>128620638.0</td>
+      <td>263427551.0</td>
+      <td>123427551.0</td>
       <td>3.0</td>
     </tr>
     <tr>
@@ -1205,10 +2128,11 @@ document.write(`
       <td>6.9</td>
       <td>57.0</td>
       <td>6.4</td>
-      <td>$200,000,000</td>
-      <td>$312,433,331</td>
-      <td>$311,500,000</td>
-      <td>$623,933,331</td>
+      <td>200000000.0</td>
+      <td>312433331.0</td>
+      <td>311500000.0</td>
+      <td>623933331.0</td>
+      <td>423933331.0</td>
       <td>-1.0</td>
     </tr>
     <tr>
@@ -1224,10 +2148,11 @@ document.write(`
       <td>7.0</td>
       <td>57.0</td>
       <td>7.0</td>
-      <td>$150,000,000</td>
-      <td>$181,030,624</td>
-      <td>$268,295,994</td>
-      <td>$449,326,618</td>
+      <td>150000000.0</td>
+      <td>181030624.0</td>
+      <td>268295994.0</td>
+      <td>449326618.0</td>
+      <td>299326618.0</td>
       <td>-1.0</td>
     </tr>
     <tr>
@@ -1243,10 +2168,11 @@ document.write(`
       <td>6.9</td>
       <td>66.0</td>
       <td>6.8</td>
-      <td>$140,000,000</td>
-      <td>$176,654,505</td>
-      <td>$193,915,269</td>
-      <td>$370,569,774</td>
+      <td>140000000.0</td>
+      <td>176654505.0</td>
+      <td>193915269.0</td>
+      <td>370569774.0</td>
+      <td>230569774.0</td>
       <td>-4.0</td>
     </tr>
   </tbody>
@@ -1307,10 +2233,11 @@ document.write(`
       <th>imdb-rating</th>
       <th>metacritic_metascore</th>
       <th>metacritic_userscore</th>
-      <th>production_budget</th>
-      <th>domestic_box_office</th>
-      <th>international_box_office</th>
-      <th>worldwide_box_office</th>
+      <th>production</th>
+      <th>domestic</th>
+      <th>international</th>
+      <th>worldwide</th>
+      <th>profit</th>
       <th>audience_vs_critic</th>
     </tr>
   </thead>
@@ -1328,10 +2255,11 @@ document.write(`
       <td>6.6</td>
       <td>61.0</td>
       <td>6.8</td>
-      <td>$140,000,000</td>
-      <td>$134,806,913</td>
-      <td>$128,620,638</td>
-      <td>$263,427,551</td>
+      <td>140000000.0</td>
+      <td>134806913.0</td>
+      <td>1.286206e+08</td>
+      <td>2.634276e+08</td>
+      <td>1.234276e+08</td>
       <td>3.0</td>
     </tr>
     <tr>
@@ -1347,10 +2275,11 @@ document.write(`
       <td>6.8</td>
       <td>54.0</td>
       <td>7.0</td>
-      <td>$170,000,000</td>
-      <td>$206,362,140</td>
-      <td>$438,421,000</td>
-      <td>$644,783,140</td>
+      <td>170000000.0</td>
+      <td>206362140.0</td>
+      <td>4.384210e+08</td>
+      <td>6.447831e+08</td>
+      <td>4.747831e+08</td>
       <td>9.0</td>
     </tr>
     <tr>
@@ -1366,10 +2295,11 @@ document.write(`
       <td>7.7</td>
       <td>70.0</td>
       <td>8.3</td>
-      <td>$170,000,000</td>
-      <td>$259,766,572</td>
-      <td>$454,654,931</td>
-      <td>$714,421,503</td>
+      <td>170000000.0</td>
+      <td>259766572.0</td>
+      <td>4.546549e+08</td>
+      <td>7.144215e+08</td>
+      <td>5.444215e+08</td>
       <td>2.0</td>
     </tr>
     <tr>
@@ -1385,10 +2315,11 @@ document.write(`
       <td>7.3</td>
       <td>66.0</td>
       <td>7.1</td>
-      <td>$250,000,000</td>
-      <td>$459,005,868</td>
-      <td>$943,786,000</td>
-      <td>$1,402,791,868</td>
+      <td>250000000.0</td>
+      <td>459005868.0</td>
+      <td>9.437860e+08</td>
+      <td>1.402792e+09</td>
+      <td>1.152792e+09</td>
       <td>7.0</td>
     </tr>
     <tr>
@@ -1404,10 +2335,11 @@ document.write(`
       <td>7.2</td>
       <td>64.0</td>
       <td>7.4</td>
-      <td>$130,000,000</td>
-      <td>$180,202,163</td>
-      <td>$339,109,802</td>
-      <td>$519,311,965</td>
+      <td>130000000.0</td>
+      <td>180202163.0</td>
+      <td>3.391098e+08</td>
+      <td>5.193120e+08</td>
+      <td>3.893120e+08</td>
       <td>2.0</td>
     </tr>
     <tr>
@@ -1423,10 +2355,11 @@ document.write(`
       <td>7.6</td>
       <td>67.0</td>
       <td>7.8</td>
-      <td>$200,000,000</td>
-      <td>$389,813,101</td>
-      <td>$473,900,000</td>
-      <td>$863,756,051</td>
+      <td>200000000.0</td>
+      <td>389813101.0</td>
+      <td>4.739000e+08</td>
+      <td>8.637561e+08</td>
+      <td>6.637561e+08</td>
       <td>2.0</td>
     </tr>
     <tr>
@@ -1442,10 +2375,11 @@ document.write(`
       <td>8.4</td>
       <td>68.0</td>
       <td>8.5</td>
-      <td>$300,000,000</td>
-      <td>$678,815,482</td>
-      <td>$1,369,544,272</td>
-      <td>$2,048,359,754</td>
+      <td>300000000.0</td>
+      <td>678815482.0</td>
+      <td>1.369544e+09</td>
+      <td>2.048360e+09</td>
+      <td>1.748360e+09</td>
       <td>6.0</td>
     </tr>
     <tr>
@@ -1461,10 +2395,11 @@ document.write(`
       <td>7.4</td>
       <td>69.0</td>
       <td>7.5</td>
-      <td>$160,000,000</td>
-      <td>$390,532,085</td>
-      <td>$741,220,000</td>
-      <td>$1,131,752,085</td>
+      <td>160000000.0</td>
+      <td>390532085.0</td>
+      <td>7.412200e+08</td>
+      <td>1.131752e+09</td>
+      <td>9.717521e+08</td>
       <td>5.0</td>
     </tr>
     <tr>
@@ -1480,10 +2415,11 @@ document.write(`
       <td>6.7</td>
       <td>68.0</td>
       <td>6.0</td>
-      <td>$288,000,000</td>
-      <td>$183,651,655</td>
-      <td>$196,100,000</td>
-      <td>$379,751,655</td>
+      <td>288000000.0</td>
+      <td>183651655.0</td>
+      <td>1.961000e+08</td>
+      <td>3.797517e+08</td>
+      <td>9.175166e+07</td>
       <td>12.0</td>
     </tr>
     <tr>
@@ -1499,10 +2435,11 @@ document.write(`
       <td>7.4</td>
       <td>71.0</td>
       <td>7.0</td>
-      <td>$150,000,000</td>
-      <td>$224,543,292</td>
-      <td>$207,700,000</td>
-      <td>$432,243,292</td>
+      <td>150000000.0</td>
+      <td>224543292.0</td>
+      <td>2.077000e+08</td>
+      <td>4.322433e+08</td>
+      <td>2.822433e+08</td>
       <td>7.0</td>
     </tr>
     <tr>
@@ -1518,10 +2455,11 @@ document.write(`
       <td>6.3</td>
       <td>52.0</td>
       <td>6.1</td>
-      <td>$236,000,000</td>
-      <td>$164,870,234</td>
-      <td>$237,194,665</td>
-      <td>$402,064,899</td>
+      <td>236000000.0</td>
+      <td>164870234.0</td>
+      <td>2.371947e+08</td>
+      <td>4.020649e+08</td>
+      <td>1.660649e+08</td>
       <td>31.0</td>
     </tr>
     <tr>
@@ -1537,10 +2475,11 @@ document.write(`
       <td>8.2</td>
       <td>71.0</td>
       <td>8.5</td>
-      <td>$200,000,000</td>
-      <td>$814,115,070</td>
-      <td>$1,107,732,041</td>
-      <td>$1,921,847,111</td>
+      <td>200000000.0</td>
+      <td>814115070.0</td>
+      <td>1.107732e+09</td>
+      <td>1.921847e+09</td>
+      <td>1.721847e+09</td>
       <td>5.0</td>
     </tr>
     <tr>
@@ -1556,10 +2495,11 @@ document.write(`
       <td>7.3</td>
       <td>69.0</td>
       <td>6.9</td>
-      <td>$148,000,000</td>
-      <td>-</td>
-      <td>-</td>
-      <td>-</td>
+      <td>148000000.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>3.0</td>
     </tr>
     <tr>
@@ -1575,10 +2515,11 @@ document.write(`
       <td>6.9</td>
       <td>60.0</td>
       <td>5.9</td>
-      <td>$294,000,000</td>
-      <td>$411,331,607</td>
-      <td>$544,444,197</td>
-      <td>$955,775,804</td>
+      <td>294000000.0</td>
+      <td>411331607.0</td>
+      <td>5.444442e+08</td>
+      <td>9.557758e+08</td>
+      <td>6.617758e+08</td>
       <td>12.0</td>
     </tr>
     <tr>
@@ -1594,10 +2535,11 @@ document.write(`
       <td>6.2</td>
       <td>57.0</td>
       <td>4.8</td>
-      <td>$250,000,000</td>
-      <td>$343,256,830</td>
-      <td>$417,671,251</td>
-      <td>$760,928,081</td>
+      <td>250000000.0</td>
+      <td>343256830.0</td>
+      <td>4.176713e+08</td>
+      <td>7.609281e+08</td>
+      <td>5.109281e+08</td>
       <td>13.0</td>
     </tr>
     <tr>
@@ -1613,10 +2555,11 @@ document.write(`
       <td>6.7</td>
       <td>67.0</td>
       <td>5.2</td>
-      <td>$200,000,000</td>
-      <td>$453,829,060</td>
-      <td>$405,379,776</td>
-      <td>$859,208,836</td>
+      <td>200000000.0</td>
+      <td>453829060.0</td>
+      <td>4.053798e+08</td>
+      <td>8.592088e+08</td>
+      <td>6.592088e+08</td>
       <td>11.0</td>
     </tr>
     <tr>
@@ -1632,10 +2575,11 @@ document.write(`
       <td>6.1</td>
       <td>48.0</td>
       <td>5.5</td>
-      <td>$200,000,000</td>
-      <td>$214,504,909</td>
-      <td>$261,566,271</td>
-      <td>$476,071,180</td>
+      <td>200000000.0</td>
+      <td>214504909.0</td>
+      <td>2.615663e+08</td>
+      <td>4.760712e+08</td>
+      <td>2.760712e+08</td>
       <td>36.0</td>
     </tr>
     <tr>
@@ -1651,10 +2595,11 @@ document.write(`
       <td>7.9</td>
       <td>64.0</td>
       <td>7.9</td>
-      <td>$250,000,000</td>
-      <td>$358,995,815</td>
-      <td>$486,559,962</td>
-      <td>$845,555,777</td>
+      <td>250000000.0</td>
+      <td>358995815.0</td>
+      <td>4.865600e+08</td>
+      <td>8.455558e+08</td>
+      <td>5.955558e+08</td>
       <td>12.0</td>
     </tr>
     <tr>
@@ -1670,10 +2615,11 @@ document.write(`
       <td>5.6</td>
       <td>50.0</td>
       <td>3.8</td>
-      <td>$270,000,000</td>
-      <td>$84,500,223</td>
-      <td>$121,612,709</td>
-      <td>$206,112,932</td>
+      <td>270000000.0</td>
+      <td>84500223.0</td>
+      <td>1.216127e+08</td>
+      <td>2.061129e+08</td>
+      <td>-6.388707e+07</td>
       <td>20.0</td>
     </tr>
   </tbody>
