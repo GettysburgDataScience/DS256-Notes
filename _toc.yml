@@ -32,6 +32,7 @@ parts:
     numbered: true
     chapters:
     - file: 04_Pandas/01_pandas_intro
+    - file: 04_Pandas/02_groupby
   - caption: Assignments
     numbered: false
     chapters:
