@@ -445,121 +445,147 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/Electric_Vehicle_WA.csv&#39;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">ev_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ev_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/pandas/io/common.py:728,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">725</span>     <span class="n">codecs</span><span class="o">.</span><span class="n">lookup_error</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">727</span> <span class="c1"># open URLs</span>
-<span class="ne">--&gt; </span><span class="mi">728</span> <span class="n">ioargs</span> <span class="o">=</span> <span class="n">_get_filepath_or_buffer</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">729</span>     <span class="n">path_or_buf</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">730</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">731</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">732</span>     <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">733</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">734</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">736</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">filepath_or_buffer</span>
-<span class="g g-Whitespace">    </span><span class="mi">737</span> <span class="n">handles</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">BaseBuffer</span><span class="p">]</span>
-
-<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/pandas/io/common.py:389,</span> in <span class="ni">_get_filepath_or_buffer</span><span class="nt">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">386</span>         <span class="k">if</span> <span class="n">content_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">387</span>             <span class="c1"># Override compression based on Content-Encoding header</span>
-<span class="g g-Whitespace">    </span><span class="mi">388</span>             <span class="n">compression</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;gzip&quot;</span><span class="p">}</span>
-<span class="ne">--&gt; </span><span class="mi">389</span>         <span class="n">reader</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">390</span>     <span class="k">return</span> <span class="n">IOArgs</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">391</span>         <span class="n">filepath_or_buffer</span><span class="o">=</span><span class="n">reader</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">392</span>         <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">395</span>         <span class="n">mode</span><span class="o">=</span><span class="n">fsspec_mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">396</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">398</span> <span class="k">if</span> <span class="n">is_fsspec_url</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">):</span>
-
-<span class="nn">File ~/.pyenv/versions/3.13.1/lib/python3.13/http/client.py:495,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">495</span>         <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_safe_read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span>     <span class="k">except</span> <span class="n">IncompleteRead</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
-
-<span class="nn">File ~/.pyenv/versions/3.13.1/lib/python3.13/http/client.py:640,</span> in <span class="ni">HTTPResponse._safe_read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">633</span> <span class="k">def</span><span class="w"> </span><span class="nf">_safe_read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amt</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">634</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Read the number of bytes requested.</span>
-<span class="g g-Whitespace">    </span><span class="mi">635</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">636</span><span class="sd">     This function should be used when &lt;amt&gt; bytes &quot;should&quot; be present for</span>
-<span class="g g-Whitespace">    </span><span class="mi">637</span><span class="sd">     reading. If the bytes are truly not available (due to EOF), then the</span>
-<span class="g g-Whitespace">    </span><span class="mi">638</span><span class="sd">     IncompleteRead exception can be used to detect the problem.</span>
-<span class="g g-Whitespace">    </span><span class="mi">639</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">640</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">641</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">amt</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">642</span>         <span class="k">raise</span> <span class="n">IncompleteRead</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">amt</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-
-<span class="nn">File ~/.pyenv/versions/3.13.1/lib/python3.13/socket.py:719,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="s2">&quot;cannot read from timed out object&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">718</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">719</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">720</span> <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">721</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File ~/.pyenv/versions/3.13.1/lib/python3.13/ssl.py:1304,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1300</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1302</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1303</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1304</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1305</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1306</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/3.13.1/lib/python3.13/ssl.py:1138,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1136</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1137</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1138</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1139</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1140</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VIN (1-10)</th>
+      <th>County</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal Code</th>
+      <th>Model Year</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Electric Vehicle Type</th>
+      <th>Clean Alternative Fuel Vehicle (CAFV) Eligibility</th>
+      <th>Electric Range</th>
+      <th>Base MSRP</th>
+      <th>Legislative District</th>
+      <th>DOL Vehicle ID</th>
+      <th>Vehicle Location</th>
+      <th>Electric Utility</th>
+      <th>2020 Census Tract</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>WA1E2AFY8R</td>
+      <td>Thurston</td>
+      <td>Olympia</td>
+      <td>WA</td>
+      <td>98512.0</td>
+      <td>2024</td>
+      <td>AUDI</td>
+      <td>Q5 E</td>
+      <td>Plug-in Hybrid Electric Vehicle (PHEV)</td>
+      <td>Not eligible due to low battery range</td>
+      <td>23.0</td>
+      <td>0</td>
+      <td>22.0</td>
+      <td>263239938</td>
+      <td>POINT (-122.90787 46.9461)</td>
+      <td>PUGET SOUND ENERGY INC</td>
+      <td>5.306701e+10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>WAUUPBFF4J</td>
+      <td>Yakima</td>
+      <td>Wapato</td>
+      <td>WA</td>
+      <td>98951.0</td>
+      <td>2018</td>
+      <td>AUDI</td>
+      <td>A3</td>
+      <td>Plug-in Hybrid Electric Vehicle (PHEV)</td>
+      <td>Not eligible due to low battery range</td>
+      <td>16.0</td>
+      <td>0</td>
+      <td>15.0</td>
+      <td>318160860</td>
+      <td>POINT (-120.42083 46.44779)</td>
+      <td>PACIFICORP</td>
+      <td>5.307794e+10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1N4AZ0CP0F</td>
+      <td>King</td>
+      <td>Seattle</td>
+      <td>WA</td>
+      <td>98125.0</td>
+      <td>2015</td>
+      <td>NISSAN</td>
+      <td>LEAF</td>
+      <td>Battery Electric Vehicle (BEV)</td>
+      <td>Clean Alternative Fuel Vehicle Eligible</td>
+      <td>84.0</td>
+      <td>0</td>
+      <td>46.0</td>
+      <td>184963586</td>
+      <td>POINT (-122.30253 47.72656)</td>
+      <td>CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)</td>
+      <td>5.303300e+10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>WA1VAAGE5K</td>
+      <td>King</td>
+      <td>Kent</td>
+      <td>WA</td>
+      <td>98031.0</td>
+      <td>2019</td>
+      <td>AUDI</td>
+      <td>E-TRON</td>
+      <td>Battery Electric Vehicle (BEV)</td>
+      <td>Clean Alternative Fuel Vehicle Eligible</td>
+      <td>204.0</td>
+      <td>0</td>
+      <td>11.0</td>
+      <td>259426821</td>
+      <td>POINT (-122.17743 47.41185)</td>
+      <td>PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)</td>
+      <td>5.303303e+10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7SAXCAE57N</td>
+      <td>Snohomish</td>
+      <td>Bothell</td>
+      <td>WA</td>
+      <td>98021.0</td>
+      <td>2022</td>
+      <td>TESLA</td>
+      <td>MODEL X</td>
+      <td>Battery Electric Vehicle (BEV)</td>
+      <td>Eligibility unknown as battery range has not b...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>208182236</td>
+      <td>POINT (-122.18384 47.8031)</td>
+      <td>PUGET SOUND ENERGY INC</td>
+      <td>5.306105e+10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -670,6 +696,41 @@ document.write(`
   </tbody>
 </table>
 </div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 264628 entries, 0 to 264627
+Data columns (total 17 columns):
+ #   Column                                             Non-Null Count   Dtype  
+---  ------                                             --------------   -----  
+ 0   VIN (1-10)                                         264628 non-null  object 
+ 1   County                                             264619 non-null  object 
+ 2   City                                               264619 non-null  object 
+ 3   State                                              264628 non-null  object 
+ 4   Postal Code                                        264619 non-null  float64
+ 5   Model Year                                         264628 non-null  int64  
+ 6   Make                                               264628 non-null  object 
+ 7   Model                                              264628 non-null  object 
+ 8   Electric Vehicle Type                              264628 non-null  object 
+ 9   Clean Alternative Fuel Vehicle (CAFV) Eligibility  264628 non-null  object 
+ 10  Electric Range                                     264624 non-null  float64
+ 11  Base MSRP                                          264624 non-null  object 
+ 12  Legislative District                               263969 non-null  float64
+ 13  DOL Vehicle ID                                     264628 non-null  int64  
+ 14  Vehicle Location                                   264611 non-null  object 
+ 15  Electric Utility                                   264619 non-null  object 
+ 16  2020 Census Tract                                  264619 non-null  float64
+dtypes: float64(4), int64(2), object(11)
+memory usage: 34.3+ MB
+</pre></div>
+</div>
+</div>
 </div>
 <section id="groupby-and-aggregate">
 <h2><span class="section-number">14.1. </span>Groupby and Aggregate<a class="headerlink" href="#groupby-and-aggregate" title="Link to this heading">#</a></h2>
@@ -1071,6 +1132,574 @@ Name: Electric Range, Length: 239, dtype: float64
 </table>
 <p>239 rows × 4 columns</p>
 </div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Make&#39;</span><span class="p">)[[</span><span class="s1">&#39;VIN (1-10)&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;VIN (1-10)&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VIN (1-10)</th>
+    </tr>
+    <tr>
+      <th>Make</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>TESLA</th>
+      <td>108633</td>
+    </tr>
+    <tr>
+      <th>CHEVROLET</th>
+      <td>19051</td>
+    </tr>
+    <tr>
+      <th>NISSAN</th>
+      <td>16177</td>
+    </tr>
+    <tr>
+      <th>FORD</th>
+      <td>14347</td>
+    </tr>
+    <tr>
+      <th>KIA</th>
+      <td>13183</td>
+    </tr>
+    <tr>
+      <th>TOYOTA</th>
+      <td>11022</td>
+    </tr>
+    <tr>
+      <th>BMW</th>
+      <td>10882</td>
+    </tr>
+    <tr>
+      <th>HYUNDAI</th>
+      <td>9278</td>
+    </tr>
+    <tr>
+      <th>RIVIAN</th>
+      <td>8118</td>
+    </tr>
+    <tr>
+      <th>VOLKSWAGEN</th>
+      <td>7074</td>
+    </tr>
+    <tr>
+      <th>VOLVO</th>
+      <td>6899</td>
+    </tr>
+    <tr>
+      <th>JEEP</th>
+      <td>6811</td>
+    </tr>
+    <tr>
+      <th>AUDI</th>
+      <td>5524</td>
+    </tr>
+    <tr>
+      <th>CHRYSLER</th>
+      <td>3874</td>
+    </tr>
+    <tr>
+      <th>MERCEDES-BENZ</th>
+      <td>3081</td>
+    </tr>
+    <tr>
+      <th>HONDA</th>
+      <td>2825</td>
+    </tr>
+    <tr>
+      <th>SUBARU</th>
+      <td>2588</td>
+    </tr>
+    <tr>
+      <th>PORSCHE</th>
+      <td>1868</td>
+    </tr>
+    <tr>
+      <th>CADILLAC</th>
+      <td>1828</td>
+    </tr>
+    <tr>
+      <th>POLESTAR</th>
+      <td>1511</td>
+    </tr>
+    <tr>
+      <th>MAZDA</th>
+      <td>1466</td>
+    </tr>
+    <tr>
+      <th>LEXUS</th>
+      <td>1243</td>
+    </tr>
+    <tr>
+      <th>MINI</th>
+      <td>1228</td>
+    </tr>
+    <tr>
+      <th>MITSUBISHI</th>
+      <td>1227</td>
+    </tr>
+    <tr>
+      <th>FIAT</th>
+      <td>856</td>
+    </tr>
+    <tr>
+      <th>DODGE</th>
+      <td>792</td>
+    </tr>
+    <tr>
+      <th>LUCID</th>
+      <td>536</td>
+    </tr>
+    <tr>
+      <th>GMC</th>
+      <td>489</td>
+    </tr>
+    <tr>
+      <th>GENESIS</th>
+      <td>453</td>
+    </tr>
+    <tr>
+      <th>LINCOLN</th>
+      <td>426</td>
+    </tr>
+    <tr>
+      <th>ACURA</th>
+      <td>345</td>
+    </tr>
+    <tr>
+      <th>SMART</th>
+      <td>234</td>
+    </tr>
+    <tr>
+      <th>JAGUAR</th>
+      <td>205</td>
+    </tr>
+    <tr>
+      <th>LAND ROVER</th>
+      <td>201</td>
+    </tr>
+    <tr>
+      <th>FISKER</th>
+      <td>146</td>
+    </tr>
+    <tr>
+      <th>ALFA ROMEO</th>
+      <td>99</td>
+    </tr>
+    <tr>
+      <th>BRIGHTDROP</th>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>LAMBORGHINI</th>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>RAM</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>BENTLEY</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>ROLLS-ROYCE</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>TH!NK</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>AZURE DYNAMICS</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>MULLEN AUTOMOTIVE INC.</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>VINFAST</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>WHEEGO ELECTRIC CARS</th>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First find all the models made by Chevy</span>
+<span class="n">ev_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Make == &quot;CHEVROLET&quot;&#39;</span><span class="p">)[</span><span class="s1">&#39;Model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;VOLT&#39;, &#39;BOLT EV&#39;, &#39;SPARK&#39;, &#39;BOLT EUV&#39;, &#39;BLAZER&#39;, &#39;EQUINOX&#39;,
+       &#39;SILVERADO&#39;, &#39;BRIGHTDROP&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter to only cars made by Chevy</span>
+<span class="n">ev_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Make == &quot;CHEVROLET&quot;&#39;</span><span class="p">)</span>
+
+<span class="c1"># Highlight every chevy model a different color and then collect all the same colors together</span>
+<span class="n">ev_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Make == &quot;CHEVROLET&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Model&#39;</span><span class="p">)</span>
+
+<span class="n">ev_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Make == &quot;CHEVROLET&quot;&#39;</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Model&#39;</span><span class="p">)[[</span><span class="s1">&#39;VIN (1-10)&#39;</span><span class="p">]]</span>\
+    <span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;VIN (1-10)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VIN (1-10)</th>
+    </tr>
+    <tr>
+      <th>Model</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>BRIGHTDROP</th>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>SPARK</th>
+      <td>219</td>
+    </tr>
+    <tr>
+      <th>SILVERADO</th>
+      <td>495</td>
+    </tr>
+    <tr>
+      <th>BLAZER</th>
+      <td>1261</td>
+    </tr>
+    <tr>
+      <th>EQUINOX</th>
+      <td>1661</td>
+    </tr>
+    <tr>
+      <th>BOLT EUV</th>
+      <td>2920</td>
+    </tr>
+    <tr>
+      <th>VOLT</th>
+      <td>4635</td>
+    </tr>
+    <tr>
+      <th>BOLT EV</th>
+      <td>7845</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>For every year, which county had the most registered EV vehicles.</p></li>
+<li><p>For each manufacturer, find the vehicle model with the highest electric range.</p></li>
+<li><p>For each manufacturer, find the number of different models they produce.</p></li>
+<li><p>For each county, find the highest and lowest electric range of all the vehicles in that county.</p></li>
+<li><p>For each manufacturer, how many cars of each different model year were registered in WA?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Model Year&#39;</span><span class="p">)[[</span><span class="s1">&#39;County&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="4" halign="left">County</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+    </tr>
+    <tr>
+      <th>Model Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1999</th>
+      <td>2</td>
+      <td>1</td>
+      <td>Pierce</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2000</th>
+      <td>8</td>
+      <td>4</td>
+      <td>King</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Clallam</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>1</td>
+      <td>1</td>
+      <td>San Juan</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>20</td>
+      <td>7</td>
+      <td>King</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>22</td>
+      <td>7</td>
+      <td>King</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>622</td>
+      <td>30</td>
+      <td>King</td>
+      <td>243</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>1438</td>
+      <td>36</td>
+      <td>King</td>
+      <td>484</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>4061</td>
+      <td>39</td>
+      <td>King</td>
+      <td>1629</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>3292</td>
+      <td>47</td>
+      <td>King</td>
+      <td>1382</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>4532</td>
+      <td>46</td>
+      <td>King</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>5203</td>
+      <td>49</td>
+      <td>King</td>
+      <td>2396</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>8667</td>
+      <td>56</td>
+      <td>King</td>
+      <td>3809</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>14322</td>
+      <td>68</td>
+      <td>King</td>
+      <td>7155</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>10935</td>
+      <td>61</td>
+      <td>King</td>
+      <td>5274</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>12213</td>
+      <td>69</td>
+      <td>King</td>
+      <td>5821</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>20772</td>
+      <td>89</td>
+      <td>King</td>
+      <td>10096</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>29397</td>
+      <td>113</td>
+      <td>King</td>
+      <td>14678</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>60156</td>
+      <td>125</td>
+      <td>King</td>
+      <td>31118</td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>49234</td>
+      <td>106</td>
+      <td>King</td>
+      <td>24186</td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <td>32674</td>
+      <td>57</td>
+      <td>King</td>
+      <td>17107</td>
+    </tr>
+    <tr>
+      <th>2026</th>
+      <td>7047</td>
+      <td>38</td>
+      <td>King</td>
+      <td>3765</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;VIN (1-10)&#39;, &#39;County&#39;, &#39;City&#39;, &#39;State&#39;, &#39;Postal Code&#39;, &#39;Model Year&#39;,
+       &#39;Make&#39;, &#39;Model&#39;, &#39;Electric Vehicle Type&#39;,
+       &#39;Clean Alternative Fuel Vehicle (CAFV) Eligibility&#39;, &#39;Electric Range&#39;,
+       &#39;Base MSRP&#39;, &#39;Legislative District&#39;, &#39;DOL Vehicle ID&#39;,
+       &#39;Vehicle Location&#39;, &#39;Electric Utility&#39;, &#39;2020 Census Tract&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Make&#39;</span><span class="p">)[[</span><span class="s1">&#39;Model&#39;</span><span class="p">,</span> <span class="s1">&#39;Electric Range&#39;</span><span class="p">]]</span>\
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Electric Range&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Make&#39;</span><span class="p">)[[</span><span class="s1">&#39;Model&#39;</span><span class="p">,</span> <span class="s1">&#39;Electric Range&#39;</span><span class="p">]]</span>\
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Electric Range&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/pandas/core/groupby/groupby.py:1365,</span> in <span class="ni">GroupBy.__getattr__</span><span class="nt">(self, attr)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span> <span class="k">if</span> <span class="n">attr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1363</span>     <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">1365</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1366</span>     <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; object has no attribute &#39;</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1367</span> <span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;DataFrameGroupBy&#39; object has no attribute &#39;sort_values&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
