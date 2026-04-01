@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pandas Cheat Sheet &#8212; DS256 Data Science Programming</title>
+    <title>16. Pandas Cheat Sheet &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -70,9 +70,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '04_Pandas/05_pandas_cheatsheet';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_Pandas/04_pandas_cheatsheet';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PS01" href="../00_Assignments/ps01.html" />
+    <link rel="prev" title="15. Crack the Code!" href="03_crackthecode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -134,8 +136,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -218,9 +218,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/04_matplotlib_reference.html">12. Matplotlib Cheat Sheet</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_pandas_intro.html">13. Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_pandas_groupby.html">14. Pandas - Grouping and Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_crackthecode.html">15. Crack the Code!</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Pandas Cheat Sheet</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -283,7 +285,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/GettysburgDataScience/DS256-Notes/blob/main/04_Pandas/05_pandas_cheatsheet.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/GettysburgDataScience/DS256-Notes/blob/main/04_Pandas/04_pandas_cheatsheet.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -314,7 +316,7 @@
       
       
       
-      <li><a href="../_sources/04_Pandas/05_pandas_cheatsheet.ipynb" target="_blank"
+      <li><a href="../_sources/04_Pandas/04_pandas_cheatsheet.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -408,13 +410,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-inspection">Initial Inspection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#row-column-selection-and-slicing">Row/Column selection and slicing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-search">Filter/Search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-and-aggregation">Grouping and aggregation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging">Merging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reordering-and-renaming-columns-replacing-values-resetting-indices">Reordering and Renaming Columns, Replacing Values, Resetting Indices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-functions-to-columns">Applying functions to columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-inspection">16.1. Initial Inspection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#row-column-selection-and-slicing">16.2. Row/Column selection and slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-search">16.3. Filter/Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-and-aggregation">16.4. Grouping and aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-counting-and-finding-maxima-minima-in-data">16.5. Sorting, Counting, and Finding Maxima/Minima in Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging">16.6. Merging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reordering-and-renaming-columns-replacing-values-resetting-indices">16.7. Reordering and Renaming Columns, Replacing Values, Resetting Indices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-functions-to-columns">16.8. Applying functions to columns</a></li>
 </ul>
             </nav>
         </div>
@@ -427,7 +430,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-cheat-sheet">
-<h1>Pandas Cheat Sheet<a class="headerlink" href="#pandas-cheat-sheet" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">16. </span>Pandas Cheat Sheet<a class="headerlink" href="#pandas-cheat-sheet" title="Link to this heading">#</a></h1>
 <p>Here’s an amazingly comprehensive <a class="reference internal" href="#../images/Pandas_Cheat_Sheet.pdf"><span class="xref myst">Pandas cheat sheet</span></a>. This includes many operations we haven’t covered in class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -452,7 +455,7 @@ document.write(`
 </div>
 </div>
 <section id="initial-inspection">
-<h2>Initial Inspection<a class="headerlink" href="#initial-inspection" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.1. </span>Initial Inspection<a class="headerlink" href="#initial-inspection" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get statistics on columns</span>
@@ -529,7 +532,7 @@ memory usage: 260.0+ bytes
 </div>
 </section>
 <section id="row-column-selection-and-slicing">
-<h2>Row/Column selection and slicing<a class="headerlink" href="#row-column-selection-and-slicing" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.2. </span>Row/Column selection and slicing<a class="headerlink" href="#row-column-selection-and-slicing" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html"><code class="docutils literal notranslate"><span class="pre">iloc</span></code></a>: Select by integer-location based indexing</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html"><code class="docutils literal notranslate"><span class="pre">loc</span></code></a>: Select by label/index</p></li>
@@ -609,7 +612,7 @@ memory usage: 260.0+ bytes
 </div>
 </section>
 <section id="filter-search">
-<h2>Filter/Search<a class="headerlink" href="#filter-search" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.3. </span>Filter/Search<a class="headerlink" href="#filter-search" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.query.html"><code class="docutils literal notranslate"><span class="pre">query</span></code></a>: Query the columns of a DataFrame with a boolean expression</p></li>
 </ul>
@@ -663,7 +666,7 @@ memory usage: 260.0+ bytes
 </div>
 </section>
 <section id="grouping-and-aggregation">
-<h2>Grouping and aggregation<a class="headerlink" href="#grouping-and-aggregation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.4. </span>Grouping and aggregation<a class="headerlink" href="#grouping-and-aggregation" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html"><code class="docutils literal notranslate"><span class="pre">groupby</span></code></a>: Group DataFrame using a mapper or by a Series of columns</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html"><code class="docutils literal notranslate"><span class="pre">agg</span></code></a>: Aggregate using one or more operations over the specified axis</p></li>
@@ -730,8 +733,40 @@ memory usage: 260.0+ bytes
 </div></div></div>
 </div>
 </section>
+<section id="sorting-counting-and-finding-maxima-minima-in-data">
+<h2><span class="section-number">16.5. </span>Sorting, Counting, and Finding Maxima/Minima in Data<a class="headerlink" href="#sorting-counting-and-finding-maxima-minima-in-data" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Sorting Values:</strong> Sort the DataFrame by a column (e.g., Electric Range):</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Counting Instances:</strong> Count the number of vehicles by manufacturer:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="p">[</span><span class="s1">&#39;Make&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Counting in Groups:</strong> Count the number of vehicles by county and model:</p></li>
+</ul>
+<p>is this outdated ?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;County&#39;</span><span class="p">,</span> <span class="s1">&#39;Model&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Finding Max Value:</strong> Find the maximum value in a column:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="p">[</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Finding the Data Row with the Max Value:</strong> Find the row with the maximum electric range:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ev_df</span><span class="p">[</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+</pre></div>
+</div>
+</section>
 <section id="merging">
-<h2>Merging<a class="headerlink" href="#merging" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.6. </span>Merging<a class="headerlink" href="#merging" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html">pandas.DataFrame.merge</a></p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html">pandas.merge</a></p></li>
@@ -810,7 +845,7 @@ memory usage: 260.0+ bytes
 </div>
 </section>
 <section id="reordering-and-renaming-columns-replacing-values-resetting-indices">
-<h2>Reordering and Renaming Columns, Replacing Values, Resetting Indices<a class="headerlink" href="#reordering-and-renaming-columns-replacing-values-resetting-indices" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.7. </span>Reordering and Renaming Columns, Replacing Values, Resetting Indices<a class="headerlink" href="#reordering-and-renaming-columns-replacing-values-resetting-indices" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html"><code class="docutils literal notranslate"><span class="pre">set_index</span></code></a>: Set the DataFrame index using existing columns</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reset_index.html"><code class="docutils literal notranslate"><span class="pre">reset_index</span></code></a>: Reset the index of the DataFrame</p></li>
@@ -898,7 +933,7 @@ memory usage: 260.0+ bytes
 </div>
 </section>
 <section id="applying-functions-to-columns">
-<h2>Applying functions to columns<a class="headerlink" href="#applying-functions-to-columns" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.8. </span>Applying functions to columns<a class="headerlink" href="#applying-functions-to-columns" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html"><code class="docutils literal notranslate"><span class="pre">apply</span></code></a>: apply a function to the column of a dataframe</p></li>
 </ul>
@@ -951,6 +986,24 @@ memory usage: 260.0+ bytes
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="03_crackthecode.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Crack the Code!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../00_Assignments/ps01.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PS01</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -967,13 +1020,14 @@ memory usage: 260.0+ bytes
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-inspection">Initial Inspection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#row-column-selection-and-slicing">Row/Column selection and slicing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-search">Filter/Search</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-and-aggregation">Grouping and aggregation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging">Merging</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reordering-and-renaming-columns-replacing-values-resetting-indices">Reordering and Renaming Columns, Replacing Values, Resetting Indices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-functions-to-columns">Applying functions to columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-inspection">16.1. Initial Inspection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#row-column-selection-and-slicing">16.2. Row/Column selection and slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-search">16.3. Filter/Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-and-aggregation">16.4. Grouping and aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-counting-and-finding-maxima-minima-in-data">16.5. Sorting, Counting, and Finding Maxima/Minima in Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging">16.6. Merging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reordering-and-renaming-columns-replacing-values-resetting-indices">16.7. Reordering and Renaming Columns, Replacing Values, Resetting Indices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-functions-to-columns">16.8. Applying functions to columns</a></li>
 </ul>
   </nav></div>
 

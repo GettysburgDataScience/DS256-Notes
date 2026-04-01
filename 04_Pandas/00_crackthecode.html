@@ -1,0 +1,1708 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Crack the Code! &#8212; DS256 Data Science Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_admonition_style.css?v=8627ce31" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_dropdown_style.css?v=f3461767" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_code_header_style.css?v=7d542921" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_sidebar_scroll.css?v=b9929681" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_margin.css?v=4a1e31aa" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_text_captions.css?v=29546296" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_code.css?v=719ffd7f" />
+    <link rel="stylesheet" type="text/css" href="../_static/margin_patch.css?v=1aa379b9" />
+    <link rel="stylesheet" type="text/css" href="../_static/mathjax_patch.css?v=e1a8445e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/download_patch.js?v=75631000"></script>
+    <script src="../_static/fix_hash_jump.js?v=2aad3019"></script>
+    <script src="../_static/mathjax_patch.js?v=c73a562d"></script>
+    <script src="../_static/preserve_dropdown_state.js?v=d724701d"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_Pandas/00_crackthecode';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/_ds256_sticker.png" class="logo__image only-light" alt="DS256 Data Science Programming - Home"/>
+    <script>document.write(`<img src="../_static/_ds256_sticker.png" class="logo__image only-dark" alt="DS256 Data Science Programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to DS256 Data Science Programming
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_Resources/setup.html">Setting Up</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/01_jupyter.html">1. Intro to Notebooks and Python First Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/02_variables.html">2. Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/03_functions.html">3. Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_Intro/04_conditionals.html">4. Control Flow: Conditional statements</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_Intro/04_conditionals_practice.html">4.6. Practice Problems: Conditionals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/05_lists.html">5. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/06_loops.html">6. Control Flow: Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/07_dictionaries.html">7. Dictionaries</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy and Matplotlib</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/01_import.html">8. Introducing (and importing) Packages and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/02_numpy.html">9. Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/03_matplotlib.html">10. Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/03_matplotlib_practice.html">11. Matplotlib Practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/04_matplotlib_reference.html">12. Matplotlib Cheat Sheet</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_pandas_cheatsheet.html">13. Pandas Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_pandas_intro.html">14. Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_pandas_groupby.html">15. Pandas - Grouping and Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_pandas_merge.html">16. Pandas - Merging DataFrames</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps01.html">PS01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps02.html">PS02</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps03.html">PS03</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps04.html">PS04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps05.html">PS05</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/GettysburgDataScience/DS256-Notes/blob/main/04_Pandas/00_crackthecode.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/04_Pandas/00_crackthecode.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Crack the Code!</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clues-part-i">CLUES! Part I</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-clues-part-ii">MORE CLUES! Part II</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-secret-message">THE SECRET MESSAGE</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="crack-the-code">
+<h1>Crack the Code!<a class="headerlink" href="#crack-the-code" title="Link to this heading">#</a></h1>
+<p><img alt="jigsaw from saw" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/i-want-to-play-a-game-jigsaw-saw-movie-remake-posters.jpg" /></p>
+<p>Answer the 10 questions below to reveal a hidden message at the bottom of the notebook.</p>
+<ul class="simple">
+<li><p>Each answer is numeric, BUT YOU SHOULD WRITE CODE TO GET THE ANSWER.</p></li>
+<li><p>For each question, store your code in a variable that’s the same letter as the question (e.g. for the first question, you should have <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">&lt;YOUR</span> <span class="pre">CODE&gt;</span></code>)</p></li>
+<li><p>Each correct answer reveals two words from a secret message at the bottom of the notebook.</p></li>
+<li><p>Once the message is complete, you’ll know what to do next.</p></li>
+</ul>
+<p>Rules of the game:</p>
+<ul class="simple">
+<li><p>Teams of 2. Both teammates must have all solutions to have finished.</p></li>
+<li><p>You may not type on anybody else’s keyboard. To share an answer, you can speak the code or show your screen.</p></li>
+<li><p>Hints are provided for some questions.</p></li>
+<li><p>If you’re still stuck with your teammate, you may ask for help from another team.</p></li>
+<li><p>If you’re still stuck, then you can ask Prof Roth.</p></li>
+<li><p>Each answer is numeric, BUT YOU SHOULD WRITE CODE TO GET THE ANSWER.</p></li>
+<li><p>For each question, WRITE CODE TO FIND THE ANSWER and store the output in a variable with that’s the letter of the question (e.g. the answer to a should be stored in a variable named a). Each answer reveals two words from the hidden message.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/countypres_2000-2024.csv&quot;</span>
+<span class="n">elec_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
+
+<span class="n">elec_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>state</th>
+      <th>state_po</th>
+      <th>county_name</th>
+      <th>county_fips</th>
+      <th>office</th>
+      <th>candidate</th>
+      <th>party</th>
+      <th>candidatevotes</th>
+      <th>totalvotes</th>
+      <th>version</th>
+      <th>mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2000</td>
+      <td>ALABAMA</td>
+      <td>AL</td>
+      <td>AUTAUGA</td>
+      <td>1001.0</td>
+      <td>US PRESIDENT</td>
+      <td>AL GORE</td>
+      <td>DEMOCRAT</td>
+      <td>4942</td>
+      <td>17208</td>
+      <td>20250821</td>
+      <td>TOTAL</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>ALABAMA</td>
+      <td>AL</td>
+      <td>AUTAUGA</td>
+      <td>1001.0</td>
+      <td>US PRESIDENT</td>
+      <td>GEORGE W. BUSH</td>
+      <td>REPUBLICAN</td>
+      <td>11993</td>
+      <td>17208</td>
+      <td>20250821</td>
+      <td>TOTAL</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000</td>
+      <td>ALABAMA</td>
+      <td>AL</td>
+      <td>AUTAUGA</td>
+      <td>1001.0</td>
+      <td>US PRESIDENT</td>
+      <td>OTHER</td>
+      <td>OTHER</td>
+      <td>113</td>
+      <td>17208</td>
+      <td>20250821</td>
+      <td>TOTAL</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000</td>
+      <td>ALABAMA</td>
+      <td>AL</td>
+      <td>AUTAUGA</td>
+      <td>1001.0</td>
+      <td>US PRESIDENT</td>
+      <td>RALPH NADER</td>
+      <td>GREEN</td>
+      <td>160</td>
+      <td>17208</td>
+      <td>20250821</td>
+      <td>TOTAL</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000</td>
+      <td>ALABAMA</td>
+      <td>AL</td>
+      <td>BALDWIN</td>
+      <td>1003.0</td>
+      <td>US PRESIDENT</td>
+      <td>AL GORE</td>
+      <td>DEMOCRAT</td>
+      <td>13997</td>
+      <td>56480</td>
+      <td>20250821</td>
+      <td>TOTAL</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>94404</th>
+      <td>2024</td>
+      <td>WYOMING</td>
+      <td>WY</td>
+      <td>WESTON</td>
+      <td>56045.0</td>
+      <td>US PRESIDENT</td>
+      <td>DONALD J TRUMP</td>
+      <td>REPUBLICAN</td>
+      <td>3069</td>
+      <td>3512</td>
+      <td>20250821</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>94405</th>
+      <td>2024</td>
+      <td>WYOMING</td>
+      <td>WY</td>
+      <td>WESTON</td>
+      <td>56045.0</td>
+      <td>US PRESIDENT</td>
+      <td>KAMALA D HARRIS</td>
+      <td>DEMOCRAT</td>
+      <td>378</td>
+      <td>3512</td>
+      <td>20250821</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>94406</th>
+      <td>2024</td>
+      <td>WYOMING</td>
+      <td>WY</td>
+      <td>WESTON</td>
+      <td>56045.0</td>
+      <td>US PRESIDENT</td>
+      <td>OTHER</td>
+      <td>OTHER</td>
+      <td>18</td>
+      <td>3512</td>
+      <td>20250821</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>94407</th>
+      <td>2024</td>
+      <td>WYOMING</td>
+      <td>WY</td>
+      <td>WESTON</td>
+      <td>56045.0</td>
+      <td>US PRESIDENT</td>
+      <td>OVERVOTES</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>3512</td>
+      <td>20250821</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>94408</th>
+      <td>2024</td>
+      <td>WYOMING</td>
+      <td>WY</td>
+      <td>WESTON</td>
+      <td>56045.0</td>
+      <td>US PRESIDENT</td>
+      <td>UNDERVOTES</td>
+      <td>NaN</td>
+      <td>20</td>
+      <td>3512</td>
+      <td>20250821</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>94409 rows × 12 columns</p>
+</div></div></div>
+</div>
+<section id="note">
+<h2>Note<a class="headerlink" href="#note" title="Link to this heading">#</a></h2>
+<p>The way election tallies were reported changed in 2020. Prior to 2020, only Total counts are provided. In the 2020 and 2024 elections, some states provide breakdowns by voting method (e.g. absentee, provisional), but the nomenclature varies by state.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modes</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">modes</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="n">modes</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[]</span>
+        
+<span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">elec_df</span><span class="p">[</span><span class="s1">&#39;state_po&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">modes</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2025</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="n">modes</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;state_po == @state and year==@year&quot;</span><span class="p">)[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+   
+<span class="n">voting_modes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">modes</span><span class="p">)</span>
+<span class="n">voting_modes</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>2000</th>
+      <th>2004</th>
+      <th>2008</th>
+      <th>2012</th>
+      <th>2016</th>
+      <th>2020</th>
+      <th>2024</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>AK</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AZ</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[EARLY VOTE, ELECTION DAY, PROVISIONAL]</td>
+      <td>[EARLY VOTING, ELECTION DAY, PROVISIONAL, TOTA...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE, EARLY VOTE, ELECTION DAY, PROVISIONAL]</td>
+      <td>[ABSENTEE, EARLY VOTING, ELECTION DAY, PROVISI...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CO</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>CT</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>DE</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>DC</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>FL</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>GA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE, ADVANCED VOTING, ELECTION DAY, PROV]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>HI</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>ID</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>IL</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>IN</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>IA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE, ELECTION DAY]</td>
+      <td>[ABSENTEE, ELECTION DAY, TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>KS</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>KY</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ELECTION DAY]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>LA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[EARLY VOTING, PROVISIONAL, TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>ME</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>MD</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[2ND ABSENTEE, ABSENTEE, EARLY VOTING, ELECTIO...</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>MA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>MI</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>MN</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>MS</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>MO</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>MT</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>NE</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>NV</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>NH</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>NJ</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>NM</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE, EARLY VOTING, ELECTION DAY]</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>NY</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>NC</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE BY MAIL, ELECTION DAY, ONE STOP, PRO...</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>ND</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>OH</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>OK</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE BY MAIL, EARLY, ELECTION DAY]</td>
+      <td>[ABSENTEE, EARLY VOTING, ELECTION DAY, TOTAL V...</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>OR</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>PA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ELECTION DAY, MAIL-IN, PROVISIONAL, TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>RI</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>SC</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE BY MAIL, ELECTION DAY, FAILSAFE, FAI...</td>
+      <td>[ABSENTEE, EARLY VOTING, ELECTION DAY, FAILSAF...</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>SD</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES, VOTE CENTER]</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>TN</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>TX</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan, EARLY VOTING, TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>UT</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[EARLY, ELECTION DAY, MAIL, TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>VT</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>VA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE, ELECTION DAY, PROVISIONAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>WA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>WV</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>WI</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>WY</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="clues-part-i">
+<h2>CLUES! Part I<a class="headerlink" href="#clues-part-i" title="Link to this heading">#</a></h2>
+<p>The first batch of questions use the presidential election data above. Each answer is numeric, BUT YOU SHOULD WRITE CODE TO GET THE ANSWER.
+For each question, WRITE CODE TO FIND THE ANSWER and store the output in a variable with that’s the letter of the question (e.g. the answer to a should be stored in a variable named a). Each answer reveals two words from the hidden message.</p>
+<p><strong>a.</strong> What number is in the row with index 189 under the column ‘candidatevotes’?</p>
+<details>
+<summary>Click to reveal hint</summary>
+ - Use `.iloc[]`
+</details>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">elec_df</span><span class="p">[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">189</span><span class="p">]</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(17084)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>b.</strong> In 2024, how many election day (not mail-in or provisional) votes did DJT get in Adams County, PA?</p>
+<details>
+<summary>Click to reveal hint</summary>
+ - Use ```.query()``` to filter the year, candidate, county, and mode.
+</details><p><strong>c.</strong> What is the county_fips of the Pennsylvania county with the greatest percentage of third party votes?</p>
+<details>
+<summary>Click to reveal hint</summary>
+<ul class="simple">
+<li><p>Create a new dataframe of only rows corresponding to PA results from the 2024 election where the mode is “TOTAL VOTES” and the party is neither “REPUBLICAN” or “DEMOCRAT”.</p></li>
+<li><p>Create a column called “percent vote” to this dataframe calculating the percent vote each candidate got.</p></li>
+<li><p>Groupby ‘county_name’ and aggregate the percentages as a ‘sum’. To keep the ‘county_fips’ column, aggregate that column with ‘first’.</p></li>
+<li><p>Sort the results by “percent vote” and select the fips corresponding to the greatest percentage using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> or <code class="docutils literal notranslate"><span class="pre">.iloc</span></code>.</p></li>
+</ul>
+</details>
+<p>d. How many more votes were cast in PA in the 2020 election than the 2016 election?</p>
+<details>
+<summary>Click to reveal hint</summary>
+   - No hint. YOU GOT THIS!
+</details><p>e. In the 2000 election, by how many votes did the Republican party LOSE Florida? (this should be a positive number…they won, but it was a long legal battle)</p>
+<details>
+<summary>Click to reveal not a hint</summary>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/2000_United_States_presidential_election">One of the craziest elections ever!</a> The vote differential in this wikipedia article is not the one you’ll get from the data.</p>
+</details></section>
+<section id="more-clues-part-ii">
+<h2>MORE CLUES! Part II<a class="headerlink" href="#more-clues-part-ii" title="Link to this heading">#</a></h2>
+<p>The next batch of questions use the Washington State Electric Vehicle registry.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/Electric_Vehicle_WA.csv&#39;</span>
+
+<span class="n">ev_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">ev_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">ev_df</span><span class="p">[</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ev_df</span><span class="p">[</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">ev_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VIN (1-10)</th>
+      <th>County</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal Code</th>
+      <th>Model Year</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Electric Vehicle Type</th>
+      <th>Clean Alternative Fuel Vehicle (CAFV) Eligibility</th>
+      <th>Electric Range</th>
+      <th>Base MSRP</th>
+      <th>Legislative District</th>
+      <th>DOL Vehicle ID</th>
+      <th>Vehicle Location</th>
+      <th>Electric Utility</th>
+      <th>2020 Census Tract</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>WA1E2AFY8R</td>
+      <td>Thurston</td>
+      <td>Olympia</td>
+      <td>WA</td>
+      <td>98512.0</td>
+      <td>2024</td>
+      <td>AUDI</td>
+      <td>Q5 E</td>
+      <td>Plug-in Hybrid Electric Vehicle (PHEV)</td>
+      <td>Not eligible due to low battery range</td>
+      <td>23</td>
+      <td>0</td>
+      <td>22.0</td>
+      <td>263239938</td>
+      <td>POINT (-122.90787 46.9461)</td>
+      <td>PUGET SOUND ENERGY INC</td>
+      <td>5.306701e+10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>WAUUPBFF4J</td>
+      <td>Yakima</td>
+      <td>Wapato</td>
+      <td>WA</td>
+      <td>98951.0</td>
+      <td>2018</td>
+      <td>AUDI</td>
+      <td>A3</td>
+      <td>Plug-in Hybrid Electric Vehicle (PHEV)</td>
+      <td>Not eligible due to low battery range</td>
+      <td>16</td>
+      <td>0</td>
+      <td>15.0</td>
+      <td>318160860</td>
+      <td>POINT (-120.42083 46.44779)</td>
+      <td>PACIFICORP</td>
+      <td>5.307794e+10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1N4AZ0CP0F</td>
+      <td>King</td>
+      <td>Seattle</td>
+      <td>WA</td>
+      <td>98125.0</td>
+      <td>2015</td>
+      <td>NISSAN</td>
+      <td>LEAF</td>
+      <td>Battery Electric Vehicle (BEV)</td>
+      <td>Clean Alternative Fuel Vehicle Eligible</td>
+      <td>84</td>
+      <td>0</td>
+      <td>46.0</td>
+      <td>184963586</td>
+      <td>POINT (-122.30253 47.72656)</td>
+      <td>CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)</td>
+      <td>5.303300e+10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>WA1VAAGE5K</td>
+      <td>King</td>
+      <td>Kent</td>
+      <td>WA</td>
+      <td>98031.0</td>
+      <td>2019</td>
+      <td>AUDI</td>
+      <td>E-TRON</td>
+      <td>Battery Electric Vehicle (BEV)</td>
+      <td>Clean Alternative Fuel Vehicle Eligible</td>
+      <td>204</td>
+      <td>0</td>
+      <td>11.0</td>
+      <td>259426821</td>
+      <td>POINT (-122.17743 47.41185)</td>
+      <td>PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)</td>
+      <td>5.303303e+10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7SAXCAE57N</td>
+      <td>Snohomish</td>
+      <td>Bothell</td>
+      <td>WA</td>
+      <td>98021.0</td>
+      <td>2022</td>
+      <td>TESLA</td>
+      <td>MODEL X</td>
+      <td>Battery Electric Vehicle (BEV)</td>
+      <td>Eligibility unknown as battery range has not b...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>208182236</td>
+      <td>POINT (-122.18384 47.8031)</td>
+      <td>PUGET SOUND ENERGY INC</td>
+      <td>5.306105e+10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>f.</strong> What is the maximum Electric Range of the vehicles in this dataset?</p>
+<details>
+<summary>Click to reveal hint</summary>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.query()</span></code> and <code class="docutils literal notranslate"><span class="pre">.max()</span></code></p></li>
+</ul>
+</details><p><strong>g.</strong> How many 2024 Tesla Model Ys are in King County?</p>
+<details>
+<summary>Click to reveal hint</summary>
+   - Use `.query()` and then selecting the 'DOL Vehicle ID' column, apply `.nunique()`
+</details><p><strong>h.</strong> For the Model Year that has the most registered vehicles, how many vehicles are there?</p>
+<details>
+<summary>Click to reveal hint</summary>
+<ul class="simple">
+<li><p>Groupby ‘Model Year’, then aggregate ‘DOL Vehicle ID’ with ‘count’.</p></li>
+<li><p>Sort the values and pick the greatest count.</p></li>
+</ul>
+</details>
+<p><strong>i.</strong> Of Chevrolet EVs, what is the count for the most popular model?</p>
+<details>
+<summary>Click to reveal hint</summary>
+<ul class="simple">
+<li><p>Filter to only Chevy cars.</p></li>
+<li><p>Groupby the model and count the DOL Vehicle IDs</p></li>
+<li><p>Sort the values and select the greatest number.</p></li>
+</ul>
+  </details><p><strong>j.</strong> What is the DOL Vehicle ID of the oldest car on this registry? There are two entries (likely a data entry mistake), pick the smaller number DOL Vehicle ID.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">decode_word</span><span class="p">(</span><span class="n">codestr</span><span class="p">,</span> <span class="n">ans</span><span class="p">):</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000000000</span><span class="p">)</span>
+    
+    <span class="n">numberstr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="n">decoded</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">while</span> <span class="n">codestr</span><span class="p">:</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">codestr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">numberstr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>     
+
+        <span class="n">char</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">code</span> <span class="o">-</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="nb">ord</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+        <span class="n">decoded</span> <span class="o">+=</span> <span class="n">char</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">codestr</span> <span class="o">=</span> <span class="n">codestr</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">numberstr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">numberstr</span> <span class="o">=</span> <span class="n">numberstr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        
+    <span class="k">return</span> <span class="n">decoded</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">decode_message</span><span class="p">(</span><span class="n">encoded_message</span><span class="p">,</span> <span class="n">ans_list</span><span class="p">):</span>
+    <span class="n">code_list</span> <span class="o">=</span> <span class="n">encoded_message</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">word_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">ans</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">code_list</span><span class="p">,</span> <span class="n">ans_list</span><span class="p">):</span>
+        
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">series</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">ans</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span> <span class="k">pass</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">word_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">decode_word</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">ans</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">word_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_&#39;</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>           
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="the-secret-message">
+<h2>THE SECRET MESSAGE<a class="headerlink" href="#the-secret-message" title="Link to this heading">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">secret_message_a</span> <span class="o">=</span> <span class="s1">&#39;237202361314 439489165137378251 304305197489360361670 686308309555 509228234171522273 613251619163301543251614 672475257671 601 213488419305440361 174649525572226407616&#39;</span>
+<span class="n">secret_message_b</span> <span class="o">=</span> <span class="s1">&#39;171609548612 195493425 543582671199360 667 620255619163321541213609 522251262206561 609325305555479 309314 415488159214364251162 258195370307377601151305424&#39;</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">g</span><span class="p">]</span>
+
+<span class="n">message_a</span> <span class="o">=</span> <span class="n">decode_message</span><span class="p">(</span><span class="n">secret_message_a</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span>
+<span class="n">message_b</span> <span class="o">=</span> <span class="n">decode_message</span><span class="p">(</span><span class="n">secret_message_b</span><span class="p">,</span> <span class="n">ans</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Instruction 1: </span><span class="si">{</span><span class="n">message_a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Instruction 2: </span><span class="si">{</span><span class="n">message_b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Instruction 1: ____ you&#39;ve _______ ____ ______ ________ ____ ǃ ______ _______
+Instruction 2: ____ ___ _____ ȅ ________ _____ _____ Ċ another _________
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./04_Pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clues-part-i">CLUES! Part I</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-clues-part-ii">MORE CLUES! Part II</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-secret-message">THE SECRET MESSAGE</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eatai Roth, Gettysburg College
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Eatai Roth   2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

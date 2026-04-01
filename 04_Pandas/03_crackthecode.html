@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Crack the Code! &#8212; DS256 Data Science Programming</title>
+    <title>15. Crack the Code! &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -70,9 +70,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '04_Pandas/03_crackthecode_solutions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_Pandas/03_crackthecode';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="16. Pandas Cheat Sheet" href="04_pandas_cheatsheet.html" />
+    <link rel="prev" title="14. Pandas - Grouping and Aggregation" href="02_pandas_groupby.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -134,8 +136,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -218,9 +218,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/04_matplotlib_reference.html">12. Matplotlib Cheat Sheet</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_pandas_intro.html">13. Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_pandas_groupby.html">14. Pandas - Grouping and Aggregation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Crack the Code!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_pandas_cheatsheet.html">16. Pandas Cheat Sheet</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -283,7 +285,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/GettysburgDataScience/DS256-Notes/blob/main/04_Pandas/03_crackthecode_solutions.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/GettysburgDataScience/DS256-Notes/blob/main/04_Pandas/03_crackthecode.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -314,7 +316,7 @@
       
       
       
-      <li><a href="../_sources/04_Pandas/03_crackthecode_solutions.ipynb" target="_blank"
+      <li><a href="../_sources/04_Pandas/03_crackthecode.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -408,8 +410,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clues">Clues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note">15.1. Note</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clues-part-i">15.2. CLUES! Part I</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-clues-part-ii">15.3. MORE CLUES! Part II</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-secret-message">15.4. THE SECRET MESSAGE</a></li>
 </ul>
             </nav>
         </div>
@@ -422,13 +426,44 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="crack-the-code">
-<h1>Crack the Code!<a class="headerlink" href="#crack-the-code" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">15. </span>Crack the Code!<a class="headerlink" href="#crack-the-code" title="Link to this heading">#</a></h1>
+<p><img alt="jigsaw from saw" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/i-want-to-play-a-game-jigsaw-saw-movie-remake-posters.jpg" /></p>
+<p>Answer the 10 questions below to reveal a hidden message at the bottom of the notebook.</p>
+<ul class="simple">
+<li><p>Each answer is numeric, BUT YOU SHOULD WRITE CODE TO GET THE ANSWER.</p></li>
+<li><p>For each question, store your code in a variable that’s the same letter as the question (e.g. for the first question, you should have <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">&lt;YOUR</span> <span class="pre">CODE&gt;</span></code>)</p></li>
+<li><p>Each correct answer reveals two words from a secret message at the bottom of the notebook.</p></li>
+<li><p>Once the message is complete, you’ll know what to do next.</p></li>
+</ul>
+<p>Rules of the game:</p>
+<ul class="simple">
+<li><p>Teams of 2. Both teammates must have all solutions to have finished.</p></li>
+<li><p>You may not type on anybody else’s keyboard. To share an answer, you can speak the code or show your screen.</p></li>
+<li><p>Hints are provided for some questions.</p></li>
+<li><p>If you’re still stuck with your teammate, you may ask for help from another team.</p></li>
+<li><p>If you’re still stuck, then you can ask Prof Roth.</p></li>
+<li><p>Each answer is numeric, BUT YOU SHOULD WRITE CODE TO GET THE ANSWER.</p></li>
+<li><p>For each question, WRITE CODE TO FIND THE ANSWER and store the output in a variable with that’s the letter of the question (e.g. the answer to a should be stored in a variable named a). Each answer reveals two words from the hidden message.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-
-<span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/countypres_2000-2024.csv&quot;</span>
-<span class="n">elec_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fips&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/countypres_2000-2024.csv&quot;</span>
+<span class="n">elec_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
 
 <span class="n">elec_df</span>
 </pre></div>
@@ -639,7 +674,7 @@ document.write(`
 </div></div></div>
 </div>
 <section id="note">
-<h2>Note<a class="headerlink" href="#note" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.1. </span>Note<a class="headerlink" href="#note" title="Link to this heading">#</a></h2>
 <p>The way election tallies were reported changed in 2020. Prior to 2020, only Total counts are provided. In the 2020 and 2024 elections, some states provide breakdowns by voting method (e.g. absentee, provisional), but the nomenclature varies by state.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -656,7 +691,7 @@ document.write(`
         <span class="n">modes</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;state_po == @state and year==@year&quot;</span><span class="p">)[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
    
 <span class="n">voting_modes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">modes</span><span class="p">)</span>
-<span class="n">voting_modes</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">voting_modes</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -690,6 +725,446 @@ document.write(`
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <th>1</th>
+      <td>AK</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AZ</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[EARLY VOTE, ELECTION DAY, PROVISIONAL]</td>
+      <td>[EARLY VOTING, ELECTION DAY, PROVISIONAL, TOTA...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE, EARLY VOTE, ELECTION DAY, PROVISIONAL]</td>
+      <td>[ABSENTEE, EARLY VOTING, ELECTION DAY, PROVISI...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CO</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>CT</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>DE</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>DC</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>FL</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>GA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE, ADVANCED VOTING, ELECTION DAY, PROV]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>HI</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>ID</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>IL</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>IN</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>IA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE, ELECTION DAY]</td>
+      <td>[ABSENTEE, ELECTION DAY, TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>KS</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>KY</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ELECTION DAY]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>LA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[EARLY VOTING, PROVISIONAL, TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>ME</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>MD</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[2ND ABSENTEE, ABSENTEE, EARLY VOTING, ELECTIO...</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>MA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>MI</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>MN</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>MS</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>MO</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>MT</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>NE</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>NV</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>NH</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>NJ</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>NM</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE, EARLY VOTING, ELECTION DAY]</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>NY</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>NC</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE BY MAIL, ELECTION DAY, ONE STOP, PRO...</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>ND</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>OH</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>OK</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE BY MAIL, EARLY, ELECTION DAY]</td>
+      <td>[ABSENTEE, EARLY VOTING, ELECTION DAY, TOTAL V...</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>OR</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>PA</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ELECTION DAY, MAIL-IN, PROVISIONAL, TOTAL VOTES]</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>RI</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[nan]</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>SC</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[TOTAL]</td>
+      <td>[ABSENTEE BY MAIL, ELECTION DAY, FAILSAFE, FAI...</td>
+      <td>[ABSENTEE, EARLY VOTING, ELECTION DAY, FAILSAF...</td>
+    </tr>
     <tr>
       <th>41</th>
       <td>SD</td>
@@ -805,33 +1280,224 @@ document.write(`
 </div></div></div>
 </div>
 </section>
-<section id="clues">
-<h2>Clues<a class="headerlink" href="#clues" title="Link to this heading">#</a></h2>
-<p>Below are 7 questions of increasing difficulty. Each answer is numeric. Find the answers and assign the value to the corresponding variable in the Answers section below. The secret messages are clues to a fictitious scientific breakthrough that purportedly happened today.</p>
+<section id="clues-part-i">
+<h2><span class="section-number">15.2. </span>CLUES! Part I<a class="headerlink" href="#clues-part-i" title="Link to this heading">#</a></h2>
+<p>The first batch of questions use the presidential election data above. Each answer is numeric, BUT YOU SHOULD WRITE CODE TO GET THE ANSWER.
+For each question, WRITE CODE TO FIND THE ANSWER and store the output in a variable with that’s the letter of the question (e.g. the answer to a should be stored in a variable named a). Each answer reveals two words from the hidden message.</p>
+<p><strong>a.</strong> What number is in the row with index 189 under the column ‘candidatevotes’?</p>
+<details>
+<summary>Click to reveal hint</summary>
+ - Use ```.iloc[]```
+</details>
+<p><strong>b.</strong> In 2024, how many election day (not mail-in or provisional) votes did DJT get in Adams County, PA?</p>
+<details>
+<summary>Click to reveal hint</summary>
+ - Use ```.query()``` to filter the year, candidate, county, and mode.
+</details><p><strong>c.</strong> What is the county_fips of the Pennsylvania county with the greatest percentage of third party votes?</p>
+<details>
+<summary>Click to reveal hint</summary>
 <ul class="simple">
-<li><p>a. What number is in the row with index 189 under the column ‘candidatevotes’?</p></li>
-<li><p>b. How many different counties are tabulated in this dataset?</p></li>
-<li><p>c. What is the county_fips code for the alphabetically last county in Pennsylvania?</p></li>
-<li><p>d. In 2024, how many election day (not mail-in or provisional) votes did DJT get in Adams County, PA?</p></li>
-<li><p>e. How many more votes were cast in PA in the 2020 election than the 2016 election?</p></li>
-<li><p>f. In the 2000 election, by how many votes did the Republican party win Florida?</p></li>
-<li><p>g. Rounded to the nearest percentage point, what was the Republican lean of Adams County in 2020?</p></li>
+<li><p>Create a new dataframe of only rows corresponding to PA results from the 2024 election where the mode is “TOTAL VOTES” and the party is neither “REPUBLICAN” or “DEMOCRAT”.</p></li>
+<li><p>Create a column called “percent vote” to this dataframe calculating the percent vote each candidate got.</p></li>
+<li><p>Groupby ‘county_name’ and aggregate the percentages as a ‘sum’. To keep the ‘county_fips’ column, aggregate that column with ‘first’.</p></li>
+<li><p>Sort the results by “percent vote” and select the fips corresponding to the greatest percentage using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> or <code class="docutils literal notranslate"><span class="pre">.iloc</span></code>.</p></li>
 </ul>
+</details>
+<p>d. How many more votes were cast in PA in the 2020 election than the 2016 election?</p>
+<details>
+<summary>Click to reveal hint</summary>
+   - No hint. YOU GOT THIS!
+</details><p>e. In the 2000 election, by how many votes did the Republican party LOSE Florida? (this should be a positive number…they won, but it was a long legal battle)</p>
+<details>
+<summary>Click to reveal not a hint</summary>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/2000_United_States_presidential_election">One of the craziest elections ever!</a> The vote differential in this wikipedia article is not the one you’ll get from the data.</p>
+</details></section>
+<section id="more-clues-part-ii">
+<h2><span class="section-number">15.3. </span>MORE CLUES! Part II<a class="headerlink" href="#more-clues-part-ii" title="Link to this heading">#</a></h2>
+<p>The next batch of questions use the Washington State Electric Vehicle registry.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s a for example</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/Electric_Vehicle_WA.csv&#39;</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">elec_df</span><span class="p">[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">189</span><span class="p">]</span>
-<span class="n">a</span>
+<span class="n">ev_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">ev_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">ev_df</span><span class="p">[</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ev_df</span><span class="p">[</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">ev_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(17084)
-</pre></div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VIN (1-10)</th>
+      <th>County</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal Code</th>
+      <th>Model Year</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Electric Vehicle Type</th>
+      <th>Clean Alternative Fuel Vehicle (CAFV) Eligibility</th>
+      <th>Electric Range</th>
+      <th>Base MSRP</th>
+      <th>Legislative District</th>
+      <th>DOL Vehicle ID</th>
+      <th>Vehicle Location</th>
+      <th>Electric Utility</th>
+      <th>2020 Census Tract</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>WA1E2AFY8R</td>
+      <td>Thurston</td>
+      <td>Olympia</td>
+      <td>WA</td>
+      <td>98512.0</td>
+      <td>2024</td>
+      <td>AUDI</td>
+      <td>Q5 E</td>
+      <td>Plug-in Hybrid Electric Vehicle (PHEV)</td>
+      <td>Not eligible due to low battery range</td>
+      <td>23</td>
+      <td>0</td>
+      <td>22.0</td>
+      <td>263239938</td>
+      <td>POINT (-122.90787 46.9461)</td>
+      <td>PUGET SOUND ENERGY INC</td>
+      <td>5.306701e+10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>WAUUPBFF4J</td>
+      <td>Yakima</td>
+      <td>Wapato</td>
+      <td>WA</td>
+      <td>98951.0</td>
+      <td>2018</td>
+      <td>AUDI</td>
+      <td>A3</td>
+      <td>Plug-in Hybrid Electric Vehicle (PHEV)</td>
+      <td>Not eligible due to low battery range</td>
+      <td>16</td>
+      <td>0</td>
+      <td>15.0</td>
+      <td>318160860</td>
+      <td>POINT (-120.42083 46.44779)</td>
+      <td>PACIFICORP</td>
+      <td>5.307794e+10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1N4AZ0CP0F</td>
+      <td>King</td>
+      <td>Seattle</td>
+      <td>WA</td>
+      <td>98125.0</td>
+      <td>2015</td>
+      <td>NISSAN</td>
+      <td>LEAF</td>
+      <td>Battery Electric Vehicle (BEV)</td>
+      <td>Clean Alternative Fuel Vehicle Eligible</td>
+      <td>84</td>
+      <td>0</td>
+      <td>46.0</td>
+      <td>184963586</td>
+      <td>POINT (-122.30253 47.72656)</td>
+      <td>CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)</td>
+      <td>5.303300e+10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>WA1VAAGE5K</td>
+      <td>King</td>
+      <td>Kent</td>
+      <td>WA</td>
+      <td>98031.0</td>
+      <td>2019</td>
+      <td>AUDI</td>
+      <td>E-TRON</td>
+      <td>Battery Electric Vehicle (BEV)</td>
+      <td>Clean Alternative Fuel Vehicle Eligible</td>
+      <td>204</td>
+      <td>0</td>
+      <td>11.0</td>
+      <td>259426821</td>
+      <td>POINT (-122.17743 47.41185)</td>
+      <td>PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)</td>
+      <td>5.303303e+10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7SAXCAE57N</td>
+      <td>Snohomish</td>
+      <td>Bothell</td>
+      <td>WA</td>
+      <td>98021.0</td>
+      <td>2022</td>
+      <td>TESLA</td>
+      <td>MODEL X</td>
+      <td>Battery Electric Vehicle (BEV)</td>
+      <td>Eligibility unknown as battery range has not b...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>208182236</td>
+      <td>POINT (-122.18384 47.8031)</td>
+      <td>PUGET SOUND ENERGY INC</td>
+      <td>5.306105e+10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
-</div>
+<p><strong>f.</strong> What is the maximum Electric Range of the vehicles in this dataset?</p>
+<details>
+<summary>Click to reveal hint</summary>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.query()</span></code> and <code class="docutils literal notranslate"><span class="pre">.max()</span></code></p></li>
+</ul>
+</details><p><strong>g.</strong> How many 2024 Tesla Model Ys are in King County?</p>
+<details>
+<summary>Click to reveal hint</summary>
+   - Use `.query()` and then selecting the 'DOL Vehicle ID' column, apply `.nunique()`
+</details><p><strong>h.</strong> For the Model Year that has the most registered vehicles, how many vehicles are there?</p>
+<details>
+<summary>Click to reveal hint</summary>
+<ul class="simple">
+<li><p>Groupby ‘Model Year’, then aggregate ‘DOL Vehicle ID’ with ‘count’.</p></li>
+<li><p>Sort the values and pick the greatest count.</p></li>
+</ul>
+</details>
+<p><strong>i.</strong> Of Chevrolet EVs, what is the count for the most popular model?</p>
+<details>
+<summary>Click to reveal hint</summary>
+<ul class="simple">
+<li><p>Filter to only Chevy cars.</p></li>
+<li><p>Groupby the model and count the DOL Vehicle IDs</p></li>
+<li><p>Sort the values and select the greatest number.</p></li>
+</ul>
+  </details><p><strong>j.</strong> What is the DOL Vehicle ID of the oldest car on this registry? There are two entries (likely a data entry mistake), pick the smaller number DOL Vehicle ID.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -839,9 +1505,7 @@ document.write(`
 <p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">decode_word</span><span class="p">(</span><span class="n">codestr</span><span class="p">,</span> <span class="n">ans</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">decode_word</span><span class="p">(</span><span class="n">codestr</span><span class="p">,</span> <span class="n">ans</span><span class="p">):</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
     <span class="n">number</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000000000</span><span class="p">)</span>
     
@@ -870,43 +1534,53 @@ document.write(`
     <span class="n">code_list</span> <span class="o">=</span> <span class="n">encoded_message</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
     <span class="n">word_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">ans</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">code_list</span><span class="p">,</span> <span class="n">ans_list</span><span class="p">):</span>
+        
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">series</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">ans</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span> <span class="k">pass</span>
+        
         <span class="k">try</span><span class="p">:</span>
             <span class="n">word_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">decode_word</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">ans</span><span class="p">))</span>
         <span class="k">except</span><span class="p">:</span>
-            <span class="n">word_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_&#39;</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
-            
+            <span class="n">word_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_&#39;</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>           
     <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 </div>
-<div class="cell docutils container">
+</section>
+<section id="the-secret-message">
+<h2><span class="section-number">15.4. </span>THE SECRET MESSAGE<a class="headerlink" href="#the-secret-message" title="Link to this heading">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">17084</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">e</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">f</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">g</span> <span class="o">=</span> <span class="mi">7</span>
-
-<span class="n">secret_message_a</span> <span class="o">=</span> <span class="s1">&#39;390495152144 462308199314 269422551417375 290309197479 584684671319423198605158164111 644479264684439 580671323423619633&#39;</span>
-<span class="n">secret_message_b</span> <span class="o">=</span> <span class="s1">&#39;591674305432605 689479189684419 607681675314421142 323305 250429550417376 488305199304 432489145198375196&#39;</span>
-
-<span class="n">ans</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">secret_message_a</span> <span class="o">=</span> <span class="s1">&#39;237202361314 439489165137378251 304305197489360361670 686308309555 509228234171522273 613251619163301543251614 672475257671 601 213488419305440361 174649525572226407616&#39;</span>
+<span class="n">secret_message_b</span> <span class="o">=</span> <span class="s1">&#39;171609548612 195493425 543582671199360 667 620255619163321541213609 522251262206561 609325305555479 309314 415488159214364251162 258195370307377601151305424&#39;</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">g</span><span class="p">]</span>
 
 <span class="n">message_a</span> <span class="o">=</span> <span class="n">decode_message</span><span class="p">(</span><span class="n">secret_message_a</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span>
 <span class="n">message_b</span> <span class="o">=</span> <span class="n">decode_message</span><span class="p">(</span><span class="n">secret_message_b</span><span class="p">,</span> <span class="n">ans</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Quote 1: </span><span class="si">{</span><span class="n">message_a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Quote 2: </span><span class="si">{</span><span class="n">message_b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Instruction 1: </span><span class="si">{</span><span class="n">message_a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Instruction 2: </span><span class="si">{</span><span class="n">message_b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quote 1: Huh. ____ _____ ____ __________ _____ ______
-Quote 2: _____ _____ ______ __ _____ ____ roads.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Instruction 1: ____ ______ _______ ____ ______ ________ ____ ǃ ______ _______
+Instruction 2: ____ ___ _____ ȅ ________ _____ _____ Ċ _______ _________
 </pre></div>
 </div>
 </div>
@@ -944,6 +1618,24 @@ Quote 2: _____ _____ ______ __ _____ ____ roads.
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="02_pandas_groupby.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Pandas - Grouping and Aggregation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04_pandas_cheatsheet.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Pandas Cheat Sheet</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -960,8 +1652,10 @@ Quote 2: _____ _____ ______ __ _____ ____ roads.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clues">Clues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note">15.1. Note</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clues-part-i">15.2. CLUES! Part I</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-clues-part-ii">15.3. MORE CLUES! Part II</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-secret-message">15.4. THE SECRET MESSAGE</a></li>
 </ul>
   </nav></div>
 

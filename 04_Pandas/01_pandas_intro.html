@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13. Pandas &#8212; DS256 Data Science Programming</title>
+    <title>14. Pandas &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -73,8 +73,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '04_Pandas/01_pandas_intro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PS01" href="../00_Assignments/ps01.html" />
-    <link rel="prev" title="12. Matplotlib Cheat Sheet" href="../02_numpy_matplotlib/04_matplotlib_reference.html" />
+    <link rel="next" title="15. Pandas - Grouping and Aggregation" href="02_pandas_groupby.html" />
+    <link rel="prev" title="13. Pandas Cheat Sheet" href="00_pandas_cheatsheet.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -219,7 +219,10 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_pandas_cheatsheet.html">13. Pandas Cheat Sheet</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_pandas_groupby.html">15. Pandas - Grouping and Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_pandas_merge.html">16. Pandas - Merging DataFrames</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -227,7 +230,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps02.html">PS02</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps03.html">PS03</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps04.html">PS04</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps05.html">PS04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps05.html">PS05</a></li>
 </ul>
 
     </div>
@@ -407,27 +410,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe">13.1. Pandas Dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">13.2. Importing and Inspecting Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-and-filtering-data">13.3. Selecting and Filtering Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-a-column-or-columns">13.3.1. Selecting a Column or Columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-rows-using-query">13.3.2. Filtering Rows using <code class="docutils literal notranslate"><span class="pre">.query</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-using-loc">13.3.3. Slicing using <code class="docutils literal notranslate"><span class="pre">.loc</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-using-iloc">13.3.4. Slicing using <code class="docutils literal notranslate"><span class="pre">.iloc</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe">14.1. Pandas Dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">14.2. Importing and Inspecting Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-and-filtering-data">14.3. Selecting and Filtering Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-a-column-or-columns">14.3.1. Selecting a Column or Columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-rows-using-query">14.3.2. Filtering Rows using <code class="docutils literal notranslate"><span class="pre">.query</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-using-loc">14.3.3. Slicing using <code class="docutils literal notranslate"><span class="pre">.loc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-using-iloc">14.3.4. Slicing using <code class="docutils literal notranslate"><span class="pre">.iloc</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">13.4. Data Cleaning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-bad-data">13.4.1. Dropping bad data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-columns">13.4.2. Renaming Columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-column">13.4.3. Adding a column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">14.4. Data Cleaning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-bad-data">14.4.1. Dropping bad data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-columns">14.4.2. Renaming Columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-column">14.4.3. Adding a column</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-on-columns">13.5. Calculations on Columns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-data">13.6. Selecting Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspection">13.6.1. Inspection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-on-columns">14.5. Calculations on Columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-data">14.6. Selecting Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspection">14.6.1. Inspection</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">13.7. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">14.7. Practice Problems</a></li>
 </ul>
             </nav>
         </div>
@@ -440,16 +443,16 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1><span class="section-number">13. </span>Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">14. </span>Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
 <p>Pandas is a python package for importing, inspecting, cleaning, aggregating, transforming, and visualizing data. You import pandas as:</p>
 <p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code></p>
 <section id="pandas-dataframe">
-<h2><span class="section-number">13.1. </span>Pandas Dataframe<a class="headerlink" href="#pandas-dataframe" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.1. </span>Pandas Dataframe<a class="headerlink" href="#pandas-dataframe" title="Link to this heading">#</a></h2>
 <p>The main new data type introduced in Pandas is the DataFrame. A DataFrame looks like a table or a spreadsheet.</p>
 <p>Pandas also introduces the DataSeries, basically a DataFrame with a single column. Why make this special data type? Beats me. I try to avoid them.</p>
 </section>
 <section id="importing-and-inspecting-data">
-<h2><span class="section-number">13.2. </span>Importing and Inspecting Data<a class="headerlink" href="#importing-and-inspecting-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.2. </span>Importing and Inspecting Data<a class="headerlink" href="#importing-and-inspecting-data" title="Link to this heading">#</a></h2>
 <p>Most of the time, we’ll be using data that exist outside of Python, either data that somebody else has collected or data that we’ve collected and saved to some other kind of file (.csv, .json, etc). We’ll import data into the dataframe using:</p>
 <p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv(data.csv)</span></code></p>
 <p>Where <code class="docutils literal notranslate"><span class="pre">data.csv</span></code> could be a filepath on your computer or a url to a file that exists online. There are other commands that allow pandas to import a variety of data filetypes.</p>
@@ -857,9 +860,9 @@ memory usage: 5.4+ KB
 </ul>
 </section>
 <section id="selecting-and-filtering-data">
-<h2><span class="section-number">13.3. </span>Selecting and Filtering Data<a class="headerlink" href="#selecting-and-filtering-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.3. </span>Selecting and Filtering Data<a class="headerlink" href="#selecting-and-filtering-data" title="Link to this heading">#</a></h2>
 <section id="selecting-a-column-or-columns">
-<h3><span class="section-number">13.3.1. </span>Selecting a Column or Columns<a class="headerlink" href="#selecting-a-column-or-columns" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.1. </span>Selecting a Column or Columns<a class="headerlink" href="#selecting-a-column-or-columns" title="Link to this heading">#</a></h3>
 <p>You can select a column or set of columns using a list of names. This is the similar to how we select keys in a dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1123,7 +1126,7 @@ memory usage: 5.4+ KB
 </div>
 </section>
 <section id="filtering-rows-using-query">
-<h3><span class="section-number">13.3.2. </span>Filtering Rows using <code class="docutils literal notranslate"><span class="pre">.query</span></code><a class="headerlink" href="#filtering-rows-using-query" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.2. </span>Filtering Rows using <code class="docutils literal notranslate"><span class="pre">.query</span></code><a class="headerlink" href="#filtering-rows-using-query" title="Link to this heading">#</a></h3>
 <p>We can think of each ROW of a dataframe as an entry. We can filter the dataframe to keep only entries with specific properties using <code class="docutils literal notranslate"><span class="pre">.query()</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">.query()</span></code> takes a string as an argument. The string should represent a Boolean statement using column names as ‘variables’.</p>
 <p>For example:</p>
@@ -1289,14 +1292,14 @@ memory usage: 5.4+ KB
 </div>
 </section>
 <section id="slicing-using-loc">
-<h3><span class="section-number">13.3.3. </span>Slicing using <code class="docutils literal notranslate"><span class="pre">.loc</span></code><a class="headerlink" href="#slicing-using-loc" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.3. </span>Slicing using <code class="docutils literal notranslate"><span class="pre">.loc</span></code><a class="headerlink" href="#slicing-using-loc" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> takes two positional arguments, a row index (or list of) and a column name (or list of)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span> <span class="n">column_name</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
 <section id="slicing-using-iloc">
-<h3><span class="section-number">13.3.4. </span>Slicing using <code class="docutils literal notranslate"><span class="pre">.iloc</span></code><a class="headerlink" href="#slicing-using-iloc" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.3.4. </span>Slicing using <code class="docutils literal notranslate"><span class="pre">.iloc</span></code><a class="headerlink" href="#slicing-using-iloc" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> treats the DataFrame as if it were a numpy array. It only accepts numeric arguments, completely ignoring the row indices and column names. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
@@ -1330,7 +1333,7 @@ memory usage: 5.4+ KB
 </section>
 </section>
 <section id="data-cleaning">
-<h2><span class="section-number">13.4. </span>Data Cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.4. </span>Data Cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h2>
 <p>The data have three main issues:</p>
 <ul class="simple">
 <li><p>The last two rows are missing all data. Easy fix.</p></li>
@@ -1339,7 +1342,7 @@ memory usage: 5.4+ KB
 </ul>
 <p>For now, I’m just cleaning the data for you. We’ll cover these tools later.</p>
 <section id="dropping-bad-data">
-<h3><span class="section-number">13.4.1. </span>Dropping bad data<a class="headerlink" href="#dropping-bad-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.4.1. </span>Dropping bad data<a class="headerlink" href="#dropping-bad-data" title="Link to this heading">#</a></h3>
 <p>Data can be ‘bad’ for numerous reasons, but most immediately obvious are missing data. We drop missing data with <code class="docutils literal notranslate"><span class="pre">df.dropna</span></code> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html">dropna documentation</a>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1618,7 +1621,7 @@ memory usage: 5.4+ KB
 </div>
 </section>
 <section id="renaming-columns">
-<h3><span class="section-number">13.4.2. </span>Renaming Columns<a class="headerlink" href="#renaming-columns" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.4.2. </span>Renaming Columns<a class="headerlink" href="#renaming-columns" title="Link to this heading">#</a></h3>
 <p>We can rename columns using the function <code class="docutils literal notranslate"><span class="pre">.rename()</span></code> which takes as input a dictionary. The keys of the dictionary are the current column headers and the values are the replacement headers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1921,12 +1924,12 @@ memory usage: 5.4+ KB
 </div>
 </section>
 <section id="adding-a-column">
-<h3><span class="section-number">13.4.3. </span>Adding a column<a class="headerlink" href="#adding-a-column" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.4.3. </span>Adding a column<a class="headerlink" href="#adding-a-column" title="Link to this heading">#</a></h3>
 <p>Just as in dictionaries, you can add a calculated column as you go.</p>
 </section>
 </section>
 <section id="calculations-on-columns">
-<h2><span class="section-number">13.5. </span>Calculations on Columns<a class="headerlink" href="#calculations-on-columns" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.5. </span>Calculations on Columns<a class="headerlink" href="#calculations-on-columns" title="Link to this heading">#</a></h2>
 <p>When extracting a column, you can use numpy functions to get different measures of those data:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code></p></li>
@@ -1938,9 +1941,9 @@ memory usage: 5.4+ KB
 </ul>
 </section>
 <section id="selecting-data">
-<h2><span class="section-number">13.6. </span>Selecting Data<a class="headerlink" href="#selecting-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.6. </span>Selecting Data<a class="headerlink" href="#selecting-data" title="Link to this heading">#</a></h2>
 <section id="inspection">
-<h3><span class="section-number">13.6.1. </span>Inspection<a class="headerlink" href="#inspection" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">14.6.1. </span>Inspection<a class="headerlink" href="#inspection" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>What movies/tv shows are on the list?</p></li>
 <li><p>What are the statistics of the numeric columns?</p></li>
@@ -2100,7 +2103,7 @@ memory usage: 5.4+ KB
 </section>
 </section>
 <section id="practice-problems">
-<h2><span class="section-number">13.7. </span>Practice Problems<a class="headerlink" href="#practice-problems" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.7. </span>Practice Problems<a class="headerlink" href="#practice-problems" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Which movies made over $500,000,000 domestic box office? Provide the title, release_year, and domestic_box_office.</p></li>
 <li><p>Which movies were liked by audiences more than by the critics? Provide all the info.</p></li>
@@ -2586,20 +2589,20 @@ memory usage: 5.4+ KB
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../02_numpy_matplotlib/04_matplotlib_reference.html"
+       href="00_pandas_cheatsheet.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Matplotlib Cheat Sheet</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Pandas Cheat Sheet</p>
       </div>
     </a>
     <a class="right-next"
-       href="../00_Assignments/ps01.html"
+       href="02_pandas_groupby.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PS01</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Pandas - Grouping and Aggregation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2619,27 +2622,27 @@ memory usage: 5.4+ KB
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe">13.1. Pandas Dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">13.2. Importing and Inspecting Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-and-filtering-data">13.3. Selecting and Filtering Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-a-column-or-columns">13.3.1. Selecting a Column or Columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-rows-using-query">13.3.2. Filtering Rows using <code class="docutils literal notranslate"><span class="pre">.query</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-using-loc">13.3.3. Slicing using <code class="docutils literal notranslate"><span class="pre">.loc</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-using-iloc">13.3.4. Slicing using <code class="docutils literal notranslate"><span class="pre">.iloc</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe">14.1. Pandas Dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">14.2. Importing and Inspecting Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-and-filtering-data">14.3. Selecting and Filtering Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-a-column-or-columns">14.3.1. Selecting a Column or Columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-rows-using-query">14.3.2. Filtering Rows using <code class="docutils literal notranslate"><span class="pre">.query</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-using-loc">14.3.3. Slicing using <code class="docutils literal notranslate"><span class="pre">.loc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-using-iloc">14.3.4. Slicing using <code class="docutils literal notranslate"><span class="pre">.iloc</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">13.4. Data Cleaning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-bad-data">13.4.1. Dropping bad data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-columns">13.4.2. Renaming Columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-column">13.4.3. Adding a column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">14.4. Data Cleaning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-bad-data">14.4.1. Dropping bad data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-columns">14.4.2. Renaming Columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-column">14.4.3. Adding a column</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-on-columns">13.5. Calculations on Columns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-data">13.6. Selecting Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspection">13.6.1. Inspection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-on-columns">14.5. Calculations on Columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-data">14.6. Selecting Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspection">14.6.1. Inspection</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">13.7. Practice Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">14.7. Practice Problems</a></li>
 </ul>
   </nav></div>
 

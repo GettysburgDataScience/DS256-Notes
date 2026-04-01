@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pandas - Merging DataFrames &#8212; DS256 Data Science Programming</title>
+    <title>16. Pandas - Merging DataFrames &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -70,9 +70,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '04_Pandas/04_pandas_merge';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_Pandas/03_pandas_merge';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PS01" href="../00_Assignments/ps01.html" />
+    <link rel="prev" title="15. Pandas - Grouping and Aggregation" href="02_pandas_groupby.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -134,8 +136,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -218,9 +218,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../02_numpy_matplotlib/04_matplotlib_reference.html">12. Matplotlib Cheat Sheet</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_pandas_intro.html">13. Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_pandas_groupby.html">14. Pandas - Grouping and Aggregation</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_pandas_cheatsheet.html">13. Pandas Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_pandas_intro.html">14. Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_pandas_groupby.html">15. Pandas - Grouping and Aggregation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Pandas - Merging DataFrames</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -283,7 +285,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/GettysburgDataScience/DS256-Notes/blob/main/04_Pandas/04_pandas_merge.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/GettysburgDataScience/DS256-Notes/blob/main/04_Pandas/03_pandas_merge.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -314,7 +316,7 @@
       
       
       
-      <li><a href="../_sources/04_Pandas/04_pandas_merge.ipynb" target="_blank"
+      <li><a href="../_sources/04_Pandas/03_pandas_merge.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -408,8 +410,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-about-how">More about ‘how’</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-about-how">16.1. More about ‘how’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">16.1.1. Example</a></li>
 </ul>
 </li>
 </ul>
@@ -424,7 +426,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-merging-dataframes">
-<h1>Pandas - Merging DataFrames<a class="headerlink" href="#pandas-merging-dataframes" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">16. </span>Pandas - Merging DataFrames<a class="headerlink" href="#pandas-merging-dataframes" title="Link to this heading">#</a></h1>
 <p>Often, we may want to pool and combine data from different sources.</p>
 <p>The Pandas function <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html"><code class="docutils literal notranslate"><span class="pre">merge()</span></code></a> allows you to combine data horizontally (adding columns) from different DataFrames based on common values in specified columns.</p>
 <p>If you are familiar with SQL, this is a JOIN.</p>
@@ -450,9 +452,9 @@ document.write(`
 <li><p><strong>suffixes</strong> are used to disambiguate columns that share the same name. After the merge, the suffixes indicate which columns came from the left and right dataframes.</p></li>
 </ul>
 <section id="more-about-how">
-<h2>More about ‘how’<a class="headerlink" href="#more-about-how" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.1. </span>More about ‘how’<a class="headerlink" href="#more-about-how" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://www.practicaldatascience.org/notebooks/class_3/week_4/15.1_combining_merging_continued.html">read more about the types of merges</a></p>
-<p><img alt="merge_types" src="images/merge_types.png" /></p>
+<p><img alt="merge_types" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.practicaldatascience.org%2F_images%2F3.4.15_merge_types.png&amp;f=1&amp;nofb=1&amp;ipt=613b379f62e7af34c68eeb383c9e0c8bdbaf714b92ca1d2ea70189329cace980" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1129,13 +1131,14 @@ document.write(`
 </div></div></div>
 </div>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">16.1.1. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
 <p>Looking again at the dataframe of election results. It’s not formatted in the most convenient way. Let’s improve the organization of this dataframe.</p>
 <p>Goal:</p>
 <ul class="simple">
 <li><p>One row for each county-and-year combo.</p></li>
 <li><p>Within a row, there should be columns for each party candidate and the number of votes they received.</p></li>
 <li><p>No duplicated or unnecessary data.</p></li>
+<li><p>Calculate win margin and lean.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1631,6 +1634,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="02_pandas_groupby.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Pandas - Grouping and Aggregation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../00_Assignments/ps01.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PS01</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1647,8 +1668,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-about-how">More about ‘how’</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-about-how">16.1. More about ‘how’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">16.1.1. Example</a></li>
 </ul>
 </li>
 </ul>

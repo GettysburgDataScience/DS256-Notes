@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>14. Pandas - Grouping and Aggregation &#8212; DS256 Data Science Programming</title>
+    <title>15. Pandas - Grouping and Aggregation &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -73,8 +73,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '04_Pandas/02_pandas_groupby';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PS01" href="../00_Assignments/ps01.html" />
-    <link rel="prev" title="13. Pandas" href="01_pandas_intro.html" />
+    <link rel="next" title="16. Pandas - Merging DataFrames" href="03_pandas_merge.html" />
+    <link rel="prev" title="14. Pandas" href="01_pandas_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -219,8 +219,10 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_pandas_intro.html">13. Pandas</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Pandas - Grouping and Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_pandas_cheatsheet.html">13. Pandas Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_pandas_intro.html">14. Pandas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Pandas - Grouping and Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_pandas_merge.html">16. Pandas - Merging DataFrames</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -228,6 +230,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps02.html">PS02</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps03.html">PS03</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps04.html">PS04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps05.html">PS05</a></li>
 </ul>
 
     </div>
@@ -407,13 +410,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-and-aggregate">14.1. Groupby and Aggregate</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-aggregation-functions">14.1.1. Common Aggregation Functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-aggregations">14.1.2. Multiple Aggregations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">14.1.3. Use Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-and-aggregate">15.1. Groupby and Aggregate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-aggregation-functions">15.1.1. Common Aggregation Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-aggregations">15.1.2. Multiple Aggregations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">15.1.3. Use Cases</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data">14.2. Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data">15.2. Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">15.3. QUESTIONS:</a></li>
 </ul>
             </nav>
         </div>
@@ -426,7 +430,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-grouping-and-aggregation">
-<h1><span class="section-number">14. </span>Pandas - Grouping and Aggregation<a class="headerlink" href="#pandas-grouping-and-aggregation" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">15. </span>Pandas - Grouping and Aggregation<a class="headerlink" href="#pandas-grouping-and-aggregation" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -733,7 +737,7 @@ memory usage: 34.3+ MB
 </div>
 </div>
 <section id="groupby-and-aggregate">
-<h2><span class="section-number">14.1. </span>Groupby and Aggregate<a class="headerlink" href="#groupby-and-aggregate" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.1. </span>Groupby and Aggregate<a class="headerlink" href="#groupby-and-aggregate" title="Link to this heading">#</a></h2>
 <p>Often in data science, we want to partition our data set into groups based on some feature and compare statistics of those groups.</p>
 <p>In pandas, <code class="docutils literal notranslate"><span class="pre">groupby</span></code> is used to split the data into groups based on the values in one or more columns. After grouping, you can apply aggregation (<code class="docutils literal notranslate"><span class="pre">agg</span></code>) functions to summarize or transform each group.</p>
 <p><code class="docutils literal notranslate"><span class="pre">groupby</span></code> works by:</p>
@@ -753,7 +757,7 @@ memory usage: 34.3+ MB
 </pre></div>
 </div>
 <section id="common-aggregation-functions">
-<h3><span class="section-number">14.1.1. </span>Common Aggregation Functions<a class="headerlink" href="#common-aggregation-functions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.1.1. </span>Common Aggregation Functions<a class="headerlink" href="#common-aggregation-functions" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">sum()</span></code>: Total of values in each group</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mean()</span></code>: Average of values in each group</p></li>
@@ -762,7 +766,7 @@ memory usage: 34.3+ MB
 </ul>
 </section>
 <section id="multiple-aggregations">
-<h3><span class="section-number">14.1.2. </span>Multiple Aggregations<a class="headerlink" href="#multiple-aggregations" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.1.2. </span>Multiple Aggregations<a class="headerlink" href="#multiple-aggregations" title="Link to this heading">#</a></h3>
 <p>You can apply multiple aggregation functions at once using <code class="docutils literal notranslate"><span class="pre">.agg()</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;County&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
     <span class="s1">&#39;Electric Range&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">],</span>
@@ -773,7 +777,7 @@ memory usage: 34.3+ MB
 <p>This produces a summary table with the specified statistics for each group.</p>
 </section>
 <section id="use-cases">
-<h3><span class="section-number">14.1.3. </span>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.1.3. </span>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Summarizing data by categories (e.g., average sales per region)</p></li>
 <li><p>Counting occurrences (e.g., number of vehicles per manufacturer)</p></li>
@@ -1446,265 +1450,10 @@ Name: Electric Range, Length: 239, dtype: float64
 </table>
 </div></div></div>
 </div>
-<ul class="simple">
-<li><p>For every year, which county had the most registered EV vehicles.</p></li>
-<li><p>For each manufacturer, find the vehicle model with the highest electric range.</p></li>
-<li><p>For each manufacturer, find the number of different models they produce.</p></li>
-<li><p>For each county, find the highest and lowest electric range of all the vehicles in that county.</p></li>
-<li><p>For each manufacturer, how many cars of each different model year were registered in WA?</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Model Year&#39;</span><span class="p">)[[</span><span class="s1">&#39;County&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="4" halign="left">County</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>count</th>
-      <th>unique</th>
-      <th>top</th>
-      <th>freq</th>
-    </tr>
-    <tr>
-      <th>Model Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1999</th>
-      <td>2</td>
-      <td>1</td>
-      <td>Pierce</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2000</th>
-      <td>8</td>
-      <td>4</td>
-      <td>King</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>1</td>
-      <td>1</td>
-      <td>Clallam</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>1</td>
-      <td>1</td>
-      <td>San Juan</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>20</td>
-      <td>7</td>
-      <td>King</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>22</td>
-      <td>7</td>
-      <td>King</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>622</td>
-      <td>30</td>
-      <td>King</td>
-      <td>243</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>1438</td>
-      <td>36</td>
-      <td>King</td>
-      <td>484</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>4061</td>
-      <td>39</td>
-      <td>King</td>
-      <td>1629</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>3292</td>
-      <td>47</td>
-      <td>King</td>
-      <td>1382</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>4532</td>
-      <td>46</td>
-      <td>King</td>
-      <td>2008</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>5203</td>
-      <td>49</td>
-      <td>King</td>
-      <td>2396</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>8667</td>
-      <td>56</td>
-      <td>King</td>
-      <td>3809</td>
-    </tr>
-    <tr>
-      <th>2018</th>
-      <td>14322</td>
-      <td>68</td>
-      <td>King</td>
-      <td>7155</td>
-    </tr>
-    <tr>
-      <th>2019</th>
-      <td>10935</td>
-      <td>61</td>
-      <td>King</td>
-      <td>5274</td>
-    </tr>
-    <tr>
-      <th>2020</th>
-      <td>12213</td>
-      <td>69</td>
-      <td>King</td>
-      <td>5821</td>
-    </tr>
-    <tr>
-      <th>2021</th>
-      <td>20772</td>
-      <td>89</td>
-      <td>King</td>
-      <td>10096</td>
-    </tr>
-    <tr>
-      <th>2022</th>
-      <td>29397</td>
-      <td>113</td>
-      <td>King</td>
-      <td>14678</td>
-    </tr>
-    <tr>
-      <th>2023</th>
-      <td>60156</td>
-      <td>125</td>
-      <td>King</td>
-      <td>31118</td>
-    </tr>
-    <tr>
-      <th>2024</th>
-      <td>49234</td>
-      <td>106</td>
-      <td>King</td>
-      <td>24186</td>
-    </tr>
-    <tr>
-      <th>2025</th>
-      <td>32674</td>
-      <td>57</td>
-      <td>King</td>
-      <td>17107</td>
-    </tr>
-    <tr>
-      <th>2026</th>
-      <td>7047</td>
-      <td>38</td>
-      <td>King</td>
-      <td>3765</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;VIN (1-10)&#39;, &#39;County&#39;, &#39;City&#39;, &#39;State&#39;, &#39;Postal Code&#39;, &#39;Model Year&#39;,
-       &#39;Make&#39;, &#39;Model&#39;, &#39;Electric Vehicle Type&#39;,
-       &#39;Clean Alternative Fuel Vehicle (CAFV) Eligibility&#39;, &#39;Electric Range&#39;,
-       &#39;Base MSRP&#39;, &#39;Legislative District&#39;, &#39;DOL Vehicle ID&#39;,
-       &#39;Vehicle Location&#39;, &#39;Electric Utility&#39;, &#39;2020 Census Tract&#39;],
-      dtype=&#39;object&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Make&#39;</span><span class="p">)[[</span><span class="s1">&#39;Model&#39;</span><span class="p">,</span> <span class="s1">&#39;Electric Range&#39;</span><span class="p">]]</span>\
-    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Electric Range&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Make&#39;</span><span class="p">)[[</span><span class="s1">&#39;Model&#39;</span><span class="p">,</span> <span class="s1">&#39;Electric Range&#39;</span><span class="p">]]</span>\
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Electric Range&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/pandas/core/groupby/groupby.py:1365,</span> in <span class="ni">GroupBy.__getattr__</span><span class="nt">(self, attr)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1362</span> <span class="k">if</span> <span class="n">attr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1363</span>     <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">1365</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1366</span>     <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; object has no attribute &#39;</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1367</span> <span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;DataFrameGroupBy&#39; object has no attribute &#39;sort_values&#39;
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data">
-<h2><span class="section-number">14.2. </span>Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data<a class="headerlink" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.2. </span>Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data<a class="headerlink" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Sorting Values:</strong> Sort the DataFrame by a column (e.g., Electric Range):</p></li>
 </ul>
@@ -1804,6 +1553,646 @@ Name: Electric Range, Length: 239, dtype: float64
 </div></div></div>
 </div>
 </section>
+<section id="questions">
+<h2><span class="section-number">15.3. </span>QUESTIONS:<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
+<p>a. For every year, which county had the most registered EV vehicles.<br />
+b. For each manufacturer, find the vehicle model with the highest electric range.<br />
+c. For each manufacturer, find the number of different models they produce.<br />
+d. For each county, find the highest and lowest electric range of all the vehicles in that county.<br />
+e. For each manufacturer, how many cars of each different model year were registered in WA?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VIN (1-10)</th>
+      <th>County</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal Code</th>
+      <th>Model Year</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Electric Vehicle Type</th>
+      <th>Clean Alternative Fuel Vehicle (CAFV) Eligibility</th>
+      <th>Electric Range</th>
+      <th>Base MSRP</th>
+      <th>Legislative District</th>
+      <th>DOL Vehicle ID</th>
+      <th>Vehicle Location</th>
+      <th>Electric Utility</th>
+      <th>2020 Census Tract</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>WA1E2AFY8R</td>
+      <td>Thurston</td>
+      <td>Olympia</td>
+      <td>WA</td>
+      <td>98512.0</td>
+      <td>2024</td>
+      <td>AUDI</td>
+      <td>Q5 E</td>
+      <td>Plug-in Hybrid Electric Vehicle (PHEV)</td>
+      <td>Not eligible due to low battery range</td>
+      <td>23.0</td>
+      <td>0</td>
+      <td>22.0</td>
+      <td>263239938</td>
+      <td>POINT (-122.90787 46.9461)</td>
+      <td>PUGET SOUND ENERGY INC</td>
+      <td>5.306701e+10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>WAUUPBFF4J</td>
+      <td>Yakima</td>
+      <td>Wapato</td>
+      <td>WA</td>
+      <td>98951.0</td>
+      <td>2018</td>
+      <td>AUDI</td>
+      <td>A3</td>
+      <td>Plug-in Hybrid Electric Vehicle (PHEV)</td>
+      <td>Not eligible due to low battery range</td>
+      <td>16.0</td>
+      <td>0</td>
+      <td>15.0</td>
+      <td>318160860</td>
+      <td>POINT (-120.42083 46.44779)</td>
+      <td>PACIFICORP</td>
+      <td>5.307794e+10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. For each Model year, how many evs in each county</span>
+<span class="c1"># 2. For each year, sort the values by the count of vehicles</span>
+<span class="c1"># 3. pick off the first county in each sorted list.</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Model Year&#39;</span><span class="p">,</span> <span class="s1">&#39;County&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;DOL Vehicle ID&#39;</span><span class="p">:</span> <span class="s1">&#39;count&#39;</span><span class="p">})</span>\
+<span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Model Year&#39;</span><span class="p">,</span> <span class="s1">&#39;DOL Vehicle ID&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>\
+<span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Model Year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;County&#39;</span><span class="p">:</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;DOL Vehicle ID&#39;</span><span class="p">:</span><span class="s1">&#39;first&#39;</span><span class="p">})</span>
+
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>County</th>
+      <th>DOL Vehicle ID</th>
+    </tr>
+    <tr>
+      <th>Model Year</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1999</th>
+      <td>Pierce</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2000</th>
+      <td>King</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>Clallam</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>San Juan</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>King</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>King</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>King</td>
+      <td>243</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>King</td>
+      <td>484</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>King</td>
+      <td>1629</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>King</td>
+      <td>1382</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>King</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>King</td>
+      <td>2396</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>King</td>
+      <td>3809</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>King</td>
+      <td>7155</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>King</td>
+      <td>5274</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>King</td>
+      <td>5821</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>King</td>
+      <td>10096</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>King</td>
+      <td>14678</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>King</td>
+      <td>31118</td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>King</td>
+      <td>24186</td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <td>King</td>
+      <td>17107</td>
+    </tr>
+    <tr>
+      <th>2026</th>
+      <td>King</td>
+      <td>3765</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>b. For each manufacturer, find the vehicle model with the highest electric range.
+c. For each manufacturer, find the number of different models they produce.
+d. For each county, find the highest and lowest electric range of all the vehicles in that county.
+e. For each manufacturer, how many cars of each different model year were registered in WA?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Sort by electric range</span>
+<span class="c1"># 2. Group by Make</span>
+<span class="c1"># 3. Get the first row for each make group</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">ev_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Electric Range&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>\
+<span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Make&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Model&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">,</span> <span class="s1">&#39;Electric Range&#39;</span><span class="p">:</span><span class="s1">&#39;last&#39;</span><span class="p">})</span>\
+    <span class="c1"># .sort_values(by = &#39;Electric Range&#39;, ascending = False)</span>
+
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Model</th>
+      <th>Electric Range</th>
+    </tr>
+    <tr>
+      <th>Make</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ACURA</th>
+      <td>ZDX</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>ALFA ROMEO</th>
+      <td>TONALE</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <th>AUDI</th>
+      <td>E-TRON</td>
+      <td>222.0</td>
+    </tr>
+    <tr>
+      <th>AZURE DYNAMICS</th>
+      <td>TRANSIT CONNECT ELECTRIC</td>
+      <td>56.0</td>
+    </tr>
+    <tr>
+      <th>BENTLEY</th>
+      <td>CONTINENTAL</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <th>BMW</th>
+      <td>I3</td>
+      <td>153.0</td>
+    </tr>
+    <tr>
+      <th>BRIGHTDROP</th>
+      <td>ZEVO</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>CADILLAC</th>
+      <td>ELR</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>CHEVROLET</th>
+      <td>BOLT EV</td>
+      <td>259.0</td>
+    </tr>
+    <tr>
+      <th>CHRYSLER</th>
+      <td>PACIFICA</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <th>DODGE</th>
+      <td>HORNET</td>
+      <td>32.0</td>
+    </tr>
+    <tr>
+      <th>FIAT</th>
+      <td>500</td>
+      <td>87.0</td>
+    </tr>
+    <tr>
+      <th>FISKER</th>
+      <td>KARMA</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <th>FORD</th>
+      <td>FOCUS</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>GENESIS</th>
+      <td>GV60</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>GMC</th>
+      <td>HUMMER EV SUV</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>HONDA</th>
+      <td>CLARITY</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>HYUNDAI</th>
+      <td>KONA</td>
+      <td>258.0</td>
+    </tr>
+    <tr>
+      <th>JAGUAR</th>
+      <td>I-PACE</td>
+      <td>234.0</td>
+    </tr>
+    <tr>
+      <th>JEEP</th>
+      <td>GRAND CHEROKEE</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>KIA</th>
+      <td>NIRO</td>
+      <td>239.0</td>
+    </tr>
+    <tr>
+      <th>LAMBORGHINI</th>
+      <td>REVUELTO</td>
+      <td>37.0</td>
+    </tr>
+    <tr>
+      <th>LAND ROVER</th>
+      <td>RANGE ROVER SPORT</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>LEXUS</th>
+      <td>RX</td>
+      <td>37.0</td>
+    </tr>
+    <tr>
+      <th>LINCOLN</th>
+      <td>CORSAIR</td>
+      <td>28.0</td>
+    </tr>
+    <tr>
+      <th>LUCID</th>
+      <td>AIR</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>MAZDA</th>
+      <td>CX-90</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <th>MERCEDES-BENZ</th>
+      <td>B-CLASS</td>
+      <td>87.0</td>
+    </tr>
+    <tr>
+      <th>MINI</th>
+      <td>HARDTOP</td>
+      <td>110.0</td>
+    </tr>
+    <tr>
+      <th>MITSUBISHI</th>
+      <td>I-MIEV</td>
+      <td>62.0</td>
+    </tr>
+    <tr>
+      <th>MULLEN AUTOMOTIVE INC.</th>
+      <td>ONE</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>NISSAN</th>
+      <td>LEAF</td>
+      <td>215.0</td>
+    </tr>
+    <tr>
+      <th>POLESTAR</th>
+      <td>PS2</td>
+      <td>233.0</td>
+    </tr>
+    <tr>
+      <th>PORSCHE</th>
+      <td>MACAN</td>
+      <td>308.0</td>
+    </tr>
+    <tr>
+      <th>RAM</th>
+      <td>PROMASTER 3500</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>RIVIAN</th>
+      <td>R1T</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>ROLLS-ROYCE</th>
+      <td>SPECTRE</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>SMART</th>
+      <td>FORTWO ELECTRIC DRIVE</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>SUBARU</th>
+      <td>CROSSTREK</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>TESLA</th>
+      <td>MODEL S</td>
+      <td>337.0</td>
+    </tr>
+    <tr>
+      <th>TH!NK</th>
+      <td>CITY</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>TOYOTA</th>
+      <td>RAV4</td>
+      <td>103.0</td>
+    </tr>
+    <tr>
+      <th>VINFAST</th>
+      <td>VF 8</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>VOLKSWAGEN</th>
+      <td>E-GOLF</td>
+      <td>125.0</td>
+    </tr>
+    <tr>
+      <th>VOLVO</th>
+      <td>S60</td>
+      <td>41.0</td>
+    </tr>
+    <tr>
+      <th>WHEEGO ELECTRIC CARS</th>
+      <td>WHEEGO</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Make&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Model&#39;</span><span class="p">:[</span><span class="s1">&#39;unique&#39;</span><span class="p">,</span> <span class="s1">&#39;nunique&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;County&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">:[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Make&#39;</span><span class="p">,</span> <span class="s1">&#39;Model Year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;DOL Vehicle ID&#39;</span><span class="p">:</span> <span class="s1">&#39;count&#39;</span><span class="p">})</span>
+<span class="n">e</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>DOL Vehicle ID</th>
+    </tr>
+    <tr>
+      <th>Make</th>
+      <th>Model Year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ACURA</th>
+      <th>2024</th>
+      <td>345</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">ALFA ROMEO</th>
+      <th>2024</th>
+      <td>97</td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AUDI</th>
+      <th>2016</th>
+      <td>205</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>184</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">VOLVO</th>
+      <th>2023</th>
+      <td>1557</td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>1011</td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <td>1254</td>
+    </tr>
+    <tr>
+      <th>2026</th>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>WHEEGO ELECTRIC CARS</th>
+      <th>2010</th>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>312 rows × 1 columns</p>
+</div></div></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1842,15 +2231,15 @@ Name: Electric Range, Length: 239, dtype: float64
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Pandas</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Pandas</p>
       </div>
     </a>
     <a class="right-next"
-       href="../00_Assignments/ps01.html"
+       href="03_pandas_merge.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PS01</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Pandas - Merging DataFrames</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1870,13 +2259,14 @@ Name: Electric Range, Length: 239, dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-and-aggregate">14.1. Groupby and Aggregate</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-aggregation-functions">14.1.1. Common Aggregation Functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-aggregations">14.1.2. Multiple Aggregations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">14.1.3. Use Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-and-aggregate">15.1. Groupby and Aggregate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-aggregation-functions">15.1.1. Common Aggregation Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-aggregations">15.1.2. Multiple Aggregations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">15.1.3. Use Cases</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data">14.2. Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data">15.2. Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">15.3. QUESTIONS:</a></li>
 </ul>
   </nav></div>
 
